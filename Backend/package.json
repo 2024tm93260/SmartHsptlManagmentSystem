@@ -1,9 +1,9 @@
 {
   "name": "hospital-management",
   "version": "1.0.0",
-  "description": "Hospital Management project ",
+  "description": "Smart Hospital Management System ",
   "license": "ISC",
-  "author": "Dipanjan Das",
+  "author": "Prakasha G",
   "type": "module",
   "main": "src/index.js",
   "scripts": {
