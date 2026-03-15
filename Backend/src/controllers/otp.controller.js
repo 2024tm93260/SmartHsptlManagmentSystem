@@ -20,7 +20,7 @@ const sendotp = asyncHandler(async (req, res) => {
 
     const response = await sendMail({
         to: email,
-        subject: "NovaMed OTP Verification",
+        subject: "BIMS OTP Verification",
         html: otpTemplate(otp),
     });
     if (!response) {
@@ -85,7 +85,7 @@ const sendForgetPasswordOtp = asyncHandler(async (req, res) => {
 
     const response = await sendMail({
         to: email,
-        subject: "Your NovaMed OTP Code to Reset Password",
+        subject: "Your BIMS OTP Code to Reset Password",
         html: forgetpasswordotptemplate(otp),
     });
     if (!response) {

@@ -84,7 +84,7 @@ const registeradmin = asyncHandler(async (req, res) => {
 
     await sendMail({
         to: email,
-        subject: `Welcome to NovaMed, ${createdAdmin.adminname}! Your Registration is Successful`,
+        subject: `Welcome to BIMS, ${createdAdmin.adminname}! Your Registration is Successful`,
         html: welcomeemailtemplate(createdAdmin.adminname),
     })
 
@@ -130,7 +130,7 @@ const loginadmin = asyncHandler(async (req, res) => {
     }
     await sendMail({
         to: email,
-        subject: `Login Alert – NovaMed Account Accessed Successfully`,
+        subject: `Login Alert – BIMS Account Accessed Successfully`,
         html: logintemplate(loggedinadmin.adminname),
     });
 

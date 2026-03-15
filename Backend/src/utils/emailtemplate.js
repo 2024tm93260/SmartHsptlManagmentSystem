@@ -1,7 +1,7 @@
 const otpTemplate = (otp) => `
   <div style="font-family: Arial, sans-serif; background: #f9f9f9; padding: 20px;">
     <div style="max-width: 500px; margin: auto; background: white; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); padding: 30px;">
-      <h2 style="text-align: center; color: #4CAF50;">NovaMed OTP Verification</h2>
+      <h2 style="text-align: center; color: #4CAF50;">BIMS OTP Verification</h2>
       <p>Dear user,</p>
       <p>Your One-Time Password (OTP) is:</p>
       <div style="text-align: center; margin: 20px 0;">
@@ -10,7 +10,7 @@ const otpTemplate = (otp) => `
         </span>
       </div>
       <p>This OTP is valid for 2 minutes. If you didn’t request it, please ignore this email.</p>
-      <p style="margin-top: 30px;">— NovaMed HMS Team</p>
+      <p style="margin-top: 30px;">— BIMS HMS Team</p>
     </div>
   </div>
 `;
@@ -57,7 +57,7 @@ const forgetpasswordotptemplate = (otp) => `
       <p>You requested to reset your password. Please use the OTP below to proceed:</p>
       <p class="otp">${otp}</p>
       <p>This OTP will expire in 2 minutes for your security. If you did not request this, please ignore this email.</p>
-      <p>Thank you,<br />NovaMed Team</p>
+      <p>Thank you,<br />BIMS Team</p>
       <div class="footer">
         This is an automated email. Please do not reply.
       </div>
@@ -70,7 +70,7 @@ const welcomeemailtemplate = (username,) => `
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Welcome to NovaMed</title>
+  <title>Welcome to BIMS</title>
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
@@ -135,18 +135,18 @@ const welcomeemailtemplate = (username,) => `
 
   <div class="email-container">
     <div class="header">
-      <h1>Welcome to NovaMed, ${username}!</h1>
+      <h1>Welcome to BIMS, ${username}!</h1>
     </div>
 
     <div class="content">
       <p>Hi ${username},</p>
       <p>We're excited to have you onboard! Your account has been successfully created.</p>
       <p>You can now access your personalized dashboard, book appointments, manage records, and much more.</p>
-      <p>If you didn't register for a NovaMed account, please ignore this message or contact our support team immediately.</p>
+      <p>If you didn't register for a BIMS account, please ignore this message or contact our support team immediately.</p>
     </div>
 
     <div class="footer">
-      &copy; 2025 NovaMed. All rights reserved.
+      &copy; 2025 BIMS. All rights reserved.
     </div>
   </div>
 
@@ -159,7 +159,7 @@ const logintemplate = (username) => `
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>NovaMed Login Alert</title>
+  <title>BIMS Login Alert</title>
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
@@ -222,14 +222,14 @@ const logintemplate = (username) => `
 
     <div class="content">
       <p>Hi ${username},</p>
-      <p>Your NovaMed account was successfully accessed.</p>
+      <p>Your BIMS account was successfully accessed.</p>
 
       <p>If this was you, no further action is needed.</p>
-      <p>If you did not initiate this login, please reset your password immediately or contact NovaMed Support.</p>
+      <p>If you did not initiate this login, please reset your password immediately or contact BIMS Support.</p>
     </div>
 
     <div class="footer">
-      &copy; 2025 NovaMed. All rights reserved.
+      &copy; 2025 BIMS. All rights reserved.
     </div>
   </div>
 
@@ -329,7 +329,7 @@ const appointmentconfirmation = (otpCode,patientName,doctorName,department,appoi
         <p>Date: <span class="highlight">${appointmentDate}</span></p>
         <p>Time: <span class="highlight">${appointmentTime}</span></p>
         <p>Department: <span class="highlight">${department}</span></p>
-        <p>Hospital: <span class="highlight">NovaMed Hospital</span></p>
+        <p>Hospital: <span class="highlight">BIMS Hospital</span></p>
       </div>
 
       <div class="section">
@@ -344,19 +344,19 @@ const appointmentconfirmation = (otpCode,patientName,doctorName,department,appoi
       <div class="section">
         <p>
           If you have any questions or need to reschedule, please contact our
-          helpdesk at <a>support@NovaMed</a> or call
+          helpdesk at <a>support@BIMS</a> or call
           <strong>1800-563-2316</strong>.
         </p>
       </div>
 
       <div class="footer">
         <p>
-          This is an automated message from NovaMed. Please do not
+          This is an automated message from BIMS. Please do not
           reply directly to this email.
         </p>
-        <p>Thank you for choosing <strong>NovaMed</strong>.</p>
+        <p>Thank you for choosing <strong>BIMS</strong>.</p>
 
-        <p>&copy; 2025 NovaMed. All rights reserved.</p>
+        <p>&copy; 2025 BIMS. All rights reserved.</p>
       </div>
     </div>
   </body>
@@ -396,12 +396,12 @@ const appointmentcancellation=(patientName,doctorName,appointmentDate,appointmen
 
       <p>Your appointment with <strong>Dr. ${doctorName}</strong> on <strong>${appointmentDate}</strong> at <strong>${appointmentTime}</strong> has been <strong>cancelled</strong>.</p>
 
-      <p>If this was a mistake or you'd like to reschedule, please contact us at <strong>support@NovaMed</strong> or call <strong>1800-563-2316</strong>.</p>
+      <p>If this was a mistake or you'd like to reschedule, please contact us at <strong>support@BIMS</strong> or call <strong>1800-563-2316</strong>.</p>
 
       <p>We hope to assist you again soon.</p>
 
       <div class="footer">
-        &copy; 2025 NovaMed. All rights reserved.
+        &copy; 2025 BIMS. All rights reserved.
       </div>
     </div>
   </body>
@@ -455,12 +455,12 @@ const appointmentupdation = (patientName,doctorName,appointmentDate,appointmentT
         <p><strong>Time:</strong> ${appointmentTime}</p>
       </div>
 
-      <p>If you have any questions or need further assistance, feel free to contact us at <strong>support@NovaMed</strong> or call <strong>1800-563-2316</strong>.</p>
+      <p>If you have any questions or need further assistance, feel free to contact us at <strong>support@BIMS</strong> or call <strong>1800-563-2316</strong>.</p>
 
-      <p>Thank you for choosing <strong>NovaMed</strong>.</p>
+      <p>Thank you for choosing <strong>BIMS</strong>.</p>
 
       <div class="footer">
-        &copy; 2025 NovaMed. All rights reserved.
+        &copy; 2025 BIMS. All rights reserved.
       </div>
     </div>
   </body>

@@ -111,7 +111,7 @@ const registerdoctor = asyncHandler(async (req, res) => {
     }
     await sendMail({
         to: email,
-        subject: `Welcome to NovaMed, ${createddoctor.doctorname}! Your Registration is Successful`,
+        subject: `Welcome to BIMS, ${createddoctor.doctorname}! Your Registration is Successful`,
         html: welcomeemailtemplate(createddoctor.doctorname),
     });
 
@@ -147,7 +147,7 @@ const logindoctor = asyncHandler(async (req, res) => {
 
     await sendMail({
         to: email,
-        subject: `Login Alert – NovaMed Account Accessed Successfully`,
+        subject: `Login Alert – BIMS Account Accessed Successfully`,
         html: logintemplate(loggedindoctor.doctorname),
     });
     const options1 = {

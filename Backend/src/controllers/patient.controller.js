@@ -84,7 +84,7 @@ const registerPatient = asyncHandler(async (req, res) => {
     const createdpatient = await Patient.findById(patient._id).select("-password -refreshtoken")
     await sendMail({
         to: email,
-        subject: `Welcome to NovaMed, ${createdpatient.patientname}! Your Registration is Successful`,
+        subject: `Welcome to BIMS, ${createdpatient.patientname}! Your Registration is Successful`,
         html: welcomeemailtemplate(createdpatient.patientname),
     });
     return res.status(201).json(
@@ -116,7 +116,7 @@ const loginPatient = asyncHandler(async (req, res) => {
 
     await sendMail({
         to: email,
-        subject: `Login Alert – NovaMed Account Accessed Successfully`,
+        subject: `Login Alert – BIMS Account Accessed Successfully`,
         html: logintemplate(loggedinpatient.patientname),
     });
 
