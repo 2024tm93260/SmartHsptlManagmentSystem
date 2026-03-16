@@ -171,28 +171,28 @@ const AdminRegister = () => {
                   id="aadhar-doc"
                   label="Aadhar Card *"
                   file={watch("aadhar")}
-                  onChange={(e) => register("aadhar", {})(e)}
+                  registerProps={register("aadhar")}
                 />
 
                 <UploadBox
                   id="adminid-doc"
                   label="Admin ID Card *"
                   file={watch("adminId")}
-                  onChange={(e) => register("adminId", {})(e)}
+                  registerProps={register("adminId")}
                 />
 
                 <UploadBox
                   id="pic-doc"
                   label="Profile Picture *"
                   file={watch("profilepicture")}
-                  onChange={(e) => register("profilepicture", {})(e)}
+                  registerProps={register("profilepicture")}
                 />
 
                 <UploadBox
                   id="appointment-doc"
                   label="Appointment Letter *"
                   file={watch("appointmentletter")}
-                  onChange={(e) => register("appointmentletter", {})(e)}
+                  registerProps={register("appointmentletter")}
                 />
 
               </div>
@@ -259,15 +259,15 @@ const FormBox = ({ label, placeholder, type = "text", register, error }) => (
 );
 
 // Reusable Upload Box
-const UploadBox = ({ id, label, file, onChange }) => (
+const UploadBox = ({ id, label, file, registerProps }) => (
   <div className="space-y-2">
     <Label className="text-base font-medium">{label}</Label>
     <div className="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center hover:border-indigo-500 transition">
       <Upload className="w-8 h-8 text-gray-400 mx-auto mb-2" />
-      <input type="file" id={id} className="hidden" onChange={onChange} />
+      <input type="file" id={id} className="hidden" {...registerProps} />
       <label htmlFor={id} className="cursor-pointer text-sm text-gray-600 hover:text-indigo-600">
-        {file ? (
-          <span className="text-indigo-600 font-medium">✓ {file[0].name}</span>
+        {file && file.length > 0 ? (
+          <span className="text-indigo-600 font-medium">✓ {file[0]?.name}</span>
         ) : (
           "Click to upload"
         )}

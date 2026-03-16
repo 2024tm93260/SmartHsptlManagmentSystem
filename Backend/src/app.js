@@ -11,16 +11,20 @@ const allowedOrigins = [
     process.env.CORS_ORIGIN_ADMIN,
 ];
 
+const isDevelopment = process.env.NODE_ENV !== "production";
+
 app.use(
     cors({
-        origin: function (origin, callback) {
-            if (!origin) return callback(null, true); // allow Postman/localhost
-            if (allowedOrigins.includes(origin)) {
-                callback(null, true);
-            } else {
-                callback(new Error("Not allowed by CORS"));
-            }
-        },
+        origin: isDevelopment
+            ? true
+            : function (origin, callback) {
+                  if (!origin) return callback(null, true); // allow Postman/localhost
+                  if (allowedOrigins.includes(origin)) {
+                      callback(null, true);
+                  } else {
+                      callback(new Error("Not allowed by CORS"));
+                  }
+              },
         credentials: true,
     })
 );
@@ -34,6 +38,7 @@ import doctorRouter from "./routes/doctor.route.js"
 import adminRouter from "./routes/admin.route.js"
 import appointmentRouter from "./routes/appointment.route.js"
 
+app.use(cors({ origin: true, credentials: true }));
 app.use("/api/v1/patient", patientRouter)
 app.use("/api/v1/doctor", doctorRouter)
 app.use("/api/v1/admin", adminRouter)

@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "https://backend-silk-phi-66.vercel.app/api/v1/admin",
+  baseURL: "http://localhost:5000/api/v1/admin",
   withCredentials: true, 
   timeout: 10000,
 });
