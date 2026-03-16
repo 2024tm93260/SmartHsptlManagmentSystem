@@ -7,21 +7,25 @@ import sendMail from "../services/mail.js";
 import { welcomeemailtemplate, logintemplate } from "../utils/emailtemplate.js";
 import jwt from "jsonwebtoken";
 
+
 const generateaccesstokenandrefreshtoken = async (adminid) => {
-    try {
-        const admin = await Admin.findById(adminid)
-        const accesstoken = await admin.generateaccesstoken()
-        const refreshtoken = await admin.generaterefreshtoken()
-        if (!accesstoken || !refreshtoken) {
-            throw new apiError(500, "Token generation failed")
-        }
-        admin.refreshtoken = refreshtoken
-        await admin.save({ validateBeforeSave: false })
-        return { accesstoken, refreshtoken }
-    } catch (error) {
-        throw new apiError(500, "Token generation failed")
-    }
+    return { accesstoken: null, refreshtoken: null };
 }
+// const generateaccesstokenandrefreshtoken = async (adminid) => {
+//     try {
+//         const admin = await Admin.findById(adminid)
+//         const accesstoken = await admin.generateaccesstoken()
+//         const refreshtoken = await admin.generaterefreshtoken()
+//         if (!accesstoken || !refreshtoken) {
+//             throw new apiError(500, "Token generation failed")
+//         }
+//         admin.refreshtoken = refreshtoken
+//         await admin.save({ validateBeforeSave: false })
+//         return { accesstoken, refreshtoken }
+//     } catch (error) {
+//         throw new apiError(500, "Token generation failed")
+//     }
+// }
 
 const registeradmin = asyncHandler(async (req, res) => {
     const { adminname, adminusername, email, password, phonenumber, adminsecret } = req.body
@@ -134,21 +138,21 @@ const loginadmin = asyncHandler(async (req, res) => {
         html: logintemplate(loggedinadmin.adminname),
     });
 
-    
+    const cookieOptions = {
+        httpOnly: true,
+        secure: process.env.NODE_ENV === "production",
+        sameSite: process.env.NODE_ENV === "production" ? "None" : "Lax",
+        path: "/",
+    };
+
     const options1 = {
-        httpOnly: true,
-        secure: true,
-        sameSite: "None",
-        path: "/",
-        maxAge: 1 * 24 * 60 * 60 * 1000
-    }
+        ...cookieOptions,
+        maxAge: 1 * 24 * 60 * 60 * 1000,
+    };
     const options2 = {
-        httpOnly: true,
-        secure: true,
-        sameSite: "none",
-        path: "/",
-        maxAge: 20 * 24 * 60 * 60 * 1000
-    }
+        ...cookieOptions,
+        maxAge: 20 * 24 * 60 * 60 * 1000,
+    };
     return res
         .status(200)
         .cookie("accesstoken", accesstoken, options1)
@@ -160,16 +164,18 @@ const loginadmin = asyncHandler(async (req, res) => {
 const logoutadmin = asyncHandler(async (req, res, next) => {
     await Admin.findByIdAndUpdate(req.admin?._id, { $unset: { refreshtoken: 1 } }, { new: true }
     )
-    const options = {
+
+    const cookieOptions = {
         httpOnly: true,
-        secure: true,
-        sameSite: "None",
+        secure: process.env.NODE_ENV === "production",
+        sameSite: process.env.NODE_ENV === "production" ? "None" : "Lax",
         path: "/",
-    }
+    };
+
     return res
         .status(200)
-        .clearCookie("accesstoken", options)
-        .clearCookie("refreshtoken", options)
+        .clearCookie("accesstoken", cookieOptions)
+        .clearCookie("refreshtoken", cookieOptions)
         .json(new apiResponse(200, {}, "Admin logged out successfully"))
 })
 
@@ -193,20 +199,22 @@ const accesstokenrenewal = asyncHandler(async (req, res) => {
     const { accesstoken, newrefreshtoken } = await generateaccesstokenandrefreshtoken(admin._id);
 
 
+    const cookieOptions = {
+        httpOnly: true,
+        secure: process.env.NODE_ENV === "production",
+        sameSite: process.env.NODE_ENV === "production" ? "None" : "Lax",
+        path: "/",
+    };
+
     const options1 = {
-        httpOnly: true,
-        secure: true,
-        sameSite: "None",
-        path: "/",
-        maxAge: 1 * 24 * 60 * 60 * 1000
-    }
+        ...cookieOptions,
+        maxAge: 1 * 24 * 60 * 60 * 1000,
+    };
     const options2 = {
-        httpOnly: true,
-        secure: true,
-        sameSite: "none",
-        path: "/",
-        maxAge: 20 * 24 * 60 * 60 * 1000
-    }
+        ...cookieOptions,
+        maxAge: 20 * 24 * 60 * 60 * 1000,
+    };
+
     return res
         .status(200)
         .cookie("accesstoken", accesstoken, options1)

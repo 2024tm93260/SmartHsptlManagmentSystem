@@ -68,16 +68,17 @@ const adminSchema = new Schema({
     },
 }, { timestamps: true })
 
-adminSchema.pre("save", async function (next) {
-    if (this.isModified("password"))
-        this.password = await bcrypt.hash(this.password, 10)
-    next()
-})
-adminSchema.pre("save", async function (next) {
-    if (this.isModified("adminsecret"))
-        this.adminsecret = await bcrypt.hash(this.adminsecret, 10)
-    next()
-})
+adminSchema.pre("save", async function () {
+    if (this.isModified("password")) {
+        this.password = await bcrypt.hash(this.password, 10);
+    }
+});
+
+adminSchema.pre("save", async function () {
+    if (this.isModified("adminsecret")) {
+        this.adminsecret = await bcrypt.hash(this.adminsecret, 10);
+    }
+});
 
 adminSchema.methods.ispasswordcorrect = async function (password) {
     return await bcrypt.compare(password, this.password)
