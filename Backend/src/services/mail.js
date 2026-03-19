@@ -1,24 +1,15 @@
-import createTransporter from "./nodemailer.js";
-
-const SENDER_EMAIL = process.env.SENDER_EMAIL;
-
 const sendMail = async ({ to, subject, html }) => {
-  try {
-    const transporter = createTransporter();
+  console.log("Email sending is disabled", {
+    to,
+    subject,
+    htmlLength: html?.length || 0,
+  });
 
-    const info = await transporter.sendMail({
-      from: SENDER_EMAIL,
-      to,
-      subject,
-      html,
-    });
-
-    console.log("📧 Email sent:", info.messageId);
-    return info;
-  } catch (error) {
-    console.error("Email sending failed:", error);
-    throw error;
-  }
+  return {
+    skipped: true,
+    to,
+    subject,
+  };
 };
 
 export default sendMail;
