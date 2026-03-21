@@ -40,13 +40,13 @@ const AdminStats = () => {
       title: "Total Doctors",
       value: totalDoctors,
       icon: Users,
-      color: "bg-indigo-100 text-indigo-700",
+      color: "bg-muted text-primary",
     },
     {
       title: "Pending Appointments",
       value: pendingAppointments,
       icon: Calendar,
-      color: "bg-blue-100 text-blue-700",
+      color: "bg-muted text-foreground",
     },
     {
       title: "Active Departments",
@@ -74,8 +74,8 @@ const AdminStats = () => {
               </div>
 
               <div>
-                <p className="text-gray-500 text-sm">{stat.title}</p>
-                <p className="text-2xl font-bold text-gray-900">
+                <p className="text-muted-foreground text-sm">{stat.title}</p>
+                <p className="text-2xl font-bold text-foreground">
                   {loading ? "..." : stat.value}
                 </p>
               </div>

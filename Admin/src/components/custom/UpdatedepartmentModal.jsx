@@ -49,7 +49,7 @@ function UpdateDepartmentModal({ open, onClose, dept }) {
             </Button>
 
             <Button
-              className="bg-linear-to-r from-indigo-600 via-purple-600 to-pink-600 text-white"
+              className="admin-accent-gradient text-white"
               onClick={handleUpdate}
             >
               Update

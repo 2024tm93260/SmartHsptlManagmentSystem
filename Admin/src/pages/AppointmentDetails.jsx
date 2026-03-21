@@ -46,11 +46,11 @@ const AppointmentDetails = () => {
   const getStatusBadge = (status) => {
     const config = {
       Pending: {
-        color: "bg-yellow-100 text-yellow-700",
+        color: "bg-muted text-foreground",
         icon: Clock,
       },
       Confirmed: {
-        color: "bg-green-100 text-green-700",
+        color: "bg-muted text-foreground",
         icon: CheckCircle2,
       },
       Cancelled: {
@@ -58,7 +58,7 @@ const AppointmentDetails = () => {
         icon: XCircle,
       },
       Completed: {
-        color: "bg-blue-100 text-blue-700",
+        color: "bg-muted text-foreground",
         icon: CheckCircle2,
       },
     };
@@ -76,9 +76,9 @@ const AppointmentDetails = () => {
 
   if (loading) {
     return (
-      <div className="flex flex-col justify-center items-center min-h-[60vh] bg-linear-to-br from-indigo-50 via-purple-50 to-pink-50">
-        <Loader2 className="w-12 h-12 text-indigo-600 animate-spin mb-4" />
-        <p className="text-gray-600">Loading appointment details...</p>
+      <div className="flex flex-col justify-center items-center min-h-[60vh] bg-background">
+        <Loader2 className="w-12 h-12 text-primary animate-spin mb-4" />
+        <p className="text-muted-foreground">Loading appointment details...</p>
       </div>
     );
   }
@@ -108,14 +108,14 @@ const AppointmentDetails = () => {
   } = appointmentDetails;
 
   return (
-    <div className="min-h-screen bg-linear-to-br from-indigo-50 via-purple-50 to-pink-50 py-12">
+    <div className="min-h-screen admin-page-gradient py-12">
       <div className="container mx-auto px-4 lg:px-8 max-w-4xl">
 
         {/* Back Button */}
         <Button
           variant="ghost"
           onClick={() => navigate(-1)}
-          className="mb-6 gap-2 text-indigo-700 hover:text-indigo-900"
+          className="mb-6 gap-2 text-primary hover:text-primary/80"
         >
           <ArrowLeft className="w-4 h-4" />
           Back
@@ -126,10 +126,10 @@ const AppointmentDetails = () => {
           <CardHeader className="space-y-4 pb-0">
             <div className="flex items-start justify-between">
               <div>
-                <CardTitle className="text-3xl font-bold text-gray-900">
+                <CardTitle className="text-3xl font-bold text-foreground">
                   Appointment Details
                 </CardTitle>
-                <p className="text-gray-500 mt-1">
+                <p className="text-muted-foreground mt-1">
                   Full information about this appointment
                 </p>
               </div>
@@ -141,22 +141,22 @@ const AppointmentDetails = () => {
 
             {/* Doctor Info */}
             <section className="space-y-4">
-              <h3 className="text-lg font-semibold flex items-center gap-2 text-gray-900">
-                <User className="w-5 h-5 text-indigo-600" />
+              <h3 className="text-lg font-semibold flex items-center gap-2 text-foreground">
+                <User className="w-5 h-5 text-primary" />
                 Doctor Information
               </h3>
 
               <div className="grid md:grid-cols-2 gap-4">
-                <div className="p-4 bg-white rounded-xl shadow-sm border border-indigo-50">
-                  <p className="text-sm text-gray-500 mb-1">Doctor Name</p>
-                  <p className="font-semibold text-gray-900">
+                <div className="p-4 bg-card rounded-xl shadow-sm border border-border">
+                  <p className="text-sm text-muted-foreground mb-1">Doctor Name</p>
+                  <p className="font-semibold text-foreground">
                     Dr. {doctordetails?.doctorname || "N/A"}
                   </p>
                 </div>
 
-                <div className="p-4 bg-white rounded-xl shadow-sm border border-indigo-50">
-                  <p className="text-sm text-gray-500 mb-1">Department</p>
-                  <p className="font-semibold text-gray-900">
+                <div className="p-4 bg-card rounded-xl shadow-sm border border-border">
+                  <p className="text-sm text-muted-foreground mb-1">Department</p>
+                  <p className="font-semibold text-foreground">
                     {doctordetails?.department || "N/A"}
                   </p>
                 </div>
@@ -168,14 +168,14 @@ const AppointmentDetails = () => {
             {/* Schedule */}
             <section className="space-y-4">
               <h3 className="text-lg font-semibold flex items-center gap-2">
-                <Calendar className="w-5 h-5 text-indigo-600" />
+                <Calendar className="w-5 h-5 text-primary" />
                 Schedule
               </h3>
 
               <div className="grid md:grid-cols-2 gap-4">
-                <div className="p-4 bg-indigo-50 rounded-xl shadow-sm">
-                  <p className="text-sm text-indigo-700 mb-1">Date</p>
-                  <p className="font-semibold text-gray-900">
+                <div className="p-4 bg-muted rounded-xl shadow-sm">
+                  <p className="text-sm text-primary mb-1">Date</p>
+                  <p className="font-semibold text-foreground">
                     {appointmentdate
                       ? new Date(appointmentdate).toLocaleDateString("en-US", {
                           weekday: "long",
@@ -187,9 +187,9 @@ const AppointmentDetails = () => {
                   </p>
                 </div>
 
-                <div className="p-4 bg-indigo-50 rounded-xl shadow-sm">
-                  <p className="text-sm text-indigo-700 mb-1">Time</p>
-                  <p className="font-semibold text-gray-900">{appointmenttime || "N/A"}</p>
+                <div className="p-4 bg-muted rounded-xl shadow-sm">
+                  <p className="text-sm text-primary mb-1">Time</p>
+                  <p className="font-semibold text-foreground">{appointmenttime || "N/A"}</p>
                 </div>
               </div>
             </section>
@@ -199,24 +199,24 @@ const AppointmentDetails = () => {
             {/* Medical Details */}
             <section className="space-y-6">
               <h3 className="text-lg font-semibold flex items-center gap-2">
-                <FileText className="w-5 h-5 text-indigo-600" />
+                <FileText className="w-5 h-5 text-primary" />
                 Medical Information
               </h3>
 
-              <div className="p-4 bg-white rounded-xl shadow-sm border border-gray-100">
+              <div className="p-4 bg-card rounded-xl shadow-sm border border-border">
                 <div className="flex items-start gap-3 mb-1">
-                  <Activity className="w-5 h-5 text-gray-600 mt-0.5" />
-                  <p className="text-sm text-gray-500">Symptoms</p>
+                  <Activity className="w-5 h-5 text-muted-foreground mt-0.5" />
+                  <p className="text-sm text-muted-foreground">Symptoms</p>
                 </div>
-                <p className="text-gray-900 ml-8">{symptoms || "N/A"}</p>
+                <p className="text-foreground ml-8">{symptoms || "N/A"}</p>
               </div>
 
-              <div className="p-4 bg-white rounded-xl shadow-sm border border-gray-100">
+              <div className="p-4 bg-card rounded-xl shadow-sm border border-border">
                 <div className="flex items-start gap-3 mb-1">
-                  <FileText className="w-5 h-5 text-gray-600 mt-0.5" />
-                  <p className="text-sm text-gray-500">Medical History</p>
+                  <FileText className="w-5 h-5 text-muted-foreground mt-0.5" />
+                  <p className="text-sm text-muted-foreground">Medical History</p>
                 </div>
-                <p className="text-gray-900 ml-8">
+                <p className="text-foreground ml-8">
                   {medicalhistory || "No medical history provided"}
                 </p>
               </div>

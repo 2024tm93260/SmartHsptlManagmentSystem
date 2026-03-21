@@ -46,10 +46,10 @@ const AdminDoctorProfile = () => {
 
   if (loading || !doctorDetails) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50">
+      <div className="min-h-screen flex items-center justify-center bg-background">
         <div className="text-center">
-          <Loader2 className="w-12 h-12 text-indigo-600 animate-spin mx-auto mb-4" />
-          <p className="text-gray-700 font-medium">Loading doctor profile...</p>
+          <Loader2 className="w-12 h-12 text-primary animate-spin mx-auto mb-4" />
+          <p className="text-foreground font-medium">Loading doctor profile...</p>
         </div>
       </div>
     );
@@ -58,14 +58,14 @@ const AdminDoctorProfile = () => {
   const profile = doctorDetails;
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 py-10">
+    <div className="min-h-screen admin-page-gradient py-10">
       <div className="container mx-auto px-4 max-w-6xl">
 
         {/* Back Button */}
         <Button
           variant="ghost"
           onClick={() => navigate(-1)}
-          className="mb-6 gap-2 text-indigo-700 hover:text-indigo-900"
+          className="mb-6 gap-2 text-primary hover:text-primary/80"
         >
           <ArrowLeft className="w-4 h-4" />
           Back
@@ -73,7 +73,7 @@ const AdminDoctorProfile = () => {
 
         {/* Header Card */}
         <Card className="shadow-xl border-0 overflow-hidden mb-10">
-          <div className="bg-linear-to-r from-indigo-600 via-purple-600 to-pink-600 p-8 text-white">
+          <div className="admin-accent-gradient p-8 text-white">
             <div className="flex flex-col md:flex-row items-center md:items-start gap-6">
 
               <div className="relative">
@@ -90,24 +90,24 @@ const AdminDoctorProfile = () => {
                 </h1>
 
                 <div className="flex flex-wrap justify-center md:justify-start gap-2 mb-3">
-                  <Badge className="bg-white/20 text-white border-0">
+                  <Badge className="bg-card/20 text-white border-0">
                     <Building2 className="w-3 h-3 mr-1" />
                     {profile.department}
                   </Badge>
 
-                  <Badge className="bg-white/20 text-white border-0">
+                  <Badge className="bg-card/20 text-white border-0">
                     <User className="w-3 h-3 mr-1" />
                     {profile.doctorusername}
                   </Badge>
 
-                  <Badge className="bg-white/20 text-white border-0">
+                  <Badge className="bg-card/20 text-white border-0">
                     <Stethoscope className="w-3 h-3 mr-1" />
                     {profile.specialization || "General"}
                   </Badge>
                 </div>
 
                 <div className="flex items-center justify-center md:justify-start gap-2 mt-2">
-                  <Mail className="w-4 h-4 text-indigo-100" />
+                  <Mail className="w-4 h-4 text-primary-foreground/80" />
                   <p className="text-sm">{profile.email}</p>
                 </div>
               </div>
@@ -125,26 +125,26 @@ const AdminDoctorProfile = () => {
             <Card className="shadow-lg border-0">
               <CardHeader>
                 <CardTitle className="flex items-center gap-2 text-lg">
-                  <Award className="w-5 h-5 text-indigo-600" />
+                  <Award className="w-5 h-5 text-primary" />
                   Professional Stats
                 </CardTitle>
               </CardHeader>
 
               <CardContent className="space-y-5">
-                <div className="text-center p-4 bg-indigo-50 rounded-lg">
-                  <Briefcase className="w-8 h-8 text-indigo-600 mx-auto mb-2" />
-                  <p className="text-3xl font-bold text-indigo-700">
+                <div className="text-center p-4 bg-muted rounded-lg">
+                  <Briefcase className="w-8 h-8 text-primary mx-auto mb-2" />
+                  <p className="text-3xl font-bold text-primary">
                     {profile.experience}+
                   </p>
-                  <p className="text-sm text-gray-600">Years Experience</p>
+                  <p className="text-sm text-muted-foreground">Years Experience</p>
                 </div>
 
-                <div className="text-center p-4 bg-purple-50 rounded-lg">
-                  <GraduationCap className="w-8 h-8 text-purple-600 mx-auto mb-2" />
-                  <p className="text-xl font-bold text-purple-700">
+                <div className="text-center p-4 bg-muted rounded-lg">
+                  <GraduationCap className="w-8 h-8 text-primary mx-auto mb-2" />
+                  <p className="text-xl font-bold text-foreground">
                     {profile.qualification}
                   </p>
-                  <p className="text-sm text-gray-600">Qualification</p>
+                  <p className="text-sm text-muted-foreground">Qualification</p>
                 </div>
               </CardContent>
             </Card>
@@ -153,7 +153,7 @@ const AdminDoctorProfile = () => {
             <Card className="shadow-lg border-0">
               <CardHeader>
                 <CardTitle className="flex items-center gap-2 text-lg">
-                  <FileText className="w-5 h-5 text-indigo-600" />
+                  <FileText className="w-5 h-5 text-primary" />
                   Documents
                 </CardTitle>
               </CardHeader>
@@ -166,12 +166,12 @@ const AdminDoctorProfile = () => {
                       href={profile.verificationdocument[doc]}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="block p-3 rounded-lg bg-gray-50 hover:bg-gray-100 transition"
+                      className="block p-3 rounded-lg bg-muted hover:bg-gray-100 transition"
                     >
-                      <p className="font-medium text-gray-900 capitalize">
+                      <p className="font-medium text-foreground capitalize">
                         {doc.replace(/([A-Z])/g, " $1")}
                       </p>
-                      <p className="text-xs text-indigo-600">View Document →</p>
+                      <p className="text-xs text-primary">View Document →</p>
                     </a>
                   )
                 ))}
@@ -186,7 +186,7 @@ const AdminDoctorProfile = () => {
             <Card className="shadow-lg border-0">
               <CardHeader>
                 <CardTitle className="text-xl flex items-center gap-2">
-                  <User className="w-6 h-6 text-indigo-600" />
+                  <User className="w-6 h-6 text-primary" />
                   Personal Information
                 </CardTitle>
               </CardHeader>
@@ -229,7 +229,7 @@ const AdminDoctorProfile = () => {
             <Card className="shadow-lg border-0">
               <CardHeader>
                 <CardTitle className="text-xl flex items-center gap-2">
-                  <Stethoscope className="w-6 h-6 text-indigo-600" />
+                  <Stethoscope className="w-6 h-6 text-primary" />
                   Professional Details
                 </CardTitle>
               </CardHeader>
@@ -267,11 +267,11 @@ const AdminDoctorProfile = () => {
 
 /* Small Reusable Info Card Component */
 const InfoCard = ({ icon: Icon, title, value }) => (
-  <div className="flex items-start gap-3 p-4 bg-gray-50 rounded-lg">
-    <Icon className="w-5 h-5 text-indigo-600 mt-0.5" />
+  <div className="flex items-start gap-3 p-4 bg-muted rounded-lg">
+    <Icon className="w-5 h-5 text-primary mt-0.5" />
     <div>
-      <p className="text-sm text-gray-500 mb-1">{title}</p>
-      <p className="font-semibold text-gray-900">{value}</p>
+      <p className="text-sm text-muted-foreground mb-1">{title}</p>
+      <p className="font-semibold text-foreground">{value}</p>
     </div>
   </div>
 );

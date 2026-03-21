@@ -77,18 +77,18 @@ const AdminRegister = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 py-14 px-4">
+    <div className="min-h-screen admin-page-gradient py-14 px-4">
       <div className="max-w-4xl mx-auto">
 
         {/* Header */}
         <div className="text-center mb-8">
           <div className="flex items-center justify-center gap-3 mb-4">
-            <div className="w-12 h-12 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 rounded-lg flex items-center justify-center shadow-lg">
+            <div className="w-12 h-12 admin-accent-gradient rounded-lg flex items-center justify-center shadow-lg">
               <Shield className="w-7 h-7 text-white" />
             </div>
-            <h1 className="text-3xl font-bold text-gray-900">BIMS Admin Portal</h1>
+            <h1 className="text-3xl font-bold text-foreground">BIMS Admin Portal</h1>
           </div>
-          <p className="text-gray-600">Register as an administrator</p>
+          <p className="text-muted-foreground">Register as an administrator</p>
         </div>
 
         <Card className="shadow-xl border-0">
@@ -200,7 +200,7 @@ const AdminRegister = () => {
               <Button
                 type="submit"
                 disabled={loading}
-                className="w-full h-11 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 text-white"
+                className="w-full h-11 admin-accent-gradient text-white"
               >
                 {loading ? (
                   <>
@@ -217,11 +217,11 @@ const AdminRegister = () => {
             </form>
 
             <div className="text-center pt-6 border-t mt-6">
-              <p className="text-sm text-gray-600">
+              <p className="text-sm text-muted-foreground">
                 Already an admin?{" "}
                 <Button
                   onClick={() => navigate("/login")}
-                  className="text-indigo-600 hover:text-indigo-700 font-semibold hover:underline"
+                  className="text-primary hover:text-primary/80 font-semibold hover:underline"
                   variant="ghost"
                 >
                   Login
@@ -231,7 +231,7 @@ const AdminRegister = () => {
           </CardContent>
         </Card>
 
-        <p className="text-center text-xs text-gray-500 mt-6">
+        <p className="text-center text-xs text-muted-foreground mt-6">
           Authorized BIMS administrators only.
         </p>
       </div>
@@ -262,17 +262,17 @@ const FormBox = ({ label, placeholder, type = "text", register, error }) => (
 const UploadBox = ({ id, label, file, registerProps }) => (
   <div className="space-y-2">
     <Label className="text-base font-medium">{label}</Label>
-    <div className="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center hover:border-indigo-500 transition">
-      <Upload className="w-8 h-8 text-gray-400 mx-auto mb-2" />
+    <div className="border-2 border-dashed border-border rounded-lg p-6 text-center hover:border-primary transition">
+      <Upload className="w-8 h-8 text-muted-foreground/70 mx-auto mb-2" />
       <input type="file" id={id} className="hidden" {...registerProps} />
-      <label htmlFor={id} className="cursor-pointer text-sm text-gray-600 hover:text-indigo-600">
+      <label htmlFor={id} className="cursor-pointer text-sm text-muted-foreground hover:text-primary">
         {file && file.length > 0 ? (
-          <span className="text-indigo-600 font-medium">✓ {file[0]?.name}</span>
+          <span className="text-primary font-medium">✓ {file[0]?.name}</span>
         ) : (
           "Click to upload"
         )}
       </label>
-      <p className="text-xs text-gray-500 mt-2">PDF, JPG, PNG (Max 5MB)</p>
+      <p className="text-xs text-muted-foreground mt-2">PDF, JPG, PNG (Max 5MB)</p>
     </div>
   </div>
 );

@@ -35,7 +35,7 @@ const AdminDashboardHeader = () => {
     : "AD";
 
   return (
-    <div className="bg-linear-to-r from-indigo-600 via-purple-600 to-pink-600 text-white shadow-lg">
+    <div className="admin-accent-gradient text-white shadow-lg">
       <div className="container mx-auto px-4 lg:px-8 py-8">
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
 
@@ -46,25 +46,25 @@ const AdminDashboardHeader = () => {
                 src={user?.profilepicture}
                 alt={user?.adminname}
               />
-              <AvatarFallback className="bg-indigo-700 text-white text-2xl font-bold">
+              <AvatarFallback className="bg-primary/90 text-white text-2xl font-bold">
                 {initials}
               </AvatarFallback>
             </Avatar>
 
             <div>
-              <p className="text-indigo-100 text-sm mb-1">{getGreeting()},</p>
+              <p className="text-primary-foreground/80 text-sm mb-1">{getGreeting()},</p>
 
               <h1 className="text-3xl font-bold mb-2">
                 {user?.adminname || "Admin User"}
               </h1>
 
               <div className="flex flex-wrap gap-2">
-                <Badge className="bg-white/20 text-white hover:bg-white/30 border-0">
+                <Badge className="bg-card/20 text-white hover:bg-card/30 border-0">
                   <Shield className="w-3 h-3 mr-1" />
                   System Administrator
                 </Badge>
 
-                <Badge className="bg-white/20 text-white hover:bg-white/30 border-0">
+                <Badge className="bg-card/20 text-white hover:bg-card/30 border-0">
                   <UserCheck className="w-3 h-3 mr-1" />
                   Verified Access
                 </Badge>
@@ -80,7 +80,7 @@ const AdminDashboardHeader = () => {
                 <>
                   <Button
                     variant="secondary"
-                    className="bg-white text-indigo-700 hover:bg-white/80"
+                    className="bg-card text-primary hover:bg-card/80"
                     onClick={() => navigate("/login")}
                   >
                     Login
@@ -88,7 +88,7 @@ const AdminDashboardHeader = () => {
 
                   <Button
                     variant="secondary"
-                    className="bg-white text-indigo-700 hover:bg-white/80"
+                    className="bg-card text-primary hover:bg-card/80"
                     onClick={() => navigate("/register")}
                   >
                     Register
@@ -100,11 +100,11 @@ const AdminDashboardHeader = () => {
             </div>
 
             {/* DATE CARD */}
-            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20">
+            <div className="bg-card/10 backdrop-blur-sm rounded-xl p-4 border border-white/20">
               <div className="flex items-center gap-3">
                 <Calendar className="w-8 h-8 text-white" />
                 <div>
-                  <p className="text-indigo-100 text-xs mb-1">Today's Date</p>
+                  <p className="text-primary-foreground/80 text-xs mb-1">Today's Date</p>
                   <p className="font-semibold text-white">{currentDate}</p>
                 </div>
               </div>

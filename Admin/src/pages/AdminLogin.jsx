@@ -57,12 +57,12 @@ const AdminLogin = () => {
   };
 
   return (
-    <div className="min-h-screen bg-linear-to-br from-indigo-50 via-purple-50 to-pink-50 flex items-center justify-center p-4">
+    <div className="min-h-screen admin-page-gradient flex items-center justify-center p-4">
       
       {/* BACK BUTTON */}
       <Button
         variant="ghost"
-        className="absolute top-4 left-4 text-indigo-700 hover:text-indigo-900"
+        className="absolute top-4 left-4 text-primary hover:text-primary/80"
         onClick={() => navigate(-1)}
       >
         <ArrowLeft className="w-4 h-4 mr-1" /> Back
@@ -73,12 +73,12 @@ const AdminLogin = () => {
         {/* HEADER */}
         <div className="text-center mb-8">
           <div className="flex items-center justify-center gap-3 mb-4">
-            <div className="w-12 h-12 bg-linear-to-r from-indigo-600 via-purple-600 to-pink-600 rounded-xl flex items-center justify-center shadow-lg">
+            <div className="w-12 h-12 admin-accent-gradient rounded-xl flex items-center justify-center shadow-lg">
               <Shield className="w-7 h-7 text-white" />
             </div>
-            <h1 className="text-3xl font-bold text-gray-900">Admin Panel</h1>
+            <h1 className="text-3xl font-bold text-foreground">Admin Panel</h1>
           </div>
-          <p className="text-gray-600">Secure Login</p>
+          <p className="text-muted-foreground">Secure Login</p>
         </div>
 
         <Card className="border-0 shadow-xl">
@@ -107,7 +107,7 @@ const AdminLogin = () => {
               {/* EMAIL */}
               <div className="space-y-2">
                 <Label className="flex items-center gap-2">
-                  <Mail className="w-4 h-4 text-gray-500" />
+                  <Mail className="w-4 h-4 text-muted-foreground" />
                   Username / Email
                 </Label>
                 <Input
@@ -126,7 +126,7 @@ const AdminLogin = () => {
               {/* PASSWORD */}
               <div className="space-y-2">
                 <Label className="flex items-center gap-2">
-                  <Lock className="w-4 h-4 text-gray-500" />
+                  <Lock className="w-4 h-4 text-muted-foreground" />
                   Password
                 </Label>
                 <Input
@@ -146,7 +146,7 @@ const AdminLogin = () => {
               {/* ADMIN SECRET */}
               <div className="space-y-2">
                 <Label className="flex items-center gap-2">
-                  <Shield className="w-4 h-4 text-gray-500" />
+                  <Shield className="w-4 h-4 text-muted-foreground" />
                   Admin Secret Key
                 </Label>
                 <Input
@@ -167,7 +167,7 @@ const AdminLogin = () => {
               <Button
                 type="submit"
                 disabled={loading}
-                className="w-full h-11 text-base bg-linear-to-r from-indigo-600 via-purple-600 to-pink-600 hover:opacity-90"
+                className="w-full h-11 text-base admin-accent-gradient hover:opacity-90"
               >
                 {loading ? (
                   <>
@@ -182,7 +182,7 @@ const AdminLogin = () => {
           </CardContent>
         </Card>
 
-        <p className="text-center text-xs text-gray-500 mt-6">
+        <p className="text-center text-xs text-muted-foreground mt-6">
           Authorized Access Only. All actions are monitored.
         </p>
       </div>

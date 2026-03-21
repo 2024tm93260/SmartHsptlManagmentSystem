@@ -74,21 +74,21 @@ const AdminSendOtp = () => {
   };
 
   return (
-    <div className="min-h-screen bg-linear-to-br from-indigo-50 via-purple-50 to-pink-50 py-12">
+    <div className="min-h-screen admin-page-gradient py-12">
       <div className="container mx-auto px-4">
         <div className="max-w-md mx-auto">
           <Card className="shadow-xl border-0">
             <CardHeader className="space-y-4 text-center">
-              <Badge className="bg-indigo-600 text-white gap-2 mx-auto py-1 px-3">
+              <Badge className="admin-accent-gradient text-white gap-2 mx-auto py-1 px-3">
                 <Shield className="w-4 h-4" />
                 {isAuthenticated ? "Update Password" : "Admin Password Recovery"}
               </Badge>
 
-              <CardTitle className="text-3xl font-bold text-gray-900">
+              <CardTitle className="text-3xl font-bold text-foreground">
                 {isAuthenticated ? "Update Password" : "Forgot Password?"}
               </CardTitle>
 
-              <p className="text-gray-600">
+              <p className="text-muted-foreground">
                 {isAuthenticated
                   ? `We will send an OTP to ${admin?.email} to verify it's you`
                   : "Enter your email and we’ll send an OTP to reset your password"}
@@ -100,12 +100,12 @@ const AdminSendOtp = () => {
                 {/* Email input when NOT logged in */}
                 {!isAuthenticated && (
                   <div className="space-y-2">
-                    <label className="text-sm font-medium text-gray-700">
+                    <label className="text-sm font-medium text-foreground">
                       Email Address
                     </label>
 
                     <div className="relative">
-                      <Mail className="w-5 h-5 absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
+                      <Mail className="w-5 h-5 absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground/70" />
                       <Input
                         placeholder="Enter your admin email"
                         className="pl-10"
@@ -130,12 +130,12 @@ const AdminSendOtp = () => {
 
                 {/* If authenticated, show email preview */}
                 {isAuthenticated && (
-                  <div className="p-4 bg-indigo-50 rounded-lg border border-indigo-200">
+                  <div className="p-4 bg-muted rounded-lg border border-border">
                     <div className="flex items-center gap-2 mb-1">
-                      <Mail className="w-4 h-4 text-indigo-700" />
-                      <p className="text-sm text-gray-700">OTP will be sent to:</p>
+                      <Mail className="w-4 h-4 text-primary" />
+                      <p className="text-sm text-foreground">OTP will be sent to:</p>
                     </div>
-                    <p className="font-semibold text-indigo-900">
+                    <p className="font-semibold text-foreground">
                       {admin?.email}
                     </p>
                   </div>
@@ -154,7 +154,7 @@ const AdminSendOtp = () => {
                 <Button
                   type="submit"
                   disabled={loading}
-                  className="w-full bg-indigo-600 hover:bg-indigo-700"
+                  className="w-full admin-accent-gradient hover:opacity-90"
                 >
                   {loading ? (
                     <>

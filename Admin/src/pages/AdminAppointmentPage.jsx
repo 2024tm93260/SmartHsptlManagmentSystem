@@ -73,9 +73,9 @@ const AdminAppointmentsPage = () => {
 
   if (loading) {
     return (
-      <div className="flex flex-col justify-center items-center min-h-screen bg-linear-to-br from-indigo-50 via-purple-50 to-pink-50">
-        <Loader2 className="w-12 h-12 text-indigo-600 animate-spin mb-3" />
-        <p className="text-gray-600 font-medium">Loading appointments...</p>
+      <div className="flex flex-col justify-center items-center min-h-screen admin-page-gradient">
+        <Loader2 className="w-12 h-12 text-primary animate-spin mb-3" />
+        <p className="text-muted-foreground font-medium">Loading appointments...</p>
       </div>
     );
   }
@@ -94,13 +94,13 @@ const AdminAppointmentsPage = () => {
   }
 
   return (
-    <div className="min-h-screen bg-linear-to-br from-indigo-50 via-purple-50 to-pink-50 py-8">
+    <div className="min-h-screen admin-page-gradient py-8">
       <div className="container mx-auto px-4 lg:px-8">
 
         {/* Back Button */}
         <Button
           variant="ghost"
-          className="mb-6 gap-2 text-indigo-700 hover:text-indigo-900"
+          className="mb-6 gap-2 text-primary hover:text-primary/80"
           onClick={() => navigate(-1)}
         >
           <ArrowLeft className="w-4 h-4" />
@@ -111,7 +111,7 @@ const AdminAppointmentsPage = () => {
         <Card className="shadow-xl border-0">
           <CardHeader>
             <CardTitle className="text-3xl flex items-center gap-2">
-              <Calendar className="w-7 h-7 text-indigo-600" />
+              <Calendar className="w-7 h-7 text-primary" />
               {title}
             </CardTitle>
             <CardDescription>{description}</CardDescription>
@@ -123,19 +123,19 @@ const AdminAppointmentsPage = () => {
 
               return (
                 <div key={appointment._id}>
-                  <div className="flex items-center justify-between p-4 bg-white rounded-xl shadow-sm hover:shadow-md transition">
+                  <div className="flex items-center justify-between p-4 bg-card rounded-xl shadow-sm hover:shadow-md transition">
                     
                     {/* Avatar + Patient info */}
                     <div className="flex items-center gap-4 flex-1">
-                      <Avatar className="w-12 h-12 border-2 border-indigo-200">
-                        <AvatarFallback className="bg-indigo-100 text-indigo-700 font-semibold">
+                      <Avatar className="w-12 h-12 border-2 border-border">
+                        <AvatarFallback className="bg-muted text-primary font-semibold">
                           {getInitials(name)}
                         </AvatarFallback>
                       </Avatar>
 
                       <div className="flex-1">
                         <div className="flex items-center gap-3 mb-1">
-                          <h4 className="font-semibold text-gray-900">{name}</h4>
+                          <h4 className="font-semibold text-foreground">{name}</h4>
 
                           <Badge
                             variant={
@@ -149,7 +149,7 @@ const AdminAppointmentsPage = () => {
                           </Badge>
                         </div>
 
-                        <div className="flex items-center gap-4 text-sm text-gray-600">
+                        <div className="flex items-center gap-4 text-sm text-muted-foreground">
                           <span className="flex items-center gap-1">
                             <Clock className="w-4 h-4" />
                             {appointment.appointmenttime}
@@ -164,7 +164,7 @@ const AdminAppointmentsPage = () => {
                     <Button
                       size="sm"
                       variant="ghost"
-                      className="gap-2 text-indigo-600 hover:text-indigo-800"
+                      className="gap-2 text-primary hover:text-primary/80"
                       onClick={() => navigate(`/admin/appointments/${appointment._id}`)}
                     >
                       View Details <ArrowRight className="w-4 h-4" />
@@ -180,7 +180,7 @@ const AdminAppointmentsPage = () => {
             })}
 
             {data?.length === 0 && (
-              <p className="text-center text-gray-500 py-8">
+              <p className="text-center text-muted-foreground py-8">
                 No appointments available.
               </p>
             )}

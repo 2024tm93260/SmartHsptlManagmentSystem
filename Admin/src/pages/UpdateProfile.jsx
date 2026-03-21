@@ -122,8 +122,8 @@ const AdminUpdateProfile = () => {
 
   if (loading && !admin) {
     return (
-      <div className="min-h-screen bg-linear-to-br from-indigo-50 via-purple-50 to-pink-50 flex items-center justify-center">
-        <Loader2 className="w-12 h-12 text-indigo-600 animate-spin" />
+      <div className="min-h-screen admin-page-gradient flex items-center justify-center">
+        <Loader2 className="w-12 h-12 text-primary animate-spin" />
       </div>
     );
   }
@@ -132,14 +132,14 @@ const AdminUpdateProfile = () => {
   return (
     <>
       <Toaster position="top-right" />
-      <div className="min-h-screen bg-linear-to-br from-indigo-50 via-purple-50 to-pink-50 py-12">
+      <div className="min-h-screen admin-page-gradient py-12">
         <div className="container mx-auto px-4 lg:px-8 max-w-5xl">
 
           {/* Back Button */}
           <Button
             variant="ghost"
             onClick={() => navigate("/admin/profile")}
-            className="mb-6 gap-2 text-indigo-700 hover:text-indigo-900"
+            className="mb-6 gap-2 text-primary hover:text-primary/80"
           >
             <ArrowLeft className="w-4 h-4" />
             Back to Profile
@@ -147,16 +147,16 @@ const AdminUpdateProfile = () => {
 
           {/* Header */}
           <div className="text-center mb-8">
-            <Badge className="bg-indigo-600 text-white mb-4">
+            <Badge className="admin-accent-gradient text-white mb-4">
               <Edit className="w-3 h-3 mr-1" />
               Update Profile
             </Badge>
 
-            <h1 className="text-4xl font-bold text-gray-900 mb-4">
+            <h1 className="text-4xl font-bold text-foreground mb-4">
               Edit Admin Profile
             </h1>
 
-            <p className="text-gray-600 max-w-2xl mx-auto">
+            <p className="text-muted-foreground max-w-2xl mx-auto">
               Update your personal information and profile photo.
             </p>
           </div>
@@ -170,7 +170,7 @@ const AdminUpdateProfile = () => {
               <Card className="shadow-lg border-0">
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2 text-lg">
-                    <User className="w-5 h-5 text-indigo-600" />
+                    <User className="w-5 h-5 text-primary" />
                     Profile Picture
                   </CardTitle>
                 </CardHeader>
@@ -179,20 +179,20 @@ const AdminUpdateProfile = () => {
                   <div className="flex flex-col items-center">
                     <img
                       src={profilePicPreview || "/placeholder-user.png"}
-                      className="w-32 h-32 rounded-full border-4 border-indigo-200 shadow-lg object-cover"
+                      className="w-32 h-32 rounded-full border-4 border-border shadow-lg object-cover"
                     />
 
                     <input
                       type="file"
                       accept="image/*"
                       onChange={(e) => setProfilePicFile(e.target.files[0])}
-                      className="mt-4 block w-full text-sm text-gray-600 file:mr-4 file:py-2 file:px-4 file:rounded-xl file:border-0 file:bg-indigo-100 file:text-indigo-700 hover:file:bg-indigo-200"
+                      className="mt-4 block w-full text-sm text-muted-foreground file:mr-4 file:py-2 file:px-4 file:rounded-xl file:border-0 file:bg-muted file:text-primary hover:file:bg-muted/80"
                     />
 
                     {profilePicFile && (
                       <Button
                         onClick={onPictureSubmit}
-                        className="w-full mt-3 bg-indigo-600 hover:bg-indigo-700"
+                        className="w-full mt-3 admin-accent-gradient hover:opacity-90"
                       >
                         <Upload className="w-4 h-4 mr-2" />
                         Upload Picture
@@ -209,7 +209,7 @@ const AdminUpdateProfile = () => {
                   <CardDescription>This cannot be changed</CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <Badge className="px-4 py-2 bg-purple-100 text-purple-700 font-semibold">
+                  <Badge className="px-4 py-2 bg-muted text-foreground font-semibold">
                     {admin?.adminusername}
                   </Badge>
                 </CardContent>
@@ -221,7 +221,7 @@ const AdminUpdateProfile = () => {
               <Card className="shadow-lg border-0">
                 <CardHeader>
                   <CardTitle className="text-2xl flex items-center gap-2">
-                    <Edit className="w-5 h-5 text-indigo-600" />
+                    <Edit className="w-5 h-5 text-primary" />
                     Personal Information
                   </CardTitle>
                   <CardDescription>
@@ -306,7 +306,7 @@ const AdminUpdateProfile = () => {
                     <div className="flex gap-4 pt-4">
                       <Button
                         type="submit"
-                        className="flex-1 bg-indigo-600 hover:bg-indigo-700 text-white"
+                        className="flex-1 admin-accent-gradient text-primary-foreground hover:opacity-90"
                       >
                         {loading ? (
                           <Loader2 className="w-4 h-4 animate-spin mr-2" />

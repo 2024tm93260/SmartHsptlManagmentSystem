@@ -43,71 +43,71 @@
 
 :root {
   --radius: 0.625rem;
-  --background: #fafafa;
-  --foreground: #111111;
+  --background: #f7faff;
+  --foreground: #0f172a;
   --card: #ffffff;
-  --card-foreground: #111111;
+  --card-foreground: #0f172a;
   --popover: #ffffff;
-  --popover-foreground: #111111;
-  --primary: #1f2937;
+  --popover-foreground: #0f172a;
+  --primary: #2563eb;
   --primary-foreground: #ffffff;
-  --secondary: #4b5563;
+  --secondary: #1d4ed8;
   --secondary-foreground: #ffffff;
-  --muted: #f3f4f6;
-  --muted-foreground: #6b7280;
-  --accent: #9ca3af;
-  --accent-foreground: #111111;
+  --muted: #eaf2ff;
+  --muted-foreground: #475569;
+  --accent: #60a5fa;
+  --accent-foreground: #0f172a;
   --destructive: #dc2626;
-  --border: #e5e7eb;
-  --input: #f3f4f6;
-  --ring: #9ca3af;
-  --chart-1: #111827;
-  --chart-2: #374151;
-  --chart-3: #6b7280;
-  --chart-4: #9ca3af;
-  --chart-5: #d1d5db;
+  --border: #dbe7ff;
+  --input: #f1f6ff;
+  --ring: #93c5fd;
+  --chart-1: #2563eb;
+  --chart-2: #3b82f6;
+  --chart-3: #60a5fa;
+  --chart-4: #93c5fd;
+  --chart-5: #bfdbfe;
   --sidebar: #ffffff;
-  --sidebar-foreground: #111111;
-  --sidebar-primary: #1f2937;
+  --sidebar-foreground: #0f172a;
+  --sidebar-primary: #2563eb;
   --sidebar-primary-foreground: #ffffff;
-  --sidebar-accent: #9ca3af;
-  --sidebar-accent-foreground: #111111;
-  --sidebar-border: #e5e7eb;
-  --sidebar-ring: #9ca3af;
+  --sidebar-accent: #60a5fa;
+  --sidebar-accent-foreground: #0f172a;
+  --sidebar-border: #dbe7ff;
+  --sidebar-ring: #93c5fd;
 }
 
 .dark {
-  --background: #0a0a0a;
-  --foreground: #f5f5f5;
-  --card: #171717;
-  --card-foreground: #f5f5f5;
-  --popover: #171717;
-  --popover-foreground: #f5f5f5;
-  --primary: #e5e7eb;
-  --primary-foreground: #111111;
-  --secondary: #9ca3af;
-  --secondary-foreground: #111111;
-  --muted: #262626;
-  --muted-foreground: #a3a3a3;
-  --accent: #737373;
-  --accent-foreground: #fafafa;
+  --background: #061226;
+  --foreground: #e8f0ff;
+  --card: #0e1a33;
+  --card-foreground: #e8f0ff;
+  --popover: #0e1a33;
+  --popover-foreground: #e8f0ff;
+  --primary: #60a5fa;
+  --primary-foreground: #061226;
+  --secondary: #3b82f6;
+  --secondary-foreground: #e8f0ff;
+  --muted: #13233f;
+  --muted-foreground: #a9bddf;
+  --accent: #93c5fd;
+  --accent-foreground: #08203f;
   --destructive: #f87171;
-  --border: rgba(163, 163, 163, 0.3);
-  --input: rgba(163, 163, 163, 0.18);
-  --ring: #a3a3a3;
-  --chart-1: #f5f5f5;
-  --chart-2: #d4d4d4;
-  --chart-3: #a3a3a3;
-  --chart-4: #737373;
-  --chart-5: #525252;
-  --sidebar: #0a0a0a;
-  --sidebar-foreground: #f5f5f5;
-  --sidebar-primary: #e5e7eb;
-  --sidebar-primary-foreground: #111111;
-  --sidebar-accent: #737373;
-  --sidebar-accent-foreground: #fafafa;
-  --sidebar-border: rgba(163, 163, 163, 0.24);
-  --sidebar-ring: #a3a3a3;
+  --border: rgba(125, 167, 228, 0.28);
+  --input: rgba(125, 167, 228, 0.16);
+  --ring: #60a5fa;
+  --chart-1: #60a5fa;
+  --chart-2: #3b82f6;
+  --chart-3: #93c5fd;
+  --chart-4: #bfdbfe;
+  --chart-5: #dbeafe;
+  --sidebar: #061226;
+  --sidebar-foreground: #e8f0ff;
+  --sidebar-primary: #60a5fa;
+  --sidebar-primary-foreground: #061226;
+  --sidebar-accent: #93c5fd;
+  --sidebar-accent-foreground: #08203f;
+  --sidebar-border: rgba(125, 167, 228, 0.24);
+  --sidebar-ring: #60a5fa;
 }
 
 @layer base {
@@ -116,5 +116,27 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .admin-page-gradient {
+    background-image: radial-gradient(circle at 5% 10%, rgba(147, 197, 253, 0.35), transparent 34%),
+      radial-gradient(circle at 92% 12%, rgba(96, 165, 250, 0.28), transparent 40%),
+      linear-gradient(180deg, #f8fbff 0%, #edf4ff 55%, #e6efff 100%);
+  }
+
+  .dark .admin-page-gradient {
+    background-image: radial-gradient(circle at 8% 6%, rgba(96, 165, 250, 0.23), transparent 34%),
+      radial-gradient(circle at 90% 8%, rgba(37, 99, 235, 0.25), transparent 38%),
+      linear-gradient(180deg, #061226 0%, #08182f 55%, #0b1f3d 100%);
+  }
+
+  .admin-accent-gradient {
+    background-image: linear-gradient(135deg, #1d4ed8 0%, #2563eb 52%, #3b82f6 100%);
+  }
+
+  .dark .admin-accent-gradient {
+    background-image: linear-gradient(135deg, #2563eb 0%, #3b82f6 50%, #60a5fa 100%);
   }
 }

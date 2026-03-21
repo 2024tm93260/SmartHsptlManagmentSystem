@@ -6,7 +6,7 @@ import AdminUpcomingAppointments from "./AdminUpcomingAppointments"; // NEW COMP
 
 const AdminDashboard = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-blue-50 to-slate-100">
+    <div className="min-h-screen admin-page-gradient">
       
       <AdminHeader />
 

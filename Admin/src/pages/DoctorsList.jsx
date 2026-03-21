@@ -78,9 +78,9 @@ const DoctorList = () => {
 
   if (loading) {
     return (
-      <div className="flex flex-col justify-center items-center min-h-[60vh] bg-white">
-        <Loader2 className="w-12 h-12 text-indigo-600 animate-spin mb-4" />
-        <p className="text-gray-700 font-medium">Loading doctors...</p>
+      <div className="flex flex-col justify-center items-center min-h-[60vh] bg-card">
+        <Loader2 className="w-12 h-12 text-primary animate-spin mb-4" />
+        <p className="text-foreground font-medium">Loading doctors...</p>
       </div>
     );
   }
@@ -103,14 +103,14 @@ const DoctorList = () => {
   /* -------------------------------------------------------------------------- */
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 py-12">
+    <div className="min-h-screen admin-page-gradient py-12">
       <div className="container mx-auto px-4 lg:px-8">
 
         {/* 🔙 Back Button */}
         <Button
           variant="ghost"
           onClick={() => navigate(-1)}
-          className="mb-6 gap-2 text-indigo-700 hover:text-indigo-900"
+          className="mb-6 gap-2 text-primary hover:text-primary/80"
         >
           <ArrowLeft className="w-5 h-5" />
           Back
@@ -118,16 +118,16 @@ const DoctorList = () => {
 
         {/* Header */}
         <div className="text-center mb-10">
-          <Badge className="bg-linear-to-r from-indigo-600 via-purple-600 to-pink-600 text-white mb-4">
+          <Badge className="admin-accent-gradient text-white mb-4">
             <Stethoscope className="w-3 h-3 mr-1" />
             {deptname ? `${deptname} Department` : "All Departments"}
           </Badge>
 
-          <h1 className="text-4xl font-bold text-gray-900 mb-3">
+          <h1 className="text-4xl font-bold text-foreground mb-3">
             {deptname ? `${deptname} Specialists` : "All Registered Doctors"}
           </h1>
 
-          <p className="text-gray-600 max-w-2xl mx-auto">
+          <p className="text-muted-foreground max-w-2xl mx-auto">
             Browse all doctors registered under BIMS.
           </p>
         </div>
@@ -135,7 +135,7 @@ const DoctorList = () => {
         {/* 🔍 Search Bar */}
         <div className="max-w-2xl mx-auto mb-8">
           <div className="relative">
-            <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
+            <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground/70" />
 
             <Input
               ref={searchInputRef}
@@ -159,7 +159,7 @@ const DoctorList = () => {
           </div>
 
           {searchQuery && (
-            <p className="text-sm text-gray-500 mt-2">
+            <p className="text-sm text-muted-foreground mt-2">
               Showing results for:{" "}
               <span className="font-semibold">{searchQuery}</span>
             </p>
@@ -169,8 +169,8 @@ const DoctorList = () => {
         {/* Count + Clear */}
         <div className="flex items-center justify-between mb-6">
           <div className="flex items-center gap-2">
-            <Filter className="w-4 h-4 text-gray-500" />
-            <p className="text-sm text-gray-700">
+            <Filter className="w-4 h-4 text-muted-foreground" />
+            <p className="text-sm text-foreground">
               <span className="font-semibold">{filteredDoctors.length}</span>{" "}
               doctors found
             </p>
@@ -185,12 +185,12 @@ const DoctorList = () => {
 
         {/* Doctors Grid */}
         {filteredDoctors.length === 0 ? (
-          <div className="text-center py-14 bg-white rounded-xl shadow">
-            <Stethoscope className="w-14 h-14 text-gray-300 mx-auto mb-4" />
-            <h3 className="text-xl font-semibold text-gray-700 mb-2">
+          <div className="text-center py-14 bg-card rounded-xl shadow">
+            <Stethoscope className="w-14 h-14 text-muted-foreground/60 mx-auto mb-4" />
+            <h3 className="text-xl font-semibold text-foreground mb-2">
               No doctors found
             </h3>
-            <p className="text-gray-500 mb-6">
+            <p className="text-muted-foreground mb-6">
               Try a different search or remove filters.
             </p>
             {searchQuery && (

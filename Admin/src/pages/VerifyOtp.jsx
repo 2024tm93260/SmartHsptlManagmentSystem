@@ -97,29 +97,29 @@ const AdminVerifyOtp = () => {
   };
 
   return (
-    <div className="min-h-screen bg-linear-to-br from-indigo-50 via-purple-50 to-pink-50 py-12">
+    <div className="min-h-screen admin-page-gradient py-12">
       <div className="container mx-auto px-4 max-w-md">
         <Card className="shadow-xl border-0">
           <CardHeader className="text-center space-y-4">
-            <Badge className="bg-indigo-600 text-white gap-2 mx-auto px-3 py-1">
+            <Badge className="admin-accent-gradient text-white gap-2 mx-auto px-3 py-1">
               <Shield className="w-4 h-4" />
               OTP Verification
             </Badge>
 
-            <CardTitle className="text-3xl font-bold text-gray-900">
+            <CardTitle className="text-3xl font-bold text-foreground">
               Verify OTP
             </CardTitle>
 
             <div className="space-y-1">
-              <p className="text-gray-600 text-sm">OTP sent to</p>
+              <p className="text-muted-foreground text-sm">OTP sent to</p>
               <div className="flex items-center justify-center gap-1">
-                <Mail className="w-4 h-4 text-indigo-600" />
-                <span className="font-semibold text-indigo-700">{email}</span>
+                <Mail className="w-4 h-4 text-primary" />
+                <span className="font-semibold text-primary">{email}</span>
               </div>
 
               <div className="flex items-center justify-center gap-2 mt-2">
-                <Clock className="w-4 h-4 text-orange-600" />
-                <p className="text-xs text-orange-600 font-medium">Valid for 2 minutes</p>
+                <Clock className="w-4 h-4 text-muted-foreground" />
+                <p className="text-xs text-muted-foreground font-medium">Valid for 2 minutes</p>
               </div>
             </div>
           </CardHeader>
@@ -128,7 +128,7 @@ const AdminVerifyOtp = () => {
             <form onSubmit={handleSubmit(submitHandler)} className="space-y-6">
               {/* OTP Input */}
               <div className="space-y-2">
-                <label className="text-sm font-medium text-gray-700">Enter 6-digit OTP</label>
+                <label className="text-sm font-medium text-foreground">Enter 6-digit OTP</label>
                 <Input
                   type="text"
                   maxLength={6}
@@ -152,7 +152,7 @@ const AdminVerifyOtp = () => {
               )}
 
               {/* Submit Button */}
-              <Button type="submit" disabled={loading} className="w-full bg-indigo-600 hover:bg-indigo-700">
+              <Button type="submit" disabled={loading} className="w-full admin-accent-gradient hover:opacity-90">
                 {loading ? (
                   <>
                     <Loader2 className="w-4 h-4 mr-2 animate-spin" />
@@ -166,9 +166,9 @@ const AdminVerifyOtp = () => {
               {/* Resend Timer & Button */}
               <div className="pt-4 border-t space-y-3 text-center">
                 {!canResend ? (
-                  <p className="text-sm text-gray-600">
+                  <p className="text-sm text-muted-foreground">
                     Resend OTP in{" "}
-                    <span className="font-semibold text-indigo-700">
+                    <span className="font-semibold text-primary">
                       {formatTime(timer)}
                     </span>
                   </p>

@@ -59,7 +59,7 @@ const AdminQuickActions = () => {
 
           {/* Create Department Button */}
           <Button
-            className="gap-2 bg-indigo-600 hover:bg-indigo-700 text-white"
+            className="gap-2 admin-accent-gradient text-primary-foreground hover:opacity-90"
             onClick={() => setOpen(true)}
           >
             <Plus className="w-4 h-4" />
@@ -75,7 +75,7 @@ const AdminQuickActions = () => {
               <Button
                 key={i}
                 onClick={() => navigate(action.path)}
-                className="h-auto flex flex-col items-center gap-2 bg-indigo-50 text-indigo-700 hover:bg-indigo-100 py-4 rounded-xl"
+                className="h-auto flex flex-col items-center gap-2 bg-muted text-foreground hover:bg-muted/80 py-4 rounded-xl"
               >
                 <Icon className="w-6 h-6" />
                 <span className="text-xs font-medium">{action.label}</span>
@@ -122,7 +122,7 @@ const AdminQuickActions = () => {
             <Button
               onClick={handleCreate}
               disabled={loading || !deptname.trim()}
-              className="bg-indigo-600 hover:bg-indigo-700 text-white"
+              className="admin-accent-gradient text-primary-foreground hover:opacity-90"
             >
               {loading ? "Creating..." : "Create"}
             </Button>

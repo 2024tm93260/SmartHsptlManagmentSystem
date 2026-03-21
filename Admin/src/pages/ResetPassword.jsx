@@ -81,20 +81,20 @@ const AdminResetPassword = () => {
   };
 
   return (
-    <div className="min-h-screen bg-linear-to-br from-indigo-50 via-purple-50 to-pink-50 py-12">
+    <div className="min-h-screen admin-page-gradient py-12">
       <div className="container mx-auto px-4 max-w-md">
         <Card className="shadow-xl border-0">
           <CardHeader className="text-center space-y-4">
-            <Badge className="bg-indigo-600 text-white gap-2 px-3 py-1 mx-auto">
+            <Badge className="admin-accent-gradient text-white gap-2 px-3 py-1 mx-auto">
               <Shield className="w-4 h-4" />
               {isUpdate ? "Update Password" : "Reset Password"}
             </Badge>
 
-            <CardTitle className="text-3xl font-bold text-gray-900">
+            <CardTitle className="text-3xl font-bold text-foreground">
               {isUpdate ? "Update Password" : "Reset Password"}
             </CardTitle>
 
-            <p className="text-gray-600 text-sm">
+            <p className="text-muted-foreground text-sm">
               {isUpdate
                 ? "Enter your current and new password to update it."
                 : "Create a new password for your admin account."}
@@ -107,11 +107,11 @@ const AdminResetPassword = () => {
               {/* Old password for Update flow */}
               {isUpdate && (
                 <div className="space-y-2">
-                  <label className="text-sm font-medium text-gray-700">
+                  <label className="text-sm font-medium text-foreground">
                     Current Password
                   </label>
                   <div className="relative">
-                    <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
+                    <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground/70" />
                     <Input
                       type="password"
                       placeholder="Enter current password"
@@ -131,11 +131,11 @@ const AdminResetPassword = () => {
 
               {/* New Password */}
               <div className="space-y-2">
-                <label className="text-sm font-medium text-gray-700">
+                <label className="text-sm font-medium text-foreground">
                   New Password
                 </label>
                 <div className="relative">
-                  <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
+                  <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground/70" />
                   <Input
                     type="password"
                     placeholder="Enter new password"
@@ -158,11 +158,11 @@ const AdminResetPassword = () => {
 
               {/* Confirm Password */}
               <div className="space-y-2">
-                <label className="text-sm font-medium text-gray-700">
+                <label className="text-sm font-medium text-foreground">
                   Confirm New Password
                 </label>
                 <div className="relative">
-                  <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
+                  <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground/70" />
                   <Input
                     type="password"
                     placeholder="Confirm new password"
@@ -196,7 +196,7 @@ const AdminResetPassword = () => {
               <Button
                 type="submit"
                 disabled={loading}
-                className="w-full bg-indigo-600 hover:bg-indigo-700"
+                className="w-full admin-accent-gradient hover:opacity-90"
               >
                 {loading ? (
                   <>
