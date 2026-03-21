@@ -1,0 +1,52 @@
+import React from "react";
+import { useSelector } from "react-redux";
+import DashboardHeader from "@/components/custom/DashboardHeader";
+import StatsOverview from "@/components/custom/StatsOverview";
+import TodayAppointments from "@/components/custom/TodayAppointments";
+import QuickActions from "@/components/custom/QuickActions";
+import UpcomingSchedule from "@/components/custom/UpcomingSchedule";
+import { Loader2 } from "lucide-react";
+
+const DoctorDashboard = () => {
+  const { isAuthenticated, user, loading } = useSelector((state) => state.auth);
+
+  if (loading) {
+    return (
+      <div className="flex flex-col justify-center items-center min-h-screen doctor-page-gradient">
+        <Loader2 className="w-12 h-12 text-primary animate-spin mb-4" />
+        <p className="text-muted-foreground font-medium">Loading dashboard...</p>
+      </div>
+    );
+  }
+
+  return (
+    <div className="min-h-screen doctor-page-gradient">
+      {/* Dashboard Header */}
+      <DashboardHeader profile={user} isAuthenticated={isAuthenticated} />
+
+      {/* Main Content */}
+      <div className="container mx-auto px-4 lg:px-8 py-8">
+        <div className="space-y-8">
+          {/* Stats Overview - 3 Cards */}
+          <StatsOverview />
+
+          {/* Two Column Layout */}
+          <div className="grid lg:grid-cols-3 gap-8">
+            {/* Left Column - Today's Appointments (2/3 width) */}
+            <div className="lg:col-span-2">
+              <TodayAppointments />
+            </div>
+
+            {/* Right Column - Quick Actions + Upcoming Schedule (1/3 width) */}
+            <div className="space-y-8">
+              <QuickActions />
+              <UpcomingSchedule />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default DoctorDashboard;

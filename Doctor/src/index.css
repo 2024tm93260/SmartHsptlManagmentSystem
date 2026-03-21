@@ -1,0 +1,142 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root {
+  --radius: 0.625rem;
+  --background: #f7faff;
+  --foreground: #0f172a;
+  --card: #ffffff;
+  --card-foreground: #0f172a;
+  --popover: #ffffff;
+  --popover-foreground: #0f172a;
+  --primary: #2563eb;
+  --primary-foreground: #ffffff;
+  --secondary: #1d4ed8;
+  --secondary-foreground: #ffffff;
+  --muted: #eaf2ff;
+  --muted-foreground: #475569;
+  --accent: #60a5fa;
+  --accent-foreground: #0f172a;
+  --destructive: #dc2626;
+  --border: #dbe7ff;
+  --input: #f1f6ff;
+  --ring: #93c5fd;
+  --chart-1: #2563eb;
+  --chart-2: #3b82f6;
+  --chart-3: #60a5fa;
+  --chart-4: #93c5fd;
+  --chart-5: #bfdbfe;
+  --sidebar: #ffffff;
+  --sidebar-foreground: #0f172a;
+  --sidebar-primary: #2563eb;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #60a5fa;
+  --sidebar-accent-foreground: #0f172a;
+  --sidebar-border: #dbe7ff;
+  --sidebar-ring: #93c5fd;
+}
+
+.dark {
+  --background: #061226;
+  --foreground: #e8f0ff;
+  --card: #0e1a33;
+  --card-foreground: #e8f0ff;
+  --popover: #0e1a33;
+  --popover-foreground: #e8f0ff;
+  --primary: #60a5fa;
+  --primary-foreground: #061226;
+  --secondary: #3b82f6;
+  --secondary-foreground: #e8f0ff;
+  --muted: #13233f;
+  --muted-foreground: #a9bddf;
+  --accent: #93c5fd;
+  --accent-foreground: #08203f;
+  --destructive: #f87171;
+  --border: rgba(125, 167, 228, 0.28);
+  --input: rgba(125, 167, 228, 0.16);
+  --ring: #60a5fa;
+  --chart-1: #60a5fa;
+  --chart-2: #3b82f6;
+  --chart-3: #93c5fd;
+  --chart-4: #bfdbfe;
+  --chart-5: #dbeafe;
+  --sidebar: #061226;
+  --sidebar-foreground: #e8f0ff;
+  --sidebar-primary: #60a5fa;
+  --sidebar-primary-foreground: #061226;
+  --sidebar-accent: #93c5fd;
+  --sidebar-accent-foreground: #08203f;
+  --sidebar-border: rgba(125, 167, 228, 0.24);
+  --sidebar-ring: #60a5fa;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .doctor-page-gradient {
+    background-image: radial-gradient(circle at 5% 10%, rgba(147, 197, 253, 0.35), transparent 34%),
+      radial-gradient(circle at 92% 12%, rgba(96, 165, 250, 0.28), transparent 40%),
+      linear-gradient(180deg, #f8fbff 0%, #edf4ff 55%, #e6efff 100%);
+  }
+
+  .dark .doctor-page-gradient {
+    background-image: radial-gradient(circle at 8% 6%, rgba(96, 165, 250, 0.23), transparent 34%),
+      radial-gradient(circle at 90% 8%, rgba(37, 99, 235, 0.25), transparent 38%),
+      linear-gradient(180deg, #061226 0%, #08182f 55%, #0b1f3d 100%);
+  }
+
+  .doctor-accent-gradient {
+    background-image: linear-gradient(135deg, #1d4ed8 0%, #2563eb 52%, #3b82f6 100%);
+  }
+
+  .dark .doctor-accent-gradient {
+    background-image: linear-gradient(135deg, #2563eb 0%, #3b82f6 50%, #60a5fa 100%);
+  }
+}
