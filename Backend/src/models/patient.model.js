@@ -24,11 +24,7 @@ const patientSchema = new Schema({
     },
     password: {
         type: String,
-        maxlength: 15,
-        minlength: 8,
         required: true,
-        trim: true,
-
     },
     phonenumber: {
         type: Number,
