@@ -7,31 +7,17 @@ dotenv.config();
 const PORT = process.env.PORT || 5000;
 const NODE_ENV = process.env.NODE_ENV || "development";
 
-// Serverless handler export for Vercel
-let isConnected = false;
-export default async function handler(req, res) {
-    if (!isConnected) {
+const startServer = async () => {
+    try {
         await connectdb();
-        isConnected = true;
+        app.listen(PORT, () => {
+            console.log(`✅ Server is running on http://localhost:${PORT}`);
+            console.log(`📝 Environment: ${NODE_ENV}`);
+        });
+    } catch (error) {
+        console.error("❌ Failed to start server:", error);
+        process.exit(1);
     }
+};
 
-    return app(req, res);
-}
-
-// Local development server setup
-if (process.env.NODE_ENV === "development" || !process.env.VERCEL) {
-    const startServer = async () => {
-        try {
-            await connectdb();
-            app.listen(PORT, () => {
-                console.log(`✅ Server is running on http://localhost:${PORT}`);
-                console.log(`📝 Environment: ${NODE_ENV}`);
-            });
-        } catch (error) {
-            console.error("❌ Failed to start server:", error);
-            process.exit(1);
-        }
-    };
-
-    startServer();
-}
+startServer();
