@@ -1,5 +1,4 @@
 {
-    // "files": [], // Removed or add file paths if needed
     "references": [
     ],
     "compilerOptions": {
