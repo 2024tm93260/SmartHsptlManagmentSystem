@@ -9,23 +9,20 @@ import jwt from "jsonwebtoken";
 
 
 const generateaccesstokenandrefreshtoken = async (adminid) => {
-    return { accesstoken: null, refreshtoken: null };
+    try {
+        const admin = await Admin.findById(adminid)
+        const accesstoken = await admin.generateaccesstoken()
+        const refreshtoken = await admin.generaterefreshtoken()
+        if (!accesstoken || !refreshtoken) {
+            throw new apiError(500, "Token generation failed")
+        }
+        admin.refreshtoken = refreshtoken
+        await admin.save({ validateBeforeSave: false })
+        return { accesstoken, refreshtoken }
+    } catch (error) {
+        throw new apiError(500, "Token generation failed: " + error.message)
+    }
 }
-// const generateaccesstokenandrefreshtoken = async (adminid) => {
-//     try {
-//         const admin = await Admin.findById(adminid)
-//         const accesstoken = await admin.generateaccesstoken()
-//         const refreshtoken = await admin.generaterefreshtoken()
-//         if (!accesstoken || !refreshtoken) {
-//             throw new apiError(500, "Token generation failed")
-//         }
-//         admin.refreshtoken = refreshtoken
-//         await admin.save({ validateBeforeSave: false })
-//         return { accesstoken, refreshtoken }
-//     } catch (error) {
-//         throw new apiError(500, "Token generation failed")
-//     }
-// }
 
 const registeradmin = asyncHandler(async (req, res) => {
     const { adminname, adminusername, email, password, phonenumber, adminsecret } = req.body
@@ -84,7 +81,7 @@ const registeradmin = asyncHandler(async (req, res) => {
         throw new apiError(500, "Admin registration failed")
     }
 
-    const createdAdmin = await Admin.findById(admin._id).select("-password -refreshtoken, -adminsecret")
+    const createdAdmin = await Admin.findById(admin._id).select("-password -refreshtoken -adminsecret")
 
     await sendMail({
         to: email,
@@ -119,7 +116,7 @@ const loginadmin = asyncHandler(async (req, res) => {
     }
     const ispasswordvalid = await existedadmin.ispasswordcorrect(password)
     if (!ispasswordvalid) {
-        throw new new apiError(500, "password is not valid")
+        throw new apiError(401, "password is not valid")
     }
 
     const isadminsecretvalid = await existedadmin.isadminsecretcorrect(adminsecret)
