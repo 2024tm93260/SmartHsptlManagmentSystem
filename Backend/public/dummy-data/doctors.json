@@ -1,0 +1,119 @@
+[
+  {
+    "doctorname": "Dr. Rajesh Kumar",
+    "doctorusername": "dr_rajesh_cardio",
+    "email": "rajesh.kumar@BIMS.com",
+    "password": "SecurePass123",
+    "phonenumber": 9876543210,
+    "sex": "Male",
+    "age": 45,
+    "experience": "15 years",
+    "qualification": "MBBS, MD (Cardiology)",
+    "department": "Cardiology",
+    "specialization": "Interventional Cardiology",
+    "verificationdocument": {
+      "aadhar": "https://res.cloudinary.com/demo/image/fetch/aadhar_rajesh.jpg",
+      "medicaldegree": "https://res.cloudinary.com/demo/image/fetch/degree_rajesh.jpg",
+      "medicallicense": "https://res.cloudinary.com/demo/image/fetch/license_rajesh.jpg",
+      "profilepicture": "https://res.cloudinary.com/demo/image/fetch/profile_rajesh.jpg"
+    },
+    "shift": [
+      {
+        "day": "Monday",
+        "starttime": "09:00 AM",
+        "endtime": "02:00 PM",
+        "patientslot": 30
+      },
+      {
+        "day": "Wednesday",
+        "starttime": "03:00 PM",
+        "endtime": "08:00 PM",
+        "patientslot": 25
+      },
+      {
+        "day": "Friday",
+        "starttime": "09:00 AM",
+        "endtime": "02:00 PM",
+        "patientslot": 30
+      }
+    ]
+  },
+  {
+    "doctorname": "Dr. Priya Sharma",
+    "doctorusername": "dr_priya_neuro",
+    "email": "priya.sharma@BIMS.com",
+    "password": "NeuroPass456",
+    "phonenumber": 9876543211,
+    "sex": "Female",
+    "age": 42,
+    "experience": "12 years",
+    "qualification": "MBBS, MD (Neurology), DM (Neurology)",
+    "department": "Neurology",
+    "specialization": "Clinical Neurology",
+    "verificationdocument": {
+      "aadhar": "https://res.cloudinary.com/demo/image/fetch/aadhar_priya.jpg",
+      "medicaldegree": "https://res.cloudinary.com/demo/image/fetch/degree_priya.jpg",
+      "medicallicense": "https://res.cloudinary.com/demo/image/fetch/license_priya.jpg",
+      "profilepicture": "https://res.cloudinary.com/demo/image/fetch/profile_priya.jpg"
+    },
+    "shift": [
+      {
+        "day": "Tuesday",
+        "starttime": "10:00 AM",
+        "endtime": "03:00 PM",
+        "patientslot": 28
+      },
+      {
+        "day": "Thursday",
+        "starttime": "04:00 PM",
+        "endtime": "09:00 PM",
+        "patientslot": 24
+      },
+      {
+        "day": "Saturday",
+        "starttime": "09:00 AM",
+        "endtime": "01:00 PM",
+        "patientslot": 20
+      }
+    ]
+  },
+  {
+    "doctorname": "Dr. Vikram Patel",
+    "doctorusername": "dr_vikram_ortho",
+    "email": "vikram.patel@BIMS.com",
+    "password": "OrthoPass789",
+    "phonenumber": 9876543212,
+    "sex": "Male",
+    "age": 50,
+    "experience": "20 years",
+    "qualification": "MBBS, MS (Orthopedic Surgery), DNB (Orthopedics)",
+    "department": "Orthopedics",
+    "specialization": "Joint Replacement Surgery",
+    "verificationdocument": {
+      "aadhar": "https://res.cloudinary.com/demo/image/fetch/aadhar_vikram.jpg",
+      "medicaldegree": "https://res.cloudinary.com/demo/image/fetch/degree_vikram.jpg",
+      "medicallicense": "https://res.cloudinary.com/demo/image/fetch/license_vikram.jpg",
+      "profilepicture": "https://res.cloudinary.com/demo/image/fetch/profile_vikram.jpg"
+    },
+    "shift": [
+      {
+        "day": "Monday",
+        "starttime": "08:00 AM",
+        "endtime": "01:00 PM",
+        "patientslot": 32
+      },
+      {
+        "day": "Wednesday",
+        "starttime": "02:00 PM",
+        "endtime": "07:00 PM",
+        "patientslot": 28
+      },
+      {
+        "day": "Friday",
+        "starttime": "08:00 AM",
+        "endtime": "01:00 PM",
+        "patientslot": 32
+      }
+    ]
+  }
+]

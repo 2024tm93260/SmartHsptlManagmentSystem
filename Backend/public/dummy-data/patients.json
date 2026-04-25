@@ -1,0 +1,112 @@
+[
+  {
+    "patientname": "Amit Singh",
+    "patientusername": "amit_singh_001",
+    "email": "amit.singh@email.com",
+    "password": "PatientPass123",
+    "phonenumber": 9876543220,
+    "sex": "Male",
+    "age": 55,
+    "guardianName": "Mrs. Sunita Singh",
+    "profilepicture": "https://res.cloudinary.com/demo/image/fetch/patient_amit.jpg"
+  },
+  {
+    "patientname": "Neha Gupta",
+    "patientusername": "neha_gupta_001",
+    "email": "neha.gupta@email.com",
+    "password": "PatientPass456",
+    "phonenumber": 9876543221,
+    "sex": "Female",
+    "age": 62,
+    "guardianName": "Mr. Rajesh Gupta",
+    "profilepicture": "https://res.cloudinary.com/demo/image/fetch/patient_neha.jpg"
+  },
+  {
+    "patientname": "Rahul Mishra",
+    "patientusername": "rahul_mishra_001",
+    "email": "rahul.mishra@email.com",
+    "password": "PatientPass789",
+    "phonenumber": 9876543222,
+    "sex": "Male",
+    "age": 48,
+    "guardianName": "Mrs. Asha Mishra",
+    "profilepicture": "https://res.cloudinary.com/demo/image/fetch/patient_rahul.jpg"
+  },
+  {
+    "patientname": "Anjali Patel",
+    "patientusername": "anjali_patel_001",
+    "email": "anjali.patel@email.com",
+    "password": "PatientPass101",
+    "phonenumber": 9876543223,
+    "sex": "Female",
+    "age": 35,
+    "guardianName": "Mr. Vikram Patel",
+    "profilepicture": "https://res.cloudinary.com/demo/image/fetch/patient_anjali.jpg"
+  },
+  {
+    "patientname": "Suresh Kumar",
+    "patientusername": "suresh_kumar_001",
+    "email": "suresh.kumar@email.com",
+    "password": "PatientPass202",
+    "phonenumber": 9876543224,
+    "sex": "Male",
+    "age": 58,
+    "guardianName": "Mrs. Priya Kumar",
+    "profilepicture": "https://res.cloudinary.com/demo/image/fetch/patient_suresh.jpg"
+  },
+  {
+    "patientname": "Deepak Verma",
+    "patientusername": "deepak_verma_001",
+    "email": "deepak.verma@email.com",
+    "password": "PatientPass303",
+    "phonenumber": 9876543225,
+    "sex": "Male",
+    "age": 65,
+    "guardianName": "Mrs. Kavita Verma",
+    "profilepicture": "https://res.cloudinary.com/demo/image/fetch/patient_deepak.jpg"
+  },
+  {
+    "patientname": "Sneha Roy",
+    "patientusername": "sneha_roy_001",
+    "email": "sneha.roy@email.com",
+    "password": "PatientPass404",
+    "phonenumber": 9876543226,
+    "sex": "Female",
+    "age": 42,
+    "guardianName": "Mr. Arun Roy",
+    "profilepicture": "https://res.cloudinary.com/demo/image/fetch/patient_sneha.jpg"
+  },
+  {
+    "patientname": "Manoj Yadav",
+    "patientusername": "manoj_yadav_001",
+    "email": "manoj.yadav@email.com",
+    "password": "PatientPass505",
+    "phonenumber": 9876543227,
+    "sex": "Male",
+    "age": 38,
+    "guardianName": "Mrs. Meera Yadav",
+    "profilepicture": "https://res.cloudinary.com/demo/image/fetch/patient_manoj.jpg"
+  },
+  {
+    "patientname": "Ritika Bhat",
+    "patientusername": "ritika_bhat_001",
+    "email": "ritika.bhat@email.com",
+    "password": "PatientPass606",
+    "phonenumber": 9876543228,
+    "sex": "Female",
+    "age": 28,
+    "guardianName": "Mr. Ravi Bhat",
+    "profilepicture": "https://res.cloudinary.com/demo/image/fetch/patient_ritika.jpg"
+  },
+  {
+    "patientname": "Vikram Singh",
+    "patientusername": "vikram_singh_001",
+    "email": "vikram.singh@email.com",
+    "password": "PatientPass707",
+    "phonenumber": 9876543229,
+    "sex": "Male",
+    "age": 72,
+    "guardianName": "Mr. Arjun Singh",
+    "profilepicture": "https://res.cloudinary.com/demo/image/fetch/patient_vikram.jpg"
+  }
+]

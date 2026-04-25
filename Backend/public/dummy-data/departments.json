@@ -1,0 +1,14 @@
+[
+  {
+    "deptname": "Cardiology",
+    "description": "Department specializing in diagnosis and treatment of heart and cardiovascular diseases"
+  },
+  {
+    "deptname": "Neurology",
+    "description": "Department specializing in nervous system disorders including brain, spinal cord, and nerves"
+  },
+  {
+    "deptname": "Orthopedics",
+    "description": "Department specializing in musculoskeletal system including bones, joints, muscles, and ligaments"
+  }
+]

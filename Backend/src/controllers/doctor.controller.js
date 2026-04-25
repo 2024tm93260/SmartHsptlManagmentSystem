@@ -221,7 +221,7 @@ const accesstokenrenewal = asyncHandler(async (req, res) => {
     if (doctor.refreshtoken !== refreshtoken) {
         throw new apiError(401, "Invalid refresh token or token is expired");
     }
-    const { accesstoken, newrefreshtoken } = await generateaccesstokenandrefreshtoken(patient._id);
+    const { accesstoken, newrefreshtoken } = await generateaccesstokenandrefreshtoken(doctor._id);
 
 
     const options1 = {

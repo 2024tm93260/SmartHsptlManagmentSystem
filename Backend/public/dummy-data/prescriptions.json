@@ -1,0 +1,316 @@
+[
+	{
+		"doctordetails": {
+			"doctorname": "Dr. Rajesh Kumar",
+			"email": "rajesh.kumar@BIMS.com",
+			"specialization": "Interventional Cardiology"
+		},
+		"patientdetails": {
+			"patientname": "Amit Singh",
+			"email": "amit.singh@email.com"
+		},
+		"diagonosis": "Stable Angina with Hypertension",
+		"medicines": [
+			{
+				"medicinename": "Aspirin",
+				"dosage": "100 mg",
+				"frequency": "Once daily",
+				"duration": "3 months"
+			},
+			{
+				"medicinename": "Atorvastatin",
+				"dosage": "20 mg",
+				"frequency": "Once daily at night",
+				"duration": "6 months"
+			},
+			{
+				"medicinename": "Amlodipine",
+				"dosage": "5 mg",
+				"frequency": "Once daily",
+				"duration": "Ongoing"
+			},
+			{
+				"medicinename": "Lisinopril",
+				"dosage": "10 mg",
+				"frequency": "Once daily",
+				"duration": "Ongoing"
+			}
+		]
+	},
+	{
+		"doctordetails": {
+			"doctorname": "Dr. Rajesh Kumar",
+			"email": "rajesh.kumar@BIMS.com",
+			"specialization": "Interventional Cardiology"
+		},
+		"patientdetails": {
+			"patientname": "Neha Gupta",
+			"email": "neha.gupta@email.com"
+		},
+		"diagonosis": "Atrial Fibrillation with Rapid Ventricular Rate",
+		"medicines": [
+			{
+				"medicinename": "Warfarin",
+				"dosage": "5 mg",
+				"frequency": "Once daily",
+				"duration": "Ongoing"
+			},
+			{
+				"medicinename": "Metoprolol",
+				"dosage": "50 mg",
+				"frequency": "Twice daily",
+				"duration": "Ongoing"
+			},
+			{
+				"medicinename": "Digoxin",
+				"dosage": "250 mcg",
+				"frequency": "Once daily",
+				"duration": "3 months"
+			}
+		]
+	},
+	{
+		"doctordetails": {
+			"doctorname": "Dr. Priya Sharma",
+			"email": "priya.sharma@BIMS.com",
+			"specialization": "Clinical Neurology"
+		},
+		"patientdetails": {
+			"patientname": "Rahul Mishra",
+			"email": "rahul.mishra@email.com"
+		},
+		"diagonosis": "Chronic Tension Headache with Migraine Features",
+		"medicines": [
+			{
+				"medicinename": "Ibuprofen",
+				"dosage": "400 mg",
+				"frequency": "As needed for pain",
+				"duration": "PRN"
+			},
+			{
+				"medicinename": "Amitriptyline",
+				"dosage": "10 mg",
+				"frequency": "Once daily at night",
+				"duration": "3 months"
+			},
+			{
+				"medicinename": "Sumatriptan",
+				"dosage": "50 mg",
+				"frequency": "As needed",
+				"duration": "PRN"
+			}
+		]
+	},
+	{
+		"doctordetails": {
+			"doctorname": "Dr. Priya Sharma",
+			"email": "priya.sharma@BIMS.com",
+			"specialization": "Clinical Neurology"
+		},
+		"patientdetails": {
+			"patientname": "Anjali Patel",
+			"email": "anjali.patel@email.com"
+		},
+		"diagonosis": "Benign Paroxysmal Positional Vertigo",
+		"medicines": [
+			{
+				"medicinename": "Meclizine",
+				"dosage": "25 mg",
+				"frequency": "Three times daily",
+				"duration": "1 week"
+			},
+			{
+				"medicinename": "Dimenhydrinate",
+				"dosage": "50 mg",
+				"frequency": "As needed for vertigo",
+				"duration": "PRN"
+			}
+		]
+	},
+	{
+		"doctordetails": {
+			"doctorname": "Dr. Priya Sharma",
+			"email": "priya.sharma@BIMS.com",
+			"specialization": "Clinical Neurology"
+		},
+		"patientdetails": {
+			"patientname": "Suresh Kumar",
+			"email": "suresh.kumar@email.com"
+		},
+		"diagonosis": "Epilepsy - Well Controlled",
+		"medicines": [
+			{
+				"medicinename": "Levetiracetam",
+				"dosage": "500 mg",
+				"frequency": "Twice daily",
+				"duration": "Ongoing"
+			},
+			{
+				"medicinename": "Lamotrigine",
+				"dosage": "100 mg",
+				"frequency": "Twice daily",
+				"duration": "Ongoing"
+			},
+			{
+				"medicinename": "Vitamin D3",
+				"dosage": "1000 IU",
+				"frequency": "Once daily",
+				"duration": "Ongoing"
+			}
+		]
+	},
+	{
+		"doctordetails": {
+			"doctorname": "Dr. Vikram Patel",
+			"email": "vikram.patel@BIMS.com",
+			"specialization": "Joint Replacement Surgery"
+		},
+		"patientdetails": {
+			"patientname": "Deepak Verma",
+			"email": "deepak.verma@email.com"
+		},
+		"diagonosis": "Knee Osteoarthritis Grade 3",
+		"medicines": [
+			{
+				"medicinename": "Naproxen",
+				"dosage": "250 mg",
+				"frequency": "Twice daily",
+				"duration": "2 months"
+			},
+			{
+				"medicinename": "Glucosamine Sulfate",
+				"dosage": "500 mg",
+				"frequency": "Three times daily",
+				"duration": "2 months"
+			},
+			{
+				"medicinename": "Omeprazole",
+				"dosage": "20 mg",
+				"frequency": "Once daily",
+				"duration": "2 months"
+			}
+		]
+	},
+	{
+		"doctordetails": {
+			"doctorname": "Dr. Vikram Patel",
+			"email": "vikram.patel@BIMS.com",
+			"specialization": "Joint Replacement Surgery"
+		},
+		"patientdetails": {
+			"patientname": "Sneha Roy",
+			"email": "sneha.roy@email.com"
+		},
+		"diagonosis": "Anterior Cruciate Ligament Tear",
+		"medicines": [
+			{
+				"medicinename": "Ibuprofen",
+				"dosage": "600 mg",
+				"frequency": "Three times daily",
+				"duration": "2 weeks"
+			},
+			{
+				"medicinename": "Acetaminophen",
+				"dosage": "500 mg",
+				"frequency": "As needed for pain",
+				"duration": "PRN"
+			},
+			{
+				"medicinename": "Tramadol",
+				"dosage": "50 mg",
+				"frequency": "Once or twice daily",
+				"duration": "1 week"
+			}
+		]
+	},
+	{
+		"doctordetails": {
+			"doctorname": "Dr. Vikram Patel",
+			"email": "vikram.patel@BIMS.com",
+			"specialization": "Joint Replacement Surgery"
+		},
+		"patientdetails": {
+			"patientname": "Manoj Yadav",
+			"email": "manoj.yadav@email.com"
+		},
+		"diagonosis": "Lumbar Spine Stenosis with Radiculopathy",
+		"medicines": [
+			{
+				"medicinename": "Pregabalin",
+				"dosage": "75 mg",
+				"frequency": "Twice daily",
+				"duration": "3 months"
+			},
+			{
+				"medicinename": "Meloxicam",
+				"dosage": "15 mg",
+				"frequency": "Once daily",
+				"duration": "2 months"
+			},
+			{
+				"medicinename": "Cyclobenzaprine",
+				"dosage": "5 mg",
+				"frequency": "Once or twice daily",
+				"duration": "1 month"
+			}
+		]
+	},
+	{
+		"doctordetails": {
+			"doctorname": "Dr. Vikram Patel",
+			"email": "vikram.patel@BIMS.com",
+			"specialization": "Joint Replacement Surgery"
+		},
+		"patientdetails": {
+			"patientname": "Ritika Bhat",
+			"email": "ritika.bhat@email.com"
+		},
+		"diagonosis": "Adhesive Capsulitis",
+		"medicines": [
+			{
+				"medicinename": "Indomethacin",
+				"dosage": "25 mg",
+				"frequency": "Three times daily",
+				"duration": "1 month"
+			},
+			{
+				"medicinename": "Diclofenac Gel",
+				"dosage": "Apply topically",
+				"frequency": "Two times daily",
+				"duration": "2 weeks"
+			}
+		]
+	},
+	{
+		"doctordetails": {
+			"doctorname": "Dr. Rajesh Kumar",
+			"email": "rajesh.kumar@BIMS.com",
+			"specialization": "Interventional Cardiology"
+		},
+		"patientdetails": {
+			"patientname": "Vikram Singh",
+			"email": "vikram.singh@email.com"
+		},
+		"diagonosis": "Hypertension Stage 2",
+		"medicines": [
+			{
+				"medicinename": "Lisinopril",
+				"dosage": "20 mg",
+				"frequency": "Once daily",
+				"duration": "Ongoing"
+			},
+			{
+				"medicinename": "Hydrochlorothiazide",
+				"dosage": "25 mg",
+				"frequency": "Once daily",
+				"duration": "Ongoing"
+			},
+			{
+				"medicinename": "Atorvastatin",
+				"dosage": "10 mg",
+				"frequency": "Once daily at night",
+				"duration": "Ongoing"
+			}
+		]
+	}
+]

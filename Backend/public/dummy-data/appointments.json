@@ -1,0 +1,182 @@
+[
+  {
+    "patientdetails": {
+      "patientname": "Amit Singh",
+      "email": "amit.singh@email.com",
+      "phonenumber": 9876543220
+    },
+    "doctordetails": {
+      "doctorname": "Dr. Rajesh Kumar",
+      "email": "rajesh.kumar@BIMS.com",
+      "specialization": "Interventional Cardiology"
+    },
+    "appointmentdate": "2026-05-10",
+    "appointmenttime": "10:30 AM",
+    "symptoms": "Chest pain, shortness of breath, dizziness",
+    "medicalhistory": "Previous heart attack 5 years ago, hypertension",
+    "uniquecode": "APT-001-2026",
+    "status": "Confirmed"
+  },
+  {
+    "patientdetails": {
+      "patientname": "Neha Gupta",
+      "email": "neha.gupta@email.com",
+      "phonenumber": 9876543221
+    },
+    "doctordetails": {
+      "doctorname": "Dr. Rajesh Kumar",
+      "email": "rajesh.kumar@BIMS.com",
+      "specialization": "Interventional Cardiology"
+    },
+    "appointmentdate": "2026-05-12",
+    "appointmenttime": "02:00 PM",
+    "symptoms": "Irregular heartbeat, fatigue, palpitations",
+    "medicalhistory": "Atrial fibrillation, diabetes type 2",
+    "uniquecode": "APT-002-2026",
+    "status": "Confirmed"
+  },
+  {
+    "patientdetails": {
+      "patientname": "Rahul Mishra",
+      "email": "rahul.mishra@email.com",
+      "phonenumber": 9876543222
+    },
+    "doctordetails": {
+      "doctorname": "Dr. Priya Sharma",
+      "email": "priya.sharma@BIMS.com",
+      "specialization": "Clinical Neurology"
+    },
+    "appointmentdate": "2026-05-11",
+    "appointmenttime": "11:00 AM",
+    "symptoms": "Severe headaches every morning, neck stiffness",
+    "medicalhistory": "Chronic tension headaches, high stress",
+    "uniquecode": "APT-003-2026",
+    "status": "Pending"
+  },
+  {
+    "patientdetails": {
+      "patientname": "Anjali Patel",
+      "email": "anjali.patel@email.com",
+      "phonenumber": 9876543223
+    },
+    "doctordetails": {
+      "doctorname": "Dr. Priya Sharma",
+      "email": "priya.sharma@BIMS.com",
+      "specialization": "Clinical Neurology"
+    },
+    "appointmentdate": "2026-05-13",
+    "appointmenttime": "04:30 PM",
+    "symptoms": "Vertigo, balance problems, nausea",
+    "medicalhistory": "BPPV diagnosis 6 months ago",
+    "uniquecode": "APT-004-2026",
+    "status": "Confirmed"
+  },
+  {
+    "patientdetails": {
+      "patientname": "Suresh Kumar",
+      "email": "suresh.kumar@email.com",
+      "phonenumber": 9876543224
+    },
+    "doctordetails": {
+      "doctorname": "Dr. Priya Sharma",
+      "email": "priya.sharma@BIMS.com",
+      "specialization": "Clinical Neurology"
+    },
+    "appointmentdate": "2026-05-14",
+    "appointmenttime": "10:00 AM",
+    "symptoms": "Routine check-up for epilepsy management",
+    "medicalhistory": "Epilepsy for 3 years, seizure-free for 1 year",
+    "uniquecode": "APT-005-2026",
+    "status": "Completed"
+  },
+  {
+    "patientdetails": {
+      "patientname": "Deepak Verma",
+      "email": "deepak.verma@email.com",
+      "phonenumber": 9876543225
+    },
+    "doctordetails": {
+      "doctorname": "Dr. Vikram Patel",
+      "email": "vikram.patel@BIMS.com",
+      "specialization": "Joint Replacement Surgery"
+    },
+    "appointmentdate": "2026-05-15",
+    "appointmenttime": "09:00 AM",
+    "symptoms": "Severe knee pain, difficulty walking, swelling",
+    "medicalhistory": "Progressive knee osteoarthritis for 5 years",
+    "uniquecode": "APT-006-2026",
+    "status": "Confirmed"
+  },
+  {
+    "patientdetails": {
+      "patientname": "Sneha Roy",
+      "email": "sneha.roy@email.com",
+      "phonenumber": 9876543226
+    },
+    "doctordetails": {
+      "doctorname": "Dr. Vikram Patel",
+      "email": "vikram.patel@BIMS.com",
+      "specialization": "Joint Replacement Surgery"
+    },
+    "appointmentdate": "2026-05-16",
+    "appointmenttime": "02:00 PM",
+    "symptoms": "Knee instability, pain during movement, swelling",
+    "medicalhistory": "ACL tear from sports injury",
+    "uniquecode": "APT-007-2026",
+    "status": "Pending"
+  },
+  {
+    "patientdetails": {
+      "patientname": "Manoj Yadav",
+      "email": "manoj.yadav@email.com",
+      "phonenumber": 9876543227
+    },
+    "doctordetails": {
+      "doctorname": "Dr. Vikram Patel",
+      "email": "vikram.patel@BIMS.com",
+      "specialization": "Joint Replacement Surgery"
+    },
+    "appointmentdate": "2026-05-17",
+    "appointmenttime": "08:30 AM",
+    "symptoms": "Lower back pain radiating to legs, numbness",
+    "medicalhistory": "Lumbar spine stenosis for 2 years",
+    "uniquecode": "APT-008-2026",
+    "status": "Confirmed"
+  },
+  {
+    "patientdetails": {
+      "patientname": "Ritika Bhat",
+      "email": "ritika.bhat@email.com",
+      "phonenumber": 9876543228
+    },
+    "doctordetails": {
+      "doctorname": "Dr. Vikram Patel",
+      "email": "vikram.patel@BIMS.com",
+      "specialization": "Joint Replacement Surgery"
+    },
+    "appointmentdate": "2026-05-18",
+    "appointmenttime": "01:00 PM",
+    "symptoms": "Shoulder stiffness, limited range of motion, pain",
+    "medicalhistory": "Frozen shoulder from fall 3 months ago",
+    "uniquecode": "APT-009-2026",
+    "status": "Pending"
+  },
+  {
+    "patientdetails": {
+      "patientname": "Vikram Singh",
+      "email": "vikram.singh@email.com",
+      "phonenumber": 9876543229
+    },
+    "doctordetails": {
+      "doctorname": "Dr. Vikram Patel",
+      "email": "vikram.patel@BIMS.com",
+      "specialization": "Joint Replacement Surgery"
+    },
+    "appointmentdate": "2026-05-19",
+    "appointmenttime": "10:00 AM",
+    "symptoms": "Pre-operative assessment for hip replacement",
+    "medicalhistory": "Severe hip osteoarthritis requiring surgery",
+    "uniquecode": "APT-010-2026",
+    "status": "Completed"
+  }
+]
