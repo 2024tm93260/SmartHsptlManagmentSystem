@@ -135,31 +135,22 @@ async function seedDoctors() {
     return docCopy;
   });
   
-  try {
-    const result = await Doctor.insertMany(doctorsToInsert);
-    log.success(`Inserted ${result.length} doctors`);
-    return result;
-  } catch (error) {
-    log.error(`Doctor insertion error: ${error.message}`);
-    if (error.code === 11000) {
-      log.warn("Some doctors already exist - attempting one-by-one");
-      const results = [];
-      for (const doc of doctorsToInsert) {
-        try {
-          const result = await Doctor.create(doc);
-          results.push(result);
-        } catch (e) {
-          if (e.code !== 11000) {
-            log.error(`Failed to insert doctor: ${e.message}`);
-            throw e;
-          }
-        }
+  const results = [];
+  for (const doc of doctorsToInsert) {
+    try {
+      const result = await Doctor.create(doc);
+      results.push(result);
+    } catch (e) {
+      if (e.code === 11000) {
+        log.warn(`Doctor already exists, skipping: ${doc.email}`);
+      } else {
+        log.error(`Failed to insert doctor: ${e.message}`);
+        throw e;
       }
-      log.success(`Inserted ${results.length} doctors`);
-      return results;
     }
-    throw error;
   }
+  log.success(`Inserted ${results.length} doctors`);
+  return results;
 }
 
 /**
@@ -179,31 +170,22 @@ async function seedPatients() {
     return patCopy;
   });
 
-  try {
-    const result = await Patient.insertMany(patientsToInsert);
-    log.success(`Inserted ${result.length} patients`);
-    return result;
-  } catch (error) {
-    log.error(`Patient insertion error: ${error.message}`);
-    if (error.code === 11000) {
-      log.warn("Some patients already exist - attempting one-by-one");
-      const results = [];
-      for (const patient of patientsToInsert) {
-        try {
-          const result = await Patient.create(patient);
-          results.push(result);
-        } catch (e) {
-          if (e.code !== 11000) {
-            log.error(`Failed to insert patient: ${e.message}`);
-            throw e;
-          }
-        }
+  const results = [];
+  for (const patient of patientsToInsert) {
+    try {
+      const result = await Patient.create(patient);
+      results.push(result);
+    } catch (e) {
+      if (e.code === 11000) {
+        log.warn(`Patient already exists, skipping: ${patient.email}`);
+      } else {
+        log.error(`Failed to insert patient: ${e.message}`);
+        throw e;
       }
-      log.success(`Inserted ${results.length} patients`);
-      return results;
     }
-    throw error;
   }
+  log.success(`Inserted ${results.length} patients`);
+  return results;
 }
 
 /**

@@ -122,15 +122,15 @@ const loginPatient = asyncHandler(async (req, res) => {
 
     const options1 = {
         httpOnly: true,
-        secure: true,
-        sameSite: "none",
+        secure: process.env.NODE_ENV === "production",
+        sameSite: process.env.NODE_ENV === "production" ? "None" : "Lax",
         path: "/",
         maxAge: 1 * 24 * 60 * 60 * 1000
     }
     const options2 = {
         httpOnly: true,
-        secure: true,
-        sameSite: "none",
+        secure: process.env.NODE_ENV === "production",
+        sameSite: process.env.NODE_ENV === "production" ? "None" : "Lax",
         path: "/",
         maxAge: 20 * 24 * 60 * 60 * 1000
     }
@@ -154,7 +154,7 @@ const logoutPatient = asyncHandler(async (req, res) => {
         req.patient._id,
         {
             $unset: {
-                refreshToken: 1
+                refreshtoken: 1
             }
         },
         {
@@ -164,8 +164,8 @@ const logoutPatient = asyncHandler(async (req, res) => {
 
     const options = {
         httpOnly: true,
-        secure: true,
-        sameSite: "none",
+        secure: process.env.NODE_ENV === "production",
+        sameSite: process.env.NODE_ENV === "production" ? "None" : "Lax",
         path: "/",
     }
 
@@ -183,9 +183,11 @@ const accesstokenrenewal = asyncHandler(async (req, res) => {
         throw new apiError(401, "Unauthorized request");
     }
 
-    const decoded = jwt.verify(refreshToken, process.env.REFRESH_TOKEN_SECRET);
-    if (!decoded) {
-        throw new apiError(401, "Invalid refresh token");
+    let decoded;
+    try {
+        decoded = jwt.verify(refreshToken, process.env.REFRESH_TOKEN_SECRET);
+    } catch (err) {
+        throw new apiError(401, "Invalid or expired refresh token");
     }
 
     const patient = await Patient.findById(decoded._id);
@@ -202,15 +204,15 @@ const accesstokenrenewal = asyncHandler(async (req, res) => {
 
     const options1 = {
         httpOnly: true,
-        secure: true,
-        sameSite: "None",
+        secure: process.env.NODE_ENV === "production",
+        sameSite: process.env.NODE_ENV === "production" ? "None" : "Lax",
         path: "/",
         maxAge: 1 * 24 * 60 * 60 * 1000
     }
     const options2 = {
         httpOnly: true,
-        secure: true,
-        sameSite: "none",
+        secure: process.env.NODE_ENV === "production",
+        sameSite: process.env.NODE_ENV === "production" ? "None" : "Lax",
         path: "/",
         maxAge: 20 * 24 * 60 * 60 * 1000
     }

@@ -23,10 +23,12 @@ export const loginDoctor = createAsyncThunk(
         try {
             const res = await api.post("/login", credentials);
 
-            const accessToken = res?.data?.data?.accessToken;
+            const accessToken = res?.data?.data?.accessToken || res?.data?.data?.accesstoken;
             if (accessToken) {
                 api.defaults.headers.common["Authorization"] = `Bearer ${accessToken}`;
             }
+
+            localStorage.setItem("doctorSession", "true");
 
             return res.data.data;
         } catch (error) {
@@ -41,6 +43,8 @@ export const logoutDoctor = createAsyncThunk(
     async (_, { rejectWithValue }) => {
         try {
             const res = await api.post("/logout");
+            delete api.defaults.headers.common["Authorization"];
+            localStorage.removeItem("doctorSession");
             return res.data.message;
         } catch (error) {
             return rejectWithValue(error.response?.data || "Logout failed");
@@ -175,21 +179,16 @@ export const resetForgottenPassword = createAsyncThunk(
         }
     }
 );
-const hasRefreshCookie = () => {
-    try {
-        return document.cookie.split(";").some((c) => c.trim().startsWith("refreshToken="));
-    } catch {
-        return false;
-    }
-};
 export const getCurrentDoctor = createAsyncThunk(
     "doctor/getCurrentDoctorForDoctor",
     async (_, { rejectWithValue }) => {
-          try {
-      const res = await api.get("/get-doctor");
-      return res.data.data;
-    } catch (error) {
-      return rejectWithValue(null);
-    }
+        try {
+            const res = await api.get("/get-doctor");
+            return res.data.data;
+        } catch (error) {
+            delete api.defaults.headers.common["Authorization"];
+            localStorage.removeItem("doctorSession");
+            return rejectWithValue(null);
+        }
     }
 );

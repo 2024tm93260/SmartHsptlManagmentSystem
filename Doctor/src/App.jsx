@@ -6,13 +6,15 @@ import { Outlet } from 'react-router-dom'
 const App = () => {
   const dispatch = useDispatch();
   const { isInitialized } = useSelector((state) => state.auth);
+  const shouldBootstrapAuth = typeof window !== 'undefined' && localStorage.getItem('doctorSession') === 'true';
 
   useEffect(() => {
-    // Check auth status on app mount
-    dispatch(getCurrentDoctor());
-  }, [dispatch]);
+    if (shouldBootstrapAuth) {
+      dispatch(getCurrentDoctor());
+    }
+  }, [dispatch, shouldBootstrapAuth]);
     
-  if (!isInitialized) {
+  if (shouldBootstrapAuth && !isInitialized) {
     return (
       <div style={{ 
         display: 'flex', 

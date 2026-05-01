@@ -177,14 +177,16 @@ const logoutadmin = asyncHandler(async (req, res, next) => {
 })
 
 const accesstokenrenewal = asyncHandler(async (req, res) => {
-    const { refreshtoken } = req.cookies || req.body;
+    const refreshtoken = req.cookies?.refreshtoken || req.body?.refreshtoken;
 
     if (!refreshtoken) {
         throw new apiError(401, "Unauthorized request");
     }
-    const decodetoken = jwt.verify(refreshtoken, process.env.REFRESH_TOKEN_SECRET);
-    if (!decodetoken) {
-        throw new apiError(401, "invalid refresh token");
+    let decodetoken;
+    try {
+        decodetoken = jwt.verify(refreshtoken, process.env.REFRESH_TOKEN_SECRET);
+    } catch (err) {
+        throw new apiError(401, "Invalid or expired refresh token");
     }
     const admin = await Admin.findById(decodetoken._id);
     if (!admin) {
@@ -193,7 +195,7 @@ const accesstokenrenewal = asyncHandler(async (req, res) => {
     if (admin.refreshtoken !== refreshtoken) {
         throw new apiError(401, "Invalid refresh token or token is expired");
     }
-    const { accesstoken, newrefreshtoken } = await generateaccesstokenandrefreshtoken(admin._id);
+    const { accesstoken, refreshtoken: newrefreshtoken } = await generateaccesstokenandrefreshtoken(admin._id);
 
 
     const cookieOptions = {

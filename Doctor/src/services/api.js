@@ -6,6 +6,24 @@ const api = axios.create({
   timeout: 10000,
 });
 
+const hasDoctorSession = () => {
+  try {
+    return localStorage.getItem("doctorSession") === "true";
+  } catch {
+    return false;
+  }
+};
+
+const isPublicRoute = (url = "") => {
+  return [
+    "/login",
+    "/register",
+    "/forgot-password/send-otp",
+    "/forgot-password/verify-otp",
+    "/forgot-password/update-password",
+  ].some((route) => url.includes(route));
+};
+
 let isRefreshing = false;
 let failedQueue = [];
 
@@ -25,7 +43,10 @@ api.interceptors.response.use(
     if (
       !error.response ||
       error.response.status !== 401 ||
-      originalRequest.url.includes("renew-access-token")
+      !originalRequest ||
+      originalRequest.url.includes("renew-access-token") ||
+      isPublicRoute(originalRequest.url) ||
+      !hasDoctorSession()
     ) {
       return Promise.reject(error);
     }

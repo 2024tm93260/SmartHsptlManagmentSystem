@@ -139,7 +139,7 @@ const logindoctor = asyncHandler(async (req, res) => {
     if (!ispasswordvalid) {
         throw new apiError(401, "Invalid password");
     }
-    const { accesstoken, refreshtoken } = await generateaccesstokenandrefreshtoken(existeddoctor._id);
+    const { accesstoken, refreshtoken: newrefreshtoken } = await generateaccesstokenandrefreshtoken(existeddoctor._id);
     const loggedindoctor = await Doctor.findById(existeddoctor._id).select("-password -refreshtoken");
     if (!loggedindoctor) {
         throw new apiError(404, "Doctor login failed");
@@ -152,29 +152,31 @@ const logindoctor = asyncHandler(async (req, res) => {
     });
     const options1 = {
         httpOnly: true,
-        secure: true,
-        sameSite: "None",
+        secure: process.env.NODE_ENV === "production",
+        sameSite: process.env.NODE_ENV === "production" ? "None" : "Lax",
         path: "/",
         maxAge: 1 * 24 * 60 * 60 * 1000
     };
     const options2 = {
         httpOnly: true,
-        secure: true,
-        sameSite: "none",
+        secure: process.env.NODE_ENV === "production",
+        sameSite: process.env.NODE_ENV === "production" ? "None" : "Lax",
         path: "/",
         maxAge: 20 * 24 * 60 * 60 * 1000
     }
     return res
         .status(200)
         .cookie("accesstoken", accesstoken, options1)
-        .cookie("refreshtoken", refreshtoken, options2)
+        .cookie("refreshtoken", newrefreshtoken, options2)
         .json(
             new apiResponse(
                 200,
                 {
                     user: loggedindoctor,
                     accesstoken,
-                    refreshtoken
+                    refreshtoken: newrefreshtoken,
+                    accessToken: accesstoken,
+                    refreshToken: newrefreshtoken
                 },
                 "Doctor logged in successfully"
             )
@@ -194,8 +196,8 @@ const logoutdoctor = asyncHandler(async (req, res) => {
     );
     const options = {
         httpOnly: true,
-        secure: true,
-        sameSite: "None",
+        secure: process.env.NODE_ENV === "production",
+        sameSite: process.env.NODE_ENV === "production" ? "None" : "Lax",
         path: "/"
     };
     return res
@@ -204,47 +206,69 @@ const logoutdoctor = asyncHandler(async (req, res) => {
         .json(new apiResponse(200, {}, "Doctor logged out successfully"));
 })
 
+
 const accesstokenrenewal = asyncHandler(async (req, res) => {
-    const { refreshtoken } = req.cookies || req.body;
+  const refreshtoken =
+    req.cookies?.refreshtoken || req.body?.refreshtoken;
 
-    if (!refreshtoken) {
-        throw new apiError(401, "Unauthorized request");
-    }
-    const decodetoken = jwt.verify(refreshtoken, process.env.REFRESH_TOKEN_SECRET);
-    if (!decodetoken) {
-        throw new apiError(401, "invalid refresh token");
-    }
-    const doctor = await Doctor.findById(decodetoken._id);
-    if (!doctor) {
-        throw new apiError(404, "Doctor not found");
-    }
-    if (doctor.refreshtoken !== refreshtoken) {
-        throw new apiError(401, "Invalid refresh token or token is expired");
-    }
-    const { accesstoken, newrefreshtoken } = await generateaccesstokenandrefreshtoken(doctor._id);
+  if (!refreshtoken) {
+    throw new apiError(401, "Unauthorized request");
+  }
 
+  let decoded;
+  try {
+    decoded = jwt.verify(
+      refreshtoken,
+      process.env.REFRESH_TOKEN_SECRET
+    );
+  } catch (err) {
+    throw new apiError(401, "Invalid or expired refresh token");
+  }
 
-    const options1 = {
-        httpOnly: true,
-        secure: true,
-        sameSite: "None",
-        path: "/",
-        maxAge: 1 * 24 * 60 * 60 * 1000
-    }
-    const options2 = {
-        httpOnly: true,
-        secure: true,
-        sameSite: "none",
-        path: "/",
-        maxAge: 20 * 24 * 60 * 60 * 1000
-    }
-    return res
-        .status(200)
-        .cookie("accesstoken", accesstoken, options1)
-        .cookie("refreshtoken", newrefreshtoken, options2)
-        .json(new apiResponse(200, { accesstoken, refreshtoken: newrefreshtoken }, "Access token renewed successfully"));
+  const doctor = await Doctor.findById(decoded._id);
+  if (!doctor || doctor.refreshtoken !== refreshtoken) {
+    throw new apiError(401, "Unauthorized request");
+  }
 
-})
+  const {
+    accesstoken,
+    refreshtoken: newrefreshtoken
+  } = await generateaccesstokenandrefreshtoken(doctor._id);
+
+  const accessOptions = {
+    httpOnly: true,
+        secure: process.env.NODE_ENV === "production",
+        sameSite: process.env.NODE_ENV === "production" ? "None" : "Lax",
+    path: "/",
+    maxAge: 1 * 24 * 60 * 60 * 1000
+  };
+
+  const refreshOptions = {
+    httpOnly: true,
+        secure: process.env.NODE_ENV === "production",
+        sameSite: process.env.NODE_ENV === "production" ? "None" : "Lax",
+    path: "/",
+    maxAge: 20 * 24 * 60 * 60 * 1000
+  };
+
+  return res
+    .status(200)
+    .cookie("accesstoken", accesstoken, accessOptions)
+    .cookie("refreshtoken", newrefreshtoken, refreshOptions)
+    .json(
+      new apiResponse(
+        200,
+                {
+                    accesstoken,
+                    accessToken: accesstoken,
+                    refreshtoken: newrefreshtoken,
+                    refreshToken: newrefreshtoken
+                },
+        "Access token renewed successfully"
+      )
+    );
+});
+
 
 const updatepassword = asyncHandler(async (req, res) => {
     const { oldpassword, newpassword } = req.body;
