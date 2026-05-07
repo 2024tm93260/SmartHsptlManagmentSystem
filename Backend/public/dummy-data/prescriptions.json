@@ -312,5 +312,319 @@
 				"duration": "Ongoing"
 			}
 		]
+	},
+	{
+		"doctordetails": {
+			"doctorname": "Dr. Rajesh Kumar",
+			"email": "rajesh.kumar@BIMS.com",
+			"specialization": "Interventional Cardiology"
+		},
+		"patientdetails": {
+			"patientname": "Manoj Yadav",
+			"email": "manoj.yadav@email.com"
+		},
+		"diagonosis": "Exertional Angina with Hypertension",
+		"medicines": [
+			{
+				"medicinename": "Nitroglycerin",
+				"dosage": "0.5 mg sublingual",
+				"frequency": "As needed for chest pain",
+				"duration": "PRN"
+			},
+			{
+				"medicinename": "Metoprolol Succinate",
+				"dosage": "25 mg",
+				"frequency": "Twice daily",
+				"duration": "3 months"
+			},
+			{
+				"medicinename": "Atorvastatin",
+				"dosage": "40 mg",
+				"frequency": "Once daily at night",
+				"duration": "Ongoing"
+			}
+		]
+	},
+	{
+		"doctordetails": {
+			"doctorname": "Dr. Rajesh Kumar",
+			"email": "rajesh.kumar@BIMS.com",
+			"specialization": "Interventional Cardiology"
+		},
+		"patientdetails": {
+			"patientname": "Ritika Bhat",
+			"email": "ritika.bhat@email.com"
+		},
+		"diagonosis": "Essential Hypertension Grade 1",
+		"medicines": [
+			{
+				"medicinename": "Amlodipine",
+				"dosage": "5 mg",
+				"frequency": "Once daily",
+				"duration": "Ongoing"
+			},
+			{
+				"medicinename": "Losartan",
+				"dosage": "50 mg",
+				"frequency": "Once daily",
+				"duration": "Ongoing"
+			}
+		]
+	},
+	{
+		"doctordetails": {
+			"doctorname": "Dr. Vikram Patel",
+			"email": "vikram.patel@BIMS.com",
+			"specialization": "Joint Replacement Surgery"
+		},
+		"patientdetails": {
+			"patientname": "Vikram Singh",
+			"email": "vikram.singh@email.com"
+		},
+		"diagonosis": "Post-Total Hip Replacement - Recovery Phase",
+		"medicines": [
+			{
+				"medicinename": "Tramadol",
+				"dosage": "50 mg",
+				"frequency": "Twice daily",
+				"duration": "2 weeks"
+			},
+			{
+				"medicinename": "Enoxaparin",
+				"dosage": "40 mg subcutaneous",
+				"frequency": "Once daily",
+				"duration": "10 days"
+			},
+			{
+				"medicinename": "Calcium + Vitamin D3",
+				"dosage": "500 mg + 250 IU",
+				"frequency": "Once daily",
+				"duration": "3 months"
+			}
+		]
+	},
+	{
+		"doctordetails": {
+			"doctorname": "Dr. Vikram Patel",
+			"email": "vikram.patel@BIMS.com",
+			"specialization": "Joint Replacement Surgery"
+		},
+		"patientdetails": {
+			"patientname": "Suresh Kumar",
+			"email": "suresh.kumar@email.com"
+		},
+		"diagonosis": "Bilateral Knee Osteoarthritis Grade 2",
+		"medicines": [
+			{
+				"medicinename": "Diclofenac Sodium",
+				"dosage": "50 mg",
+				"frequency": "Twice daily with food",
+				"duration": "4 weeks"
+			},
+			{
+				"medicinename": "Glucosamine Sulfate",
+				"dosage": "750 mg",
+				"frequency": "Twice daily",
+				"duration": "3 months"
+			},
+			{
+				"medicinename": "Pantoprazole",
+				"dosage": "40 mg",
+				"frequency": "Once daily before meals",
+				"duration": "4 weeks"
+			}
+		]
+	},
+	{
+		"doctordetails": {
+			"doctorname": "Dr. Priya Sharma",
+			"email": "priya.sharma@BIMS.com",
+			"specialization": "Clinical Neurology"
+		},
+		"patientdetails": {
+			"patientname": "Neha Gupta",
+			"email": "neha.gupta@email.com"
+		},
+		"diagonosis": "Migraine with Aura",
+		"medicines": [
+			{
+				"medicinename": "Sumatriptan",
+				"dosage": "100 mg",
+				"frequency": "As needed at onset",
+				"duration": "PRN"
+			},
+			{
+				"medicinename": "Propranolol",
+				"dosage": "40 mg",
+				"frequency": "Twice daily",
+				"duration": "3 months"
+			},
+			{
+				"medicinename": "Metoclopramide",
+				"dosage": "10 mg",
+				"frequency": "As needed for nausea",
+				"duration": "PRN"
+			}
+		]
+	},
+	{
+		"doctordetails": {
+			"doctorname": "Dr. Priya Sharma",
+			"email": "priya.sharma@BIMS.com",
+			"specialization": "Clinical Neurology"
+		},
+		"patientdetails": {
+			"patientname": "Anjali Patel",
+			"email": "anjali.patel@email.com"
+		},
+		"diagonosis": "Diabetic Peripheral Neuropathy",
+		"medicines": [
+			{
+				"medicinename": "Pregabalin",
+				"dosage": "75 mg",
+				"frequency": "Twice daily",
+				"duration": "3 months"
+			},
+			{
+				"medicinename": "Methylcobalamin",
+				"dosage": "1500 mcg",
+				"frequency": "Once daily",
+				"duration": "3 months"
+			},
+			{
+				"medicinename": "Alpha Lipoic Acid",
+				"dosage": "600 mg",
+				"frequency": "Once daily",
+				"duration": "2 months"
+			}
+		]
+	},
+	{
+		"doctordetails": {
+			"doctorname": "Dr. Priya Sharma",
+			"email": "priya.sharma@BIMS.com",
+			"specialization": "Clinical Neurology"
+		},
+		"patientdetails": {
+			"patientname": "Rahul Mishra",
+			"email": "rahul.mishra@email.com"
+		},
+		"diagonosis": "Cognitive Fatigue with Anxiety Disorder",
+		"medicines": [
+			{
+				"medicinename": "Clonazepam",
+				"dosage": "0.5 mg",
+				"frequency": "Once daily at night",
+				"duration": "1 month"
+			},
+			{
+				"medicinename": "Melatonin",
+				"dosage": "5 mg",
+				"frequency": "At bedtime",
+				"duration": "1 month"
+			},
+			{
+				"medicinename": "Vitamin B Complex",
+				"dosage": "1 tablet",
+				"frequency": "Once daily",
+				"duration": "2 months"
+			}
+		]
+	},
+	{
+		"doctordetails": {
+			"doctorname": "Dr. Rajesh Kumar",
+			"email": "rajesh.kumar@BIMS.com",
+			"specialization": "Interventional Cardiology"
+		},
+		"patientdetails": {
+			"patientname": "Amit Singh",
+			"email": "amit.singh@email.com"
+		},
+		"diagonosis": "Stable Angina - Follow-up",
+		"medicines": [
+			{
+				"medicinename": "Aspirin",
+				"dosage": "75 mg",
+				"frequency": "Once daily",
+				"duration": "Ongoing"
+			},
+			{
+				"medicinename": "Bisoprolol",
+				"dosage": "5 mg",
+				"frequency": "Once daily",
+				"duration": "3 months"
+			},
+			{
+				"medicinename": "Nitroglycerin Spray",
+				"dosage": "0.4 mg/spray",
+				"frequency": "As needed for chest pain",
+				"duration": "PRN"
+			}
+		]
+	},
+	{
+		"doctordetails": {
+			"doctorname": "Dr. Rajesh Kumar",
+			"email": "rajesh.kumar@BIMS.com",
+			"specialization": "Interventional Cardiology"
+		},
+		"patientdetails": {
+			"patientname": "Deepak Verma",
+			"email": "deepak.verma@email.com"
+		},
+		"diagonosis": "Hypertensive Heart Disease with Cardiac Failure Risk",
+		"medicines": [
+			{
+				"medicinename": "Furosemide",
+				"dosage": "40 mg",
+				"frequency": "Once daily morning",
+				"duration": "2 months"
+			},
+			{
+				"medicinename": "Carvedilol",
+				"dosage": "6.25 mg",
+				"frequency": "Twice daily",
+				"duration": "Ongoing"
+			},
+			{
+				"medicinename": "Spironolactone",
+				"dosage": "25 mg",
+				"frequency": "Once daily",
+				"duration": "Ongoing"
+			}
+		]
+	},
+	{
+		"doctordetails": {
+			"doctorname": "Dr. Vikram Patel",
+			"email": "vikram.patel@BIMS.com",
+			"specialization": "Joint Replacement Surgery"
+		},
+		"patientdetails": {
+			"patientname": "Sneha Roy",
+			"email": "sneha.roy@email.com"
+		},
+		"diagonosis": "Post-ACL Reconstruction - Rehabilitation Phase",
+		"medicines": [
+			{
+				"medicinename": "Ibuprofen",
+				"dosage": "400 mg",
+				"frequency": "Three times daily with food",
+				"duration": "2 weeks"
+			},
+			{
+				"medicinename": "Pantoprazole",
+				"dosage": "40 mg",
+				"frequency": "Once daily before meals",
+				"duration": "2 weeks"
+			},
+			{
+				"medicinename": "Diclofenac Gel",
+				"dosage": "Apply topically",
+				"frequency": "Twice daily on knee",
+				"duration": "3 weeks"
+			}
+		]
 	}
 ]

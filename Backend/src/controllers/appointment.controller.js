@@ -49,9 +49,9 @@ const autoCancelExpiredAppointments = async () => {
             // Send cancellation emails to patients
             for (const appointment of expiredAppointments) {
                 try {
-                    // Fetch patient email using patientusername from appointment
+                    // Fetch patient email using email from appointment
                     const patient = await Patient.findOne({ 
-                        patientusername: appointment.patientdetails.patientusername 
+                        email: appointment.patientdetails.email 
                     }).select("email patientname");
                     
                     if (patient && patient.email) {
@@ -365,8 +365,8 @@ const getallappointmentforpatient = asyncHandler(async (req, res) => {
     
     await autoCancelExpiredAppointments();
     
-    const patientusername = req.patient?.patientusername 
-    const appointments = await Appointment.find({ "patientdetails.patientusername": patientusername }).select("doctordetails appointmenttime appointmentdate status")
+    const patientemail = req.patient?.email
+    const appointments = await Appointment.find({ "patientdetails.email": patientemail }).select("doctordetails appointmenttime appointmentdate status")
 
     return res.status(200).json(new apiResponse(200, appointments, "All appointments fetched successfully"))
 })
@@ -377,7 +377,7 @@ const gettodayappointment = asyncHandler(async (req, res) => {
 
     await autoCancelExpiredAppointments();
 
-    const doctorusername = req.doctor?.doctorusername;
+    const doctoremail = req.doctor?.email;
 
     const startOfDay = new Date();
     startOfDay.setHours(0, 0, 0, 0);
@@ -386,7 +386,7 @@ const gettodayappointment = asyncHandler(async (req, res) => {
     endOfDay.setHours(23, 59, 59, 999);
 
     const appointments = await Appointment.find({
-        "doctordetails.doctorusername": doctorusername,
+        "doctordetails.email": doctoremail,
         status: { $in: ["Confirmed"] },
         appointmentdate: { $gte: startOfDay, $lte: endOfDay },
     }).select("patientdetails appointmenttime appointmentdate status");
@@ -403,8 +403,8 @@ const getallappointmentfordoctor= asyncHandler(async(req,res)=>{
     
     await autoCancelExpiredAppointments();
     
-    const doctorusername = req.doctor?.doctorusername
-    const appointments = await Appointment.find({ "doctordetails.doctorusername": doctorusername, status: { $in: ["Confirmed", "Completed"] }, }).select("patientdetails appointmenttime appointmentdate status")
+    const doctoremail = req.doctor?.email
+    const appointments = await Appointment.find({ "doctordetails.email": doctoremail, status: { $in: ["Confirmed", "Completed"] }, }).select("patientdetails appointmenttime appointmentdate status")
 
     return res.status(200).json(new apiResponse(200, appointments, "All appointments fetched successfully"))
 })

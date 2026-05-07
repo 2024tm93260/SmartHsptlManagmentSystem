@@ -84,12 +84,12 @@ export const getprescription = asyncHandler(async (req, res) => {
     }
 
     // If patient, verify they own this prescription
-    if (req.patient && prescription.patientdetails.patientusername !== req.patient.patientusername) {
+    if (req.patient && prescription.patientdetails.email !== req.patient.email) {
         throw new apiError(403, "You don't have access to this prescription");
     }
 
     // If doctor, verify they created this prescription
-    if (req.doctor && prescription.doctordetails.doctorusername !== req.doctor.doctorusername) {
+    if (req.doctor && prescription.doctordetails.email !== req.doctor.email) {
         throw new apiError(403, "You don't have access to this prescription");
     }
 
@@ -104,9 +104,9 @@ export const getallprescriptionsforpatient = asyncHandler(async (req, res) => {
         throw new apiError(401, "Unauthorized patient request");
     }
 
-    const patientusername = req.patient.patientusername;
+    const patientemail = req.patient.email;
     const prescriptions = await Prescription.find({
-        "patientdetails.patientusername": patientusername
+        "patientdetails.email": patientemail
     })
         .populate("appointmentid")
         .populate("labtest")
@@ -123,9 +123,9 @@ export const getallprescriptionsfordoctor = asyncHandler(async (req, res) => {
         throw new apiError(401, "Unauthorized doctor request");
     }
 
-    const doctorusername = req.doctor.doctorusername;
+    const doctoremail = req.doctor.email;
     const prescriptions = await Prescription.find({
-        "doctordetails.doctorusername": doctorusername
+        "doctordetails.email": doctoremail
     })
         .populate("appointmentid")
         .populate("labtest")
@@ -170,12 +170,12 @@ export const getprescriptionbyappointment = asyncHandler(async (req, res) => {
     }
 
     // If patient, verify they own this prescription
-    if (req.patient && prescription.patientdetails.patientusername !== req.patient.patientusername) {
+    if (req.patient && prescription.patientdetails.email !== req.patient.email) {
         throw new apiError(403, "You don't have access to this prescription");
     }
 
     // If doctor, verify they created this prescription
-    if (req.doctor && prescription.doctordetails.doctorusername !== req.doctor.doctorusername) {
+    if (req.doctor && prescription.doctordetails.email !== req.doctor.email) {
         throw new apiError(403, "You don't have access to this prescription");
     }
 
