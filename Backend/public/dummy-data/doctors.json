@@ -1,6 +1,6 @@
 [
   {
-    "doctorname": "Dr. Rajesh Kumar",
+    "doctorname": "Rajesh Kumar",
     "doctorusername": "dr_rajesh_cardio",
     "email": "rajesh.kumar@BIMS.com",
     "password": "SecurePass123",
@@ -39,7 +39,7 @@
     ]
   },
   {
-    "doctorname": "Dr. Priya Sharma",
+    "doctorname": "Priya Sharma",
     "doctorusername": "dr_priya_neuro",
     "email": "priya.sharma@BIMS.com",
     "password": "NeuroPass456",
@@ -78,7 +78,7 @@
     ]
   },
   {
-    "doctorname": "Dr. Vikram Patel",
+    "doctorname": "Vikram Patel",
     "doctorusername": "dr_vikram_ortho",
     "email": "vikram.patel@BIMS.com",
     "password": "OrthoPass789",

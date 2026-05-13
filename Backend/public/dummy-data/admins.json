@@ -1,0 +1,16 @@
+[
+  {
+    "adminname": "Super Admin",
+    "adminusername": "superadmin",
+    "email": "admin@BIMS.com",
+    "password": "Admin@1234",
+    "phonenumber": 9000000001,
+    "adminsecret": "BIMS@Secret1",
+    "verificationdocs": {
+      "aadhar": "https://res.cloudinary.com/demo/image/fetch/aadhar_admin.jpg",
+      "adminId": "https://res.cloudinary.com/demo/image/fetch/adminid_admin.jpg",
+      "profilepicture": "https://res.cloudinary.com/demo/image/fetch/profile_admin.jpg",
+      "appointmentletter": "https://res.cloudinary.com/demo/image/fetch/letter_admin.jpg"
+    }
+  }
+]

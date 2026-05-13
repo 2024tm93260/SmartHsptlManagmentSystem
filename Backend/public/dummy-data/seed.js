@@ -20,6 +20,7 @@ import { Doctor } from "../../src/models/doctor.model.js";
 import { Patient } from "../../src/models/patient.model.js";
 import { Appointment } from "../../src/models/appointment.model.js";
 import { Prescription } from "../../src/models/prescription.model.js";
+import { Admin } from "../../src/models/admin.model.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -73,6 +74,7 @@ async function clearCollections() {
       { name: "Patient", model: Patient },
       { name: "Appointment", model: Appointment },
       { name: "Prescription", model: Prescription },
+      { name: "Admin", model: Admin },
     ];
 
     for (const collection of collections) {
@@ -86,6 +88,31 @@ async function clearCollections() {
     log.error(`Error clearing collections: ${error.message}`);
     throw error;
   }
+}
+
+/**
+ * Seed admins
+ */
+async function seedAdmins() {
+  log.info("Loading admins...");
+  const admins = loadJSON("admins.json");
+
+  const results = [];
+  for (const admin of admins) {
+    try {
+      const result = await Admin.create(admin);
+      results.push(result);
+    } catch (e) {
+      if (e.code === 11000) {
+        log.warn(`Admin already exists, skipping: ${admin.email}`);
+      } else {
+        log.error(`Failed to insert admin: ${e.message}`);
+        throw e;
+      }
+    }
+  }
+  log.success(`Inserted ${results.length} admins`);
+  return results;
 }
 
 /**
@@ -279,6 +306,7 @@ async function verifySeed() {
       patients: await Patient.countDocuments(),
       appointments: await Appointment.countDocuments(),
       prescriptions: await Prescription.countDocuments(),
+      admins: await Admin.countDocuments(),
     };
 
     let allGood = true;
@@ -332,6 +360,7 @@ async function main() {
     // Seed data in order
     log.header("📥 Seeding Data");
     
+    await seedAdmins();
     await seedDepartments();
     await seedDoctors();
     await seedPatients();
