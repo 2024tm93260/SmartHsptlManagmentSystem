@@ -1,0 +1,862 @@
+[
+  {
+    "prescription_index": 4,
+    "patientdetails": {
+      "patientname": "Suresh Kumar",
+      "email": "suresh.kumar@email.com"
+    },
+    "doctordetails": {
+      "doctorname": "Dr. Priya Sharma",
+      "email": "priya.sharma@BIMS.com"
+    },
+    "tests": [
+      {
+        "test_name": "Complete Blood Count (CBC)",
+        "parameters": [
+          { "name": "Haemoglobin", "value": "14.2", "unit": "g/dL", "reference_range": "13.0–17.5", "status": "Normal" },
+          { "name": "RBC Count", "value": "5.1", "unit": "million/µL", "reference_range": "4.5–5.5", "status": "Normal" },
+          { "name": "WBC Count", "value": "7200", "unit": "/µL", "reference_range": "4000–11000", "status": "Normal" },
+          { "name": "Platelets", "value": "230000", "unit": "/µL", "reference_range": "150000–400000", "status": "Normal" },
+          { "name": "MCV", "value": "88", "unit": "fL", "reference_range": "80–100", "status": "Normal" }
+        ],
+        "result_summary": "Complete blood count within normal limits.",
+        "remarks": "No haematological abnormalities detected.",
+        "status": "completed"
+      },
+      {
+        "test_name": "Serum Levetiracetam Level",
+        "parameters": [
+          { "name": "Levetiracetam", "value": "32", "unit": "µg/mL", "reference_range": "12–46", "status": "Normal" }
+        ],
+        "result_summary": "Levetiracetam within therapeutic range.",
+        "remarks": "Continue current dosing. Drug level satisfactory for seizure prophylaxis.",
+        "status": "completed"
+      },
+      {
+        "test_name": "Liver Function Tests (LFT)",
+        "parameters": [
+          { "name": "Total Bilirubin", "value": "0.8", "unit": "mg/dL", "reference_range": "0.3–1.2", "status": "Normal" },
+          { "name": "SGOT (AST)", "value": "28", "unit": "U/L", "reference_range": "10–40", "status": "Normal" },
+          { "name": "SGPT (ALT)", "value": "24", "unit": "U/L", "reference_range": "7–56", "status": "Normal" },
+          { "name": "Alkaline Phosphatase", "value": "85", "unit": "U/L", "reference_range": "44–147", "status": "Normal" },
+          { "name": "Serum Albumin", "value": "4.2", "unit": "g/dL", "reference_range": "3.5–5.0", "status": "Normal" }
+        ],
+        "result_summary": "Liver function tests normal. No hepatotoxicity from anticonvulsant therapy.",
+        "remarks": "Routine LFT monitoring for antiepileptic medication. Repeat in 6 months.",
+        "status": "completed"
+      },
+      {
+        "test_name": "Serum Vitamin D (25-OH)",
+        "parameters": [
+          { "name": "25-Hydroxy Vitamin D", "value": "18", "unit": "ng/mL", "reference_range": "30–100", "status": "Low" }
+        ],
+        "result_summary": "Vitamin D level insufficient. Supplementation required.",
+        "remarks": "Long-term antiepileptic use can reduce Vitamin D absorption. Continue Vitamin D3 supplementation as prescribed.",
+        "status": "completed"
+      }
+    ],
+    "overall_status": "completed",
+    "report_date": "2026-05-15",
+    "attachments": [
+      { "file_name": "CBC_Suresh_Kumar_APT005.pdf", "file_url": "https://res.cloudinary.com/demo/image/fetch/lab_cbc_suresh_apt005.pdf" },
+      { "file_name": "LFT_Suresh_Kumar_APT005.pdf", "file_url": "https://res.cloudinary.com/demo/image/fetch/lab_lft_suresh_apt005.pdf" }
+    ],
+    "verified_by_email": "priya.sharma@BIMS.com",
+    "verified_at": "2026-05-15T14:00:00.000Z"
+  },
+  {
+    "prescription_index": 9,
+    "patientdetails": {
+      "patientname": "Vikram Singh",
+      "email": "vikram.singh@email.com"
+    },
+    "doctordetails": {
+      "doctorname": "Dr. Vikram Patel",
+      "email": "vikram.patel@BIMS.com"
+    },
+    "tests": [
+      {
+        "test_name": "Complete Blood Count (CBC)",
+        "parameters": [
+          { "name": "Haemoglobin", "value": "13.8", "unit": "g/dL", "reference_range": "13.0–17.5", "status": "Normal" },
+          { "name": "WBC Count", "value": "6800", "unit": "/µL", "reference_range": "4000–11000", "status": "Normal" },
+          { "name": "Platelets", "value": "198000", "unit": "/µL", "reference_range": "150000–400000", "status": "Normal" },
+          { "name": "Haematocrit", "value": "42", "unit": "%", "reference_range": "38.8–50.0", "status": "Normal" }
+        ],
+        "result_summary": "CBC within acceptable pre-operative range.",
+        "remarks": "Patient fit for surgical procedure from haematological standpoint.",
+        "status": "completed"
+      },
+      {
+        "test_name": "Coagulation Profile",
+        "parameters": [
+          { "name": "Prothrombin Time (PT)", "value": "13.2", "unit": "seconds", "reference_range": "11–15", "status": "Normal" },
+          { "name": "INR", "value": "1.0", "unit": "", "reference_range": "0.8–1.2", "status": "Normal" },
+          { "name": "APTT", "value": "30", "unit": "seconds", "reference_range": "25–40", "status": "Normal" }
+        ],
+        "result_summary": "Coagulation parameters normal. No bleeding risk identified.",
+        "remarks": "Safe to proceed with elective hip replacement surgery.",
+        "status": "completed"
+      },
+      {
+        "test_name": "Renal Function Tests",
+        "parameters": [
+          { "name": "Serum Creatinine", "value": "0.9", "unit": "mg/dL", "reference_range": "0.7–1.3", "status": "Normal" },
+          { "name": "Blood Urea Nitrogen (BUN)", "value": "14", "unit": "mg/dL", "reference_range": "7–20", "status": "Normal" },
+          { "name": "eGFR", "value": "88", "unit": "mL/min/1.73m²", "reference_range": ">60", "status": "Normal" }
+        ],
+        "result_summary": "Renal function adequate for surgery and anaesthesia.",
+        "remarks": "No dose adjustments required for perioperative medications.",
+        "status": "completed"
+      },
+      {
+        "test_name": "Fasting Blood Glucose",
+        "parameters": [
+          { "name": "Fasting Glucose", "value": "118", "unit": "mg/dL", "reference_range": "70–100", "status": "High" }
+        ],
+        "result_summary": "Fasting glucose mildly elevated, suggesting impaired fasting glycaemia.",
+        "remarks": "Monitor perioperative blood glucose. Inform anaesthesiologist. No insulin required pre-operatively.",
+        "status": "completed"
+      },
+      {
+        "test_name": "Chest X-Ray",
+        "parameters": [
+          { "name": "Lung Fields", "value": "Clear", "unit": "", "reference_range": "Clear", "status": "Normal" },
+          { "name": "Cardiac Silhouette", "value": "Normal", "unit": "", "reference_range": "Normal size", "status": "Normal" },
+          { "name": "Mediastinum", "value": "Normal", "unit": "", "reference_range": "Not widened", "status": "Normal" }
+        ],
+        "result_summary": "Chest X-Ray clear. No signs of pulmonary consolidation or cardiomegaly.",
+        "remarks": "Cleared for general anaesthesia from cardiorespiratory perspective.",
+        "status": "completed"
+      },
+      {
+        "test_name": "Resting ECG",
+        "parameters": [
+          { "name": "Heart Rate", "value": "74", "unit": "bpm", "reference_range": "60–100", "status": "Normal" },
+          { "name": "Rhythm", "value": "Normal Sinus Rhythm", "unit": "", "reference_range": "Normal Sinus Rhythm", "status": "Normal" },
+          { "name": "PR Interval", "value": "164", "unit": "ms", "reference_range": "120–200", "status": "Normal" },
+          { "name": "QTc Interval", "value": "410", "unit": "ms", "reference_range": "<450", "status": "Normal" }
+        ],
+        "result_summary": "Normal sinus rhythm. No ischaemic changes or conduction abnormalities.",
+        "remarks": "Pre-operative ECG satisfactory. Proceed with planned elective hip replacement.",
+        "status": "completed"
+      }
+    ],
+    "overall_status": "completed",
+    "report_date": "2026-05-20",
+    "attachments": [
+      { "file_name": "PreOp_Panel_Vikram_Singh_APT010.pdf", "file_url": "https://res.cloudinary.com/demo/image/fetch/lab_preop_vikram_apt010.pdf" },
+      { "file_name": "ECG_Vikram_Singh_APT010.pdf", "file_url": "https://res.cloudinary.com/demo/image/fetch/lab_ecg_vikram_apt010.pdf" },
+      { "file_name": "ChestXRay_Vikram_Singh_APT010.pdf", "file_url": "https://res.cloudinary.com/demo/image/fetch/lab_cxr_vikram_apt010.pdf" }
+    ],
+    "verified_by_email": "vikram.patel@BIMS.com",
+    "verified_at": "2026-05-20T11:30:00.000Z"
+  },
+  {
+    "prescription_index": 10,
+    "patientdetails": {
+      "patientname": "Manoj Yadav",
+      "email": "manoj.yadav@email.com"
+    },
+    "doctordetails": {
+      "doctorname": "Dr. Rajesh Kumar",
+      "email": "rajesh.kumar@BIMS.com"
+    },
+    "tests": [
+      {
+        "test_name": "Complete Blood Count (CBC)",
+        "parameters": [
+          { "name": "Haemoglobin", "value": "14.8", "unit": "g/dL", "reference_range": "13.0–17.5", "status": "Normal" },
+          { "name": "WBC Count", "value": "8100", "unit": "/µL", "reference_range": "4000–11000", "status": "Normal" },
+          { "name": "Platelets", "value": "245000", "unit": "/µL", "reference_range": "150000–400000", "status": "Normal" }
+        ],
+        "result_summary": "CBC within normal limits. No anaemia or leucocytosis.",
+        "remarks": "Haematological profile normal.",
+        "status": "completed"
+      },
+      {
+        "test_name": "Lipid Profile",
+        "parameters": [
+          { "name": "Total Cholesterol", "value": "228", "unit": "mg/dL", "reference_range": "<200", "status": "High" },
+          { "name": "LDL Cholesterol", "value": "158", "unit": "mg/dL", "reference_range": "<130", "status": "High" },
+          { "name": "HDL Cholesterol", "value": "38", "unit": "mg/dL", "reference_range": ">40", "status": "Low" },
+          { "name": "Triglycerides", "value": "195", "unit": "mg/dL", "reference_range": "<150", "status": "High" },
+          { "name": "VLDL Cholesterol", "value": "39", "unit": "mg/dL", "reference_range": "<30", "status": "High" }
+        ],
+        "result_summary": "Dyslipidaemia with elevated LDL and low HDL. High cardiovascular risk.",
+        "remarks": "Statin therapy recommended. Lifestyle modification counselled. Repeat lipid panel in 3 months.",
+        "status": "completed"
+      },
+      {
+        "test_name": "Troponin I",
+        "parameters": [
+          { "name": "Troponin I (hs)", "value": "0.02", "unit": "ng/mL", "reference_range": "<0.04", "status": "Normal" }
+        ],
+        "result_summary": "High-sensitivity Troponin I negative. No acute myocardial injury.",
+        "remarks": "Current presentation does not indicate acute coronary syndrome. Monitor clinically.",
+        "status": "completed"
+      },
+      {
+        "test_name": "Fasting Blood Glucose",
+        "parameters": [
+          { "name": "Fasting Glucose", "value": "94", "unit": "mg/dL", "reference_range": "70–100", "status": "Normal" }
+        ],
+        "result_summary": "Fasting glucose normal.",
+        "remarks": "No dysglycaemia at this time. Recheck HbA1c given family history.",
+        "status": "completed"
+      },
+      {
+        "test_name": "Resting ECG",
+        "parameters": [
+          { "name": "Heart Rate", "value": "78", "unit": "bpm", "reference_range": "60–100", "status": "Normal" },
+          { "name": "Rhythm", "value": "Normal Sinus Rhythm", "unit": "", "reference_range": "Normal Sinus Rhythm", "status": "Normal" },
+          { "name": "ST Segment", "value": "No changes", "unit": "", "reference_range": "Isoelectric", "status": "Normal" },
+          { "name": "QTc Interval", "value": "405", "unit": "ms", "reference_range": "<450", "status": "Normal" }
+        ],
+        "result_summary": "Normal sinus rhythm with no ischaemic ST changes.",
+        "remarks": "ECG does not show evidence of ischaemia. Stress test may be considered if symptoms persist.",
+        "status": "completed"
+      }
+    ],
+    "overall_status": "completed",
+    "report_date": "2026-05-05",
+    "attachments": [
+      { "file_name": "LipidProfile_Manoj_Yadav_APT011.pdf", "file_url": "https://res.cloudinary.com/demo/image/fetch/lab_lipid_manoj_apt011.pdf" },
+      { "file_name": "ECG_Manoj_Yadav_APT011.pdf", "file_url": "https://res.cloudinary.com/demo/image/fetch/lab_ecg_manoj_apt011.pdf" }
+    ],
+    "verified_by_email": "rajesh.kumar@BIMS.com",
+    "verified_at": "2026-05-05T16:00:00.000Z"
+  },
+  {
+    "prescription_index": 11,
+    "patientdetails": {
+      "patientname": "Ritika Bhat",
+      "email": "ritika.bhat@email.com"
+    },
+    "doctordetails": {
+      "doctorname": "Dr. Rajesh Kumar",
+      "email": "rajesh.kumar@BIMS.com"
+    },
+    "tests": [
+      {
+        "test_name": "Complete Blood Count (CBC)",
+        "parameters": [
+          { "name": "Haemoglobin", "value": "12.8", "unit": "g/dL", "reference_range": "12.0–15.5", "status": "Normal" },
+          { "name": "WBC Count", "value": "7400", "unit": "/µL", "reference_range": "4000–11000", "status": "Normal" },
+          { "name": "Platelets", "value": "310000", "unit": "/µL", "reference_range": "150000–400000", "status": "Normal" }
+        ],
+        "result_summary": "CBC normal. No haematological contribution to hypertension.",
+        "remarks": "Haematological profile unremarkable.",
+        "status": "completed"
+      },
+      {
+        "test_name": "Renal Function Tests",
+        "parameters": [
+          { "name": "Serum Creatinine", "value": "0.8", "unit": "mg/dL", "reference_range": "0.5–1.1", "status": "Normal" },
+          { "name": "Blood Urea Nitrogen (BUN)", "value": "12", "unit": "mg/dL", "reference_range": "7–20", "status": "Normal" },
+          { "name": "eGFR", "value": "92", "unit": "mL/min/1.73m²", "reference_range": ">60", "status": "Normal" },
+          { "name": "Serum Uric Acid", "value": "5.2", "unit": "mg/dL", "reference_range": "2.4–6.0", "status": "Normal" }
+        ],
+        "result_summary": "Renal function normal. Hypertension not secondary to renal disease.",
+        "remarks": "Continue antihypertensive therapy. Annual renal monitoring recommended.",
+        "status": "completed"
+      },
+      {
+        "test_name": "Serum Electrolytes",
+        "parameters": [
+          { "name": "Sodium (Na+)", "value": "139", "unit": "mEq/L", "reference_range": "136–145", "status": "Normal" },
+          { "name": "Potassium (K+)", "value": "4.1", "unit": "mEq/L", "reference_range": "3.5–5.0", "status": "Normal" },
+          { "name": "Chloride (Cl-)", "value": "101", "unit": "mEq/L", "reference_range": "98–107", "status": "Normal" },
+          { "name": "Bicarbonate (HCO3-)", "value": "24", "unit": "mEq/L", "reference_range": "22–29", "status": "Normal" }
+        ],
+        "result_summary": "Electrolytes within normal limits.",
+        "remarks": "No electrolyte imbalance. Potassium level satisfactory before initiating ACE inhibitor therapy.",
+        "status": "completed"
+      },
+      {
+        "test_name": "Lipid Profile",
+        "parameters": [
+          { "name": "Total Cholesterol", "value": "212", "unit": "mg/dL", "reference_range": "<200", "status": "High" },
+          { "name": "LDL Cholesterol", "value": "138", "unit": "mg/dL", "reference_range": "<130", "status": "High" },
+          { "name": "HDL Cholesterol", "value": "52", "unit": "mg/dL", "reference_range": ">50", "status": "Normal" },
+          { "name": "Triglycerides", "value": "142", "unit": "mg/dL", "reference_range": "<150", "status": "Normal" }
+        ],
+        "result_summary": "Borderline high total cholesterol and LDL. Combined cardiovascular risk with hypertension.",
+        "remarks": "Dietary modification advised. Consider statin if LDL does not improve in 3 months.",
+        "status": "completed"
+      },
+      {
+        "test_name": "Urinalysis",
+        "parameters": [
+          { "name": "Urine Protein", "value": "Negative", "unit": "", "reference_range": "Negative", "status": "Normal" },
+          { "name": "Urine Blood", "value": "Negative", "unit": "", "reference_range": "Negative", "status": "Normal" },
+          { "name": "Urine Glucose", "value": "Negative", "unit": "", "reference_range": "Negative", "status": "Normal" },
+          { "name": "Urine pH", "value": "6.2", "unit": "", "reference_range": "4.5–8.0", "status": "Normal" }
+        ],
+        "result_summary": "Urinalysis normal. No proteinuria or haematuria.",
+        "remarks": "No evidence of target organ damage in kidneys.",
+        "status": "completed"
+      }
+    ],
+    "overall_status": "completed",
+    "report_date": "2026-05-05",
+    "attachments": [
+      { "file_name": "RenalPanel_Ritika_Bhat_APT012.pdf", "file_url": "https://res.cloudinary.com/demo/image/fetch/lab_renal_ritika_apt012.pdf" },
+      { "file_name": "LipidProfile_Ritika_Bhat_APT012.pdf", "file_url": "https://res.cloudinary.com/demo/image/fetch/lab_lipid_ritika_apt012.pdf" }
+    ],
+    "verified_by_email": "rajesh.kumar@BIMS.com",
+    "verified_at": "2026-05-05T17:00:00.000Z"
+  },
+  {
+    "prescription_index": 12,
+    "patientdetails": {
+      "patientname": "Vikram Singh",
+      "email": "vikram.singh@email.com"
+    },
+    "doctordetails": {
+      "doctorname": "Dr. Vikram Patel",
+      "email": "vikram.patel@BIMS.com"
+    },
+    "tests": [
+      {
+        "test_name": "Complete Blood Count (CBC)",
+        "parameters": [
+          { "name": "Haemoglobin", "value": "10.6", "unit": "g/dL", "reference_range": "13.0–17.5", "status": "Low" },
+          { "name": "WBC Count", "value": "9800", "unit": "/µL", "reference_range": "4000–11000", "status": "Normal" },
+          { "name": "Platelets", "value": "382000", "unit": "/µL", "reference_range": "150000–400000", "status": "Normal" },
+          { "name": "Neutrophils", "value": "72", "unit": "%", "reference_range": "50–70", "status": "High" }
+        ],
+        "result_summary": "Post-surgical anaemia with mild leucocytosis. Expected post-operative haematological response.",
+        "remarks": "Haemoglobin low — post-surgical blood loss likely. Consider iron supplementation. Monitor for infection given elevated neutrophils.",
+        "status": "completed"
+      },
+      {
+        "test_name": "C-Reactive Protein (CRP)",
+        "parameters": [
+          { "name": "CRP (High Sensitivity)", "value": "42.8", "unit": "mg/L", "reference_range": "<5", "status": "High" }
+        ],
+        "result_summary": "CRP markedly elevated, consistent with post-surgical inflammatory response.",
+        "remarks": "Expected post-total hip replacement elevation. Trend downwards over 2–3 weeks. Recheck in 2 weeks.",
+        "status": "completed"
+      },
+      {
+        "test_name": "D-Dimer",
+        "parameters": [
+          { "name": "D-Dimer", "value": "1.8", "unit": "µg/mL FEU", "reference_range": "<0.5", "status": "High" }
+        ],
+        "result_summary": "D-Dimer elevated, indicative of post-surgical fibrinolysis. DVT must be excluded.",
+        "remarks": "Elevated post-operatively. Continue DVT prophylaxis. Doppler ultrasound of lower limbs ordered if clinical signs present.",
+        "status": "completed"
+      },
+      {
+        "test_name": "Wound Culture & Sensitivity",
+        "parameters": [
+          { "name": "Wound Culture", "value": "No Growth", "unit": "", "reference_range": "No Growth", "status": "Normal" }
+        ],
+        "result_summary": "Wound culture sterile. No evidence of surgical site infection.",
+        "remarks": "No infective organisms isolated. Continue standard wound care.",
+        "status": "completed"
+      }
+    ],
+    "overall_status": "completed",
+    "report_date": "2026-05-05",
+    "attachments": [
+      { "file_name": "PostOp_Panel_Vikram_Singh_APT013.pdf", "file_url": "https://res.cloudinary.com/demo/image/fetch/lab_postop_vikram_apt013.pdf" }
+    ],
+    "verified_by_email": "vikram.patel@BIMS.com",
+    "verified_at": "2026-05-05T10:30:00.000Z"
+  },
+  {
+    "prescription_index": 13,
+    "patientdetails": {
+      "patientname": "Suresh Kumar",
+      "email": "suresh.kumar@email.com"
+    },
+    "doctordetails": {
+      "doctorname": "Dr. Vikram Patel",
+      "email": "vikram.patel@BIMS.com"
+    },
+    "tests": [
+      {
+        "test_name": "Complete Blood Count (CBC)",
+        "parameters": [
+          { "name": "Haemoglobin", "value": "13.4", "unit": "g/dL", "reference_range": "13.0–17.5", "status": "Normal" },
+          { "name": "WBC Count", "value": "7600", "unit": "/µL", "reference_range": "4000–11000", "status": "Normal" },
+          { "name": "Platelets", "value": "268000", "unit": "/µL", "reference_range": "150000–400000", "status": "Normal" }
+        ],
+        "result_summary": "CBC within normal limits.",
+        "remarks": "No active infection or anaemia.",
+        "status": "completed"
+      },
+      {
+        "test_name": "C-Reactive Protein (CRP)",
+        "parameters": [
+          { "name": "CRP (High Sensitivity)", "value": "8.4", "unit": "mg/L", "reference_range": "<5", "status": "High" }
+        ],
+        "result_summary": "CRP mildly elevated, suggesting low-grade inflammation consistent with osteoarthritis.",
+        "remarks": "Inflammation marker elevated. Anti-inflammatory therapy warranted.",
+        "status": "completed"
+      },
+      {
+        "test_name": "Erythrocyte Sedimentation Rate (ESR)",
+        "parameters": [
+          { "name": "ESR", "value": "38", "unit": "mm/hr", "reference_range": "0–22", "status": "High" }
+        ],
+        "result_summary": "ESR elevated, supporting inflammatory arthropathy.",
+        "remarks": "Consistent with degenerative joint disease activity. Recheck after 8 weeks of anti-inflammatory therapy.",
+        "status": "completed"
+      },
+      {
+        "test_name": "Serum Uric Acid",
+        "parameters": [
+          { "name": "Uric Acid", "value": "5.6", "unit": "mg/dL", "reference_range": "3.4–7.0", "status": "Normal" }
+        ],
+        "result_summary": "Serum uric acid normal. Gout excluded as aetiology of joint pain.",
+        "remarks": "No evidence of gouty arthritis. Continue management for osteoarthritis.",
+        "status": "completed"
+      },
+      {
+        "test_name": "Rheumatoid Factor (RF)",
+        "parameters": [
+          { "name": "Rheumatoid Factor", "value": "Negative", "unit": "", "reference_range": "Negative (<14 IU/mL)", "status": "Normal" }
+        ],
+        "result_summary": "Rheumatoid factor negative. Rheumatoid arthritis ruled out.",
+        "remarks": "Seronegative for RF. Diagnosis consistent with primary knee osteoarthritis.",
+        "status": "completed"
+      }
+    ],
+    "overall_status": "completed",
+    "report_date": "2026-05-05",
+    "attachments": [
+      { "file_name": "InflammationPanel_Suresh_Kumar_APT014.pdf", "file_url": "https://res.cloudinary.com/demo/image/fetch/lab_inflam_suresh_apt014.pdf" }
+    ],
+    "verified_by_email": "vikram.patel@BIMS.com",
+    "verified_at": "2026-05-05T13:00:00.000Z"
+  },
+  {
+    "prescription_index": 14,
+    "patientdetails": {
+      "patientname": "Neha Gupta",
+      "email": "neha.gupta@email.com"
+    },
+    "doctordetails": {
+      "doctorname": "Dr. Priya Sharma",
+      "email": "priya.sharma@BIMS.com"
+    },
+    "tests": [
+      {
+        "test_name": "Complete Blood Count (CBC)",
+        "parameters": [
+          { "name": "Haemoglobin", "value": "11.4", "unit": "g/dL", "reference_range": "12.0–15.5", "status": "Low" },
+          { "name": "MCV", "value": "72", "unit": "fL", "reference_range": "80–100", "status": "Low" },
+          { "name": "MCH", "value": "22", "unit": "pg", "reference_range": "27–33", "status": "Low" },
+          { "name": "WBC Count", "value": "6200", "unit": "/µL", "reference_range": "4000–11000", "status": "Normal" },
+          { "name": "Platelets", "value": "290000", "unit": "/µL", "reference_range": "150000–400000", "status": "Normal" }
+        ],
+        "result_summary": "Microcytic hypochromic anaemia. Iron deficiency likely contributing to migraine frequency.",
+        "remarks": "Iron deficiency anaemia identified. Start iron supplementation. Repeat CBC in 6 weeks.",
+        "status": "completed"
+      },
+      {
+        "test_name": "Thyroid Function Tests (TFT)",
+        "parameters": [
+          { "name": "TSH", "value": "2.4", "unit": "mIU/L", "reference_range": "0.5–4.5", "status": "Normal" },
+          { "name": "Free T4 (FT4)", "value": "1.1", "unit": "ng/dL", "reference_range": "0.8–1.8", "status": "Normal" },
+          { "name": "Free T3 (FT3)", "value": "3.2", "unit": "pg/mL", "reference_range": "2.3–4.2", "status": "Normal" }
+        ],
+        "result_summary": "Thyroid function normal. Hypothyroidism excluded as migraine trigger.",
+        "remarks": "No thyroid dysfunction. Continue neurological management.",
+        "status": "completed"
+      },
+      {
+        "test_name": "Serum Vitamin B12",
+        "parameters": [
+          { "name": "Vitamin B12", "value": "168", "unit": "pg/mL", "reference_range": "200–900", "status": "Low" }
+        ],
+        "result_summary": "Vitamin B12 deficiency. Associated with increased migraine frequency and neurological symptoms.",
+        "remarks": "Supplement with oral cyanocobalamin 500 µg daily. Recheck in 3 months. Consider IM injection if no improvement.",
+        "status": "completed"
+      },
+      {
+        "test_name": "Serum Ferritin",
+        "parameters": [
+          { "name": "Ferritin", "value": "8", "unit": "ng/mL", "reference_range": "12–150", "status": "Low" }
+        ],
+        "result_summary": "Ferritin critically low, confirming iron deficiency.",
+        "remarks": "Oral iron therapy initiated. Dietary iron counselling provided.",
+        "status": "completed"
+      },
+      {
+        "test_name": "MRI Brain (Report)",
+        "parameters": [
+          { "name": "Brain Parenchyma", "value": "Normal", "unit": "", "reference_range": "Normal", "status": "Normal" },
+          { "name": "White Matter", "value": "No lesions", "unit": "", "reference_range": "No lesions", "status": "Normal" },
+          { "name": "Posterior Fossa", "value": "Normal", "unit": "", "reference_range": "Normal", "status": "Normal" }
+        ],
+        "result_summary": "MRI brain shows no structural lesion, intracranial mass, or white matter pathology. Normal study.",
+        "remarks": "MRI normal. Migraine diagnosis supported clinically. No secondary cause identified.",
+        "status": "completed"
+      }
+    ],
+    "overall_status": "completed",
+    "report_date": "2026-05-06",
+    "attachments": [
+      { "file_name": "MRI_Brain_Neha_Gupta_APT015.pdf", "file_url": "https://res.cloudinary.com/demo/image/fetch/lab_mri_neha_apt015.pdf" },
+      { "file_name": "BloodPanel_Neha_Gupta_APT015.pdf", "file_url": "https://res.cloudinary.com/demo/image/fetch/lab_blood_neha_apt015.pdf" }
+    ],
+    "verified_by_email": "priya.sharma@BIMS.com",
+    "verified_at": "2026-05-06T15:00:00.000Z"
+  },
+  {
+    "prescription_index": 15,
+    "patientdetails": {
+      "patientname": "Anjali Patel",
+      "email": "anjali.patel@email.com"
+    },
+    "doctordetails": {
+      "doctorname": "Dr. Priya Sharma",
+      "email": "priya.sharma@BIMS.com"
+    },
+    "tests": [
+      {
+        "test_name": "HbA1c (Glycated Haemoglobin)",
+        "parameters": [
+          { "name": "HbA1c", "value": "8.4", "unit": "%", "reference_range": "<5.7% Normal, 5.7–6.4% Pre-diabetic, >6.5% Diabetic", "status": "High" }
+        ],
+        "result_summary": "HbA1c markedly elevated indicating poorly controlled diabetes mellitus.",
+        "remarks": "Poor glycaemic control is accelerating peripheral neuropathy. Optimise antidiabetic regimen. Recheck HbA1c in 3 months.",
+        "status": "completed"
+      },
+      {
+        "test_name": "Fasting Blood Glucose",
+        "parameters": [
+          { "name": "Fasting Glucose", "value": "178", "unit": "mg/dL", "reference_range": "70–100", "status": "High" },
+          { "name": "Post-Prandial Glucose (2hr)", "value": "242", "unit": "mg/dL", "reference_range": "<140", "status": "High" }
+        ],
+        "result_summary": "Both fasting and post-prandial glucose significantly elevated.",
+        "remarks": "Urgent optimisation of antidiabetic medication required. Dietary compliance review.",
+        "status": "completed"
+      },
+      {
+        "test_name": "Serum Vitamin B12",
+        "parameters": [
+          { "name": "Vitamin B12", "value": "142", "unit": "pg/mL", "reference_range": "200–900", "status": "Low" }
+        ],
+        "result_summary": "Vitamin B12 deficient. Metformin use can impair B12 absorption over time.",
+        "remarks": "Start Vitamin B12 supplementation. B12 deficiency exacerbates peripheral neuropathy. Recheck in 3 months.",
+        "status": "completed"
+      },
+      {
+        "test_name": "Nerve Conduction Study (NCS)",
+        "parameters": [
+          { "name": "Median Nerve Conduction Velocity", "value": "38", "unit": "m/s", "reference_range": ">50", "status": "Low" },
+          { "name": "Sural Nerve Amplitude", "value": "3.2", "unit": "µV", "reference_range": ">6", "status": "Low" },
+          { "name": "Peroneal Nerve Conduction Velocity", "value": "36", "unit": "m/s", "reference_range": ">40", "status": "Low" }
+        ],
+        "result_summary": "Reduced nerve conduction velocities in bilateral upper and lower limbs. Consistent with sensorimotor peripheral neuropathy.",
+        "remarks": "NCS confirms diabetic peripheral neuropathy. Strict glycaemic control critical. Refer for pain management.",
+        "status": "completed"
+      },
+      {
+        "test_name": "Renal Function Tests",
+        "parameters": [
+          { "name": "Serum Creatinine", "value": "0.9", "unit": "mg/dL", "reference_range": "0.5–1.1", "status": "Normal" },
+          { "name": "eGFR", "value": "82", "unit": "mL/min/1.73m²", "reference_range": ">60", "status": "Normal" },
+          { "name": "Urine Microalbumin", "value": "48", "unit": "mg/g creatinine", "reference_range": "<30", "status": "High" }
+        ],
+        "result_summary": "Renal function preserved but microalbuminuria detected — early diabetic nephropathy.",
+        "remarks": "Microalbuminuria indicates early nephropathy. ACE inhibitor or ARB therapy to protect kidneys. Annual monitoring.",
+        "status": "completed"
+      }
+    ],
+    "overall_status": "completed",
+    "report_date": "2026-05-06",
+    "attachments": [
+      { "file_name": "NCS_Anjali_Patel_APT016.pdf", "file_url": "https://res.cloudinary.com/demo/image/fetch/lab_ncs_anjali_apt016.pdf" },
+      { "file_name": "DiabeticPanel_Anjali_Patel_APT016.pdf", "file_url": "https://res.cloudinary.com/demo/image/fetch/lab_diabetes_anjali_apt016.pdf" }
+    ],
+    "verified_by_email": "priya.sharma@BIMS.com",
+    "verified_at": "2026-05-06T16:00:00.000Z"
+  },
+  {
+    "prescription_index": 16,
+    "patientdetails": {
+      "patientname": "Rahul Mishra",
+      "email": "rahul.mishra@email.com"
+    },
+    "doctordetails": {
+      "doctorname": "Dr. Priya Sharma",
+      "email": "priya.sharma@BIMS.com"
+    },
+    "tests": [
+      {
+        "test_name": "Complete Blood Count (CBC)",
+        "parameters": [
+          { "name": "Haemoglobin", "value": "14.0", "unit": "g/dL", "reference_range": "13.0–17.5", "status": "Normal" },
+          { "name": "WBC Count", "value": "7100", "unit": "/µL", "reference_range": "4000–11000", "status": "Normal" },
+          { "name": "Platelets", "value": "220000", "unit": "/µL", "reference_range": "150000–400000", "status": "Normal" }
+        ],
+        "result_summary": "CBC within normal limits. No haematological cause for cognitive symptoms.",
+        "remarks": "Haematological profile normal.",
+        "status": "completed"
+      },
+      {
+        "test_name": "Thyroid Function Tests (TFT)",
+        "parameters": [
+          { "name": "TSH", "value": "1.9", "unit": "mIU/L", "reference_range": "0.5–4.5", "status": "Normal" },
+          { "name": "Free T4 (FT4)", "value": "1.2", "unit": "ng/dL", "reference_range": "0.8–1.8", "status": "Normal" }
+        ],
+        "result_summary": "Thyroid function normal. Hypothyroidism not a cause of memory impairment.",
+        "remarks": "Thyroid-related cognitive impairment excluded.",
+        "status": "completed"
+      },
+      {
+        "test_name": "Serum Vitamin B12",
+        "parameters": [
+          { "name": "Vitamin B12", "value": "194", "unit": "pg/mL", "reference_range": "200–900", "status": "Low" }
+        ],
+        "result_summary": "Vitamin B12 borderline low. Deficiency may contribute to cognitive impairment and fatigue.",
+        "remarks": "Start oral cyanocobalamin 1000 µg/day. B12 supplementation may improve memory and concentration. Recheck in 3 months.",
+        "status": "completed"
+      },
+      {
+        "test_name": "Serum Vitamin D (25-OH)",
+        "parameters": [
+          { "name": "25-Hydroxy Vitamin D", "value": "16", "unit": "ng/mL", "reference_range": "30–100", "status": "Low" }
+        ],
+        "result_summary": "Vitamin D deficiency. Associated with mood disorders, fatigue, and cognitive decline.",
+        "remarks": "Supplement with Vitamin D3 2000 IU/day. Recheck in 3 months. Outdoor sun exposure recommended.",
+        "status": "completed"
+      },
+      {
+        "test_name": "Serum Folate",
+        "parameters": [
+          { "name": "Serum Folate", "value": "3.8", "unit": "ng/mL", "reference_range": ">5.9", "status": "Low" }
+        ],
+        "result_summary": "Serum folate below normal range. Folate deficiency can cause cognitive impairment.",
+        "remarks": "Start folic acid 5 mg/day. Dietary assessment and counselling for folate-rich foods.",
+        "status": "completed"
+      }
+    ],
+    "overall_status": "completed",
+    "report_date": "2026-05-06",
+    "attachments": [
+      { "file_name": "CognitivePanel_Rahul_Mishra_APT017.pdf", "file_url": "https://res.cloudinary.com/demo/image/fetch/lab_cognitive_rahul_apt017.pdf" }
+    ],
+    "verified_by_email": "priya.sharma@BIMS.com",
+    "verified_at": "2026-05-06T18:00:00.000Z"
+  },
+  {
+    "prescription_index": 17,
+    "patientdetails": {
+      "patientname": "Amit Singh",
+      "email": "amit.singh@email.com"
+    },
+    "doctordetails": {
+      "doctorname": "Dr. Rajesh Kumar",
+      "email": "rajesh.kumar@BIMS.com"
+    },
+    "tests": [
+      {
+        "test_name": "Resting ECG",
+        "parameters": [
+          { "name": "Heart Rate", "value": "68", "unit": "bpm", "reference_range": "60–100", "status": "Normal" },
+          { "name": "Rhythm", "value": "Normal Sinus Rhythm", "unit": "", "reference_range": "Normal Sinus Rhythm", "status": "Normal" },
+          { "name": "ST Segment", "value": "No acute changes", "unit": "", "reference_range": "Isoelectric", "status": "Normal" },
+          { "name": "QTc Interval", "value": "418", "unit": "ms", "reference_range": "<450", "status": "Normal" },
+          { "name": "T-Wave Morphology", "value": "Normal", "unit": "", "reference_range": "Upright in V4–V6", "status": "Normal" }
+        ],
+        "result_summary": "Stable ECG. No new ischaemic changes compared to previous recording. Normal sinus rhythm maintained.",
+        "remarks": "ECG unchanged from baseline. Continue current antianginous medications. Stress ECG if symptoms escalate.",
+        "status": "completed"
+      },
+      {
+        "test_name": "Lipid Profile",
+        "parameters": [
+          { "name": "Total Cholesterol", "value": "174", "unit": "mg/dL", "reference_range": "<200", "status": "Normal" },
+          { "name": "LDL Cholesterol", "value": "98", "unit": "mg/dL", "reference_range": "<100", "status": "Normal" },
+          { "name": "HDL Cholesterol", "value": "46", "unit": "mg/dL", "reference_range": ">40", "status": "Normal" },
+          { "name": "Triglycerides", "value": "148", "unit": "mg/dL", "reference_range": "<150", "status": "Normal" }
+        ],
+        "result_summary": "Lipid profile well controlled on atorvastatin therapy. LDL at target for stable angina.",
+        "remarks": "Continue atorvastatin 20 mg. LDL target met (<100 mg/dL). Excellent response to therapy.",
+        "status": "completed"
+      },
+      {
+        "test_name": "Complete Blood Count (CBC)",
+        "parameters": [
+          { "name": "Haemoglobin", "value": "13.9", "unit": "g/dL", "reference_range": "13.0–17.5", "status": "Normal" },
+          { "name": "WBC Count", "value": "6800", "unit": "/µL", "reference_range": "4000–11000", "status": "Normal" },
+          { "name": "Platelets", "value": "212000", "unit": "/µL", "reference_range": "150000–400000", "status": "Normal" }
+        ],
+        "result_summary": "CBC normal.",
+        "remarks": "No haematological abnormalities on aspirin therapy.",
+        "status": "completed"
+      },
+      {
+        "test_name": "Troponin I (High-Sensitivity)",
+        "parameters": [
+          { "name": "Troponin I (hs)", "value": "0.01", "unit": "ng/mL", "reference_range": "<0.04", "status": "Normal" }
+        ],
+        "result_summary": "Troponin I negative. No evidence of acute myocardial injury.",
+        "remarks": "No ACS event. Stable angina confirmed. Continue current management.",
+        "status": "completed"
+      },
+      {
+        "test_name": "HbA1c (Glycated Haemoglobin)",
+        "parameters": [
+          { "name": "HbA1c", "value": "6.1", "unit": "%", "reference_range": "<5.7% Normal, 5.7–6.4% Pre-diabetic", "status": "High" }
+        ],
+        "result_summary": "HbA1c in pre-diabetic range.",
+        "remarks": "Pre-diabetes identified. Lifestyle modification recommended. Fasting glucose and OGTT advised. Annual monitoring.",
+        "status": "completed"
+      }
+    ],
+    "overall_status": "completed",
+    "report_date": "2026-05-07",
+    "attachments": [
+      { "file_name": "ECG_Amit_Singh_APT018.pdf", "file_url": "https://res.cloudinary.com/demo/image/fetch/lab_ecg_amit_apt018.pdf" },
+      { "file_name": "CardiacPanel_Amit_Singh_APT018.pdf", "file_url": "https://res.cloudinary.com/demo/image/fetch/lab_cardiac_amit_apt018.pdf" }
+    ],
+    "verified_by_email": "rajesh.kumar@BIMS.com",
+    "verified_at": "2026-05-07T09:00:00.000Z"
+  },
+  {
+    "prescription_index": 18,
+    "patientdetails": {
+      "patientname": "Deepak Verma",
+      "email": "deepak.verma@email.com"
+    },
+    "doctordetails": {
+      "doctorname": "Dr. Rajesh Kumar",
+      "email": "rajesh.kumar@BIMS.com"
+    },
+    "tests": [
+      {
+        "test_name": "B-type Natriuretic Peptide (BNP)",
+        "parameters": [
+          { "name": "BNP", "value": "420", "unit": "pg/mL", "reference_range": "<100 pg/mL (HF unlikely)", "status": "High" }
+        ],
+        "result_summary": "BNP markedly elevated. Significant cardiac stress. Heart failure diagnosis strongly supported.",
+        "remarks": "BNP >400 pg/mL is highly specific for acute decompensated heart failure. Initiate GDMT (Guideline-Directed Medical Therapy) immediately. Echo urgently.",
+        "status": "completed"
+      },
+      {
+        "test_name": "Complete Blood Count (CBC)",
+        "parameters": [
+          { "name": "Haemoglobin", "value": "11.8", "unit": "g/dL", "reference_range": "13.0–17.5", "status": "Low" },
+          { "name": "WBC Count", "value": "8200", "unit": "/µL", "reference_range": "4000–11000", "status": "Normal" },
+          { "name": "Platelets", "value": "195000", "unit": "/µL", "reference_range": "150000–400000", "status": "Normal" }
+        ],
+        "result_summary": "Mild anaemia present. Anaemia of chronic disease in setting of heart failure.",
+        "remarks": "Haemoglobin low. Optimise iron stores. Anaemia worsens heart failure symptoms.",
+        "status": "completed"
+      },
+      {
+        "test_name": "Renal Function Tests",
+        "parameters": [
+          { "name": "Serum Creatinine", "value": "1.2", "unit": "mg/dL", "reference_range": "0.7–1.3", "status": "Normal" },
+          { "name": "eGFR", "value": "62", "unit": "mL/min/1.73m²", "reference_range": ">60", "status": "Normal" },
+          { "name": "Blood Urea Nitrogen (BUN)", "value": "22", "unit": "mg/dL", "reference_range": "7–20", "status": "High" }
+        ],
+        "result_summary": "Mildly impaired renal function. Cardiorenal syndrome type 2 developing.",
+        "remarks": "BUN elevated, eGFR borderline. Close monitoring required. Avoid nephrotoxic drugs. Reduce loop diuretic dose if creatinine rises.",
+        "status": "completed"
+      },
+      {
+        "test_name": "Serum Electrolytes",
+        "parameters": [
+          { "name": "Sodium (Na+)", "value": "134", "unit": "mEq/L", "reference_range": "136–145", "status": "Low" },
+          { "name": "Potassium (K+)", "value": "3.2", "unit": "mEq/L", "reference_range": "3.5–5.0", "status": "Low" },
+          { "name": "Magnesium (Mg2+)", "value": "1.6", "unit": "mg/dL", "reference_range": "1.7–2.2", "status": "Low" }
+        ],
+        "result_summary": "Hyponatraemia, hypokalaemia and hypomagnesaemia. Electrolyte disturbance in heart failure.",
+        "remarks": "Electrolyte replacement critical before initiation of diuretics. Risk of arrhythmia with low K+ and Mg2+. Monitor daily while in-patient.",
+        "status": "completed"
+      },
+      {
+        "test_name": "Echocardiogram (Report)",
+        "parameters": [
+          { "name": "Left Ventricular Ejection Fraction (LVEF)", "value": "38", "unit": "%", "reference_range": ">55%", "status": "Low" },
+          { "name": "LV End-Diastolic Diameter", "value": "62", "unit": "mm", "reference_range": "42–59", "status": "High" },
+          { "name": "Left Atrial Size", "value": "Mildly dilated", "unit": "", "reference_range": "Normal", "status": "Abnormal" },
+          { "name": "Diastolic Function", "value": "Grade II impairment", "unit": "", "reference_range": "Normal", "status": "Abnormal" }
+        ],
+        "result_summary": "HFrEF (Heart Failure with Reduced Ejection Fraction). LVEF 38%, dilated LV, grade II diastolic dysfunction.",
+        "remarks": "Echo confirms moderate HFrEF. Initiate GDMT: ACE inhibitor/ARB, beta-blocker, MRA and SGLT2 inhibitor as per ESC guidelines. Urgent cardiology follow-up.",
+        "status": "completed"
+      }
+    ],
+    "overall_status": "completed",
+    "report_date": "2026-05-07",
+    "attachments": [
+      { "file_name": "Echo_Report_Deepak_Verma_APT019.pdf", "file_url": "https://res.cloudinary.com/demo/image/fetch/lab_echo_deepak_apt019.pdf" },
+      { "file_name": "CardiacPanel_Deepak_Verma_APT019.pdf", "file_url": "https://res.cloudinary.com/demo/image/fetch/lab_cardiac_deepak_apt019.pdf" }
+    ],
+    "verified_by_email": "rajesh.kumar@BIMS.com",
+    "verified_at": "2026-05-07T11:00:00.000Z"
+  },
+  {
+    "prescription_index": 19,
+    "patientdetails": {
+      "patientname": "Sneha Roy",
+      "email": "sneha.roy@email.com"
+    },
+    "doctordetails": {
+      "doctorname": "Dr. Vikram Patel",
+      "email": "vikram.patel@BIMS.com"
+    },
+    "tests": [
+      {
+        "test_name": "Complete Blood Count (CBC)",
+        "parameters": [
+          { "name": "Haemoglobin", "value": "13.2", "unit": "g/dL", "reference_range": "12.0–15.5", "status": "Normal" },
+          { "name": "WBC Count", "value": "7000", "unit": "/µL", "reference_range": "4000–11000", "status": "Normal" },
+          { "name": "Platelets", "value": "258000", "unit": "/µL", "reference_range": "150000–400000", "status": "Normal" },
+          { "name": "Neutrophils", "value": "62", "unit": "%", "reference_range": "50–70", "status": "Normal" }
+        ],
+        "result_summary": "CBC normal. No signs of post-operative infection.",
+        "remarks": "Haematological parameters within normal limits at 6-month follow-up post ACL repair.",
+        "status": "completed"
+      },
+      {
+        "test_name": "C-Reactive Protein (CRP)",
+        "parameters": [
+          { "name": "CRP (High Sensitivity)", "value": "3.2", "unit": "mg/L", "reference_range": "<5", "status": "Normal" }
+        ],
+        "result_summary": "CRP within normal range. Healing progressing well with no active inflammation.",
+        "remarks": "Inflammatory markers satisfactory at this stage of rehabilitation.",
+        "status": "completed"
+      },
+      {
+        "test_name": "Erythrocyte Sedimentation Rate (ESR)",
+        "parameters": [
+          { "name": "ESR", "value": "18", "unit": "mm/hr", "reference_range": "0–20", "status": "Normal" }
+        ],
+        "result_summary": "ESR within normal limits.",
+        "remarks": "No ongoing inflammatory process. Continue physiotherapy.",
+        "status": "completed"
+      },
+      {
+        "test_name": "MRI Knee (Report)",
+        "parameters": [
+          { "name": "ACL Graft Integrity", "value": "Intact", "unit": "", "reference_range": "Intact", "status": "Normal" },
+          { "name": "Menisci", "value": "No new tears", "unit": "", "reference_range": "Intact", "status": "Normal" },
+          { "name": "Bone Marrow Oedema", "value": "Resolving", "unit": "", "reference_range": "Absent", "status": "Abnormal" },
+          { "name": "Joint Effusion", "value": "Minimal", "unit": "", "reference_range": "Absent", "status": "Abnormal" }
+        ],
+        "result_summary": "ACL graft intact with good tissue integration. Resolving bone marrow oedema and minimal joint effusion — expected at this stage of recovery.",
+        "remarks": "MRI demonstrates satisfactory ACL graft healing. Continue supervised rehabilitation programme. Weight-bearing exercises can be progressed. Re-evaluate in 3 months.",
+        "status": "completed"
+      }
+    ],
+    "overall_status": "completed",
+    "report_date": "2026-05-07",
+    "attachments": [
+      { "file_name": "MRI_Knee_Sneha_Roy_APT020.pdf", "file_url": "https://res.cloudinary.com/demo/image/fetch/lab_mri_sneha_apt020.pdf" },
+      { "file_name": "InflamPanel_Sneha_Roy_APT020.pdf", "file_url": "https://res.cloudinary.com/demo/image/fetch/lab_inflam_sneha_apt020.pdf" }
+    ],
+    "verified_by_email": "vikram.patel@BIMS.com",
+    "verified_at": "2026-05-07T14:00:00.000Z"
+  }
+]

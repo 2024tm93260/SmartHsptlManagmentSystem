@@ -1,7 +1,7 @@
 import { asyncHandler } from "../utils/asynchandler.js";
 import { apiResponse } from "../utils/apiResponse.js";
 import { apiError } from "../utils/apiError.js";
-import Labtest from "../models/labtest.model.js";
+import { LabTest } from "../models/labtest.model.js";
 import { Prescription } from "../models/prescription.model.js";
 import { Patient } from "../models/patient.model.js";
 import { Doctor } from "../models/doctor.model.js";
@@ -52,13 +52,13 @@ export const createlabtest = asyncHandler(async (req, res) => {
     }
 
     // Check if lab test already exists for this prescription
-    const existingLabtest = await Labtest.findOne({ prescription_id });
+    const existingLabtest = await LabTest.findOne({ prescription_id });
     if (existingLabtest) {
         throw new apiError(409, "Lab test already exists for this prescription");
     }
 
     // Create lab test
-    const labtest = await Labtest.create({
+    const labtest = await LabTest.create({
         prescription_id,
         patient_id,
         doctor_id: req.doctor._id,
@@ -78,7 +78,7 @@ export const createlabtest = asyncHandler(async (req, res) => {
         { new: true }
     );
 
-    const createdLabtest = await Labtest.findById(labtest._id)
+    const createdLabtest = await LabTest.findById(labtest._id)
         .populate("prescription_id")
         .populate("patient_id")
         .populate("doctor_id")
@@ -98,7 +98,7 @@ export const getlabtest = asyncHandler(async (req, res) => {
         throw new apiError(401, "Unauthorized request");
     }
 
-    const labtest = await Labtest.findById(labtestid)
+    const labtest = await LabTest.findById(labtestid)
         .populate("prescription_id")
         .populate("patient_id")
         .populate("doctor_id")
@@ -131,7 +131,7 @@ export const getalllabtestsforpatient = asyncHandler(async (req, res) => {
         throw new apiError(401, "Unauthorized patient request");
     }
 
-    const labtests = await Labtest.find({ patient_id: req.patient._id })
+    const labtests = await LabTest.find({ patient_id: req.patient._id })
         .populate("prescription_id")
         .populate("patient_id")
         .populate("doctor_id")
@@ -149,7 +149,7 @@ export const getalllabtestsfordoctor = asyncHandler(async (req, res) => {
         throw new apiError(401, "Unauthorized doctor request");
     }
 
-    const labtests = await Labtest.find({ doctor_id: req.doctor._id })
+    const labtests = await LabTest.find({ doctor_id: req.doctor._id })
         .populate("prescription_id")
         .populate("patient_id")
         .populate("doctor_id")
@@ -167,7 +167,7 @@ export const getalllabtests = asyncHandler(async (req, res) => {
         throw new apiError(401, "Unauthorized admin request");
     }
 
-    const labtests = await Labtest.find()
+    const labtests = await LabTest.find()
         .populate("prescription_id")
         .populate("patient_id")
         .populate("doctor_id")
@@ -188,7 +188,7 @@ export const getlabtestbyprescription = asyncHandler(async (req, res) => {
         throw new apiError(401, "Unauthorized request");
     }
 
-    const labtest = await Labtest.findOne({ prescription_id: prescriptionid })
+    const labtest = await LabTest.findOne({ prescription_id: prescriptionid })
         .populate("prescription_id")
         .populate("patient_id")
         .populate("doctor_id")
@@ -225,7 +225,7 @@ export const updatelabtest = asyncHandler(async (req, res) => {
         throw new apiError(401, "Unauthorized request");
     }
 
-    const labtest = await Labtest.findById(labtestid);
+    const labtest = await LabTest.findById(labtestid);
     if (!labtest) {
         throw new apiError(404, "Lab test not found");
     }
@@ -266,7 +266,7 @@ export const updatelabtest = asyncHandler(async (req, res) => {
         throw new apiError(400, "At least one field is required to update");
     }
 
-    const updatedLabtest = await Labtest.findByIdAndUpdate(
+    const updatedLabtest = await LabTest.findByIdAndUpdate(
         labtestid,
         { $set: updates },
         { new: true }
@@ -295,7 +295,7 @@ export const updatetestresults = asyncHandler(async (req, res) => {
         throw new apiError(401, "Unauthorized request");
     }
 
-    const labtest = await Labtest.findById(labtestid);
+    const labtest = await LabTest.findById(labtestid);
     if (!labtest) {
         throw new apiError(404, "Lab test not found");
     }
@@ -325,7 +325,7 @@ export const updatetestresults = asyncHandler(async (req, res) => {
 
     await labtest.save();
 
-    const updatedLabtest = await Labtest.findById(labtestid)
+    const updatedLabtest = await LabTest.findById(labtestid)
         .populate("prescription_id")
         .populate("patient_id")
         .populate("doctor_id")
@@ -345,7 +345,7 @@ export const verifylabtest = asyncHandler(async (req, res) => {
         throw new apiError(401, "Unauthorized doctor request");
     }
 
-    const labtest = await Labtest.findById(labtestid);
+    const labtest = await LabTest.findById(labtestid);
     if (!labtest) {
         throw new apiError(404, "Lab test not found");
     }
@@ -360,7 +360,7 @@ export const verifylabtest = asyncHandler(async (req, res) => {
     labtest.verified_at = new Date();
     await labtest.save();
 
-    const verifiedLabtest = await Labtest.findById(labtestid)
+    const verifiedLabtest = await LabTest.findById(labtestid)
         .populate("prescription_id")
         .populate("patient_id")
         .populate("doctor_id")
@@ -380,7 +380,7 @@ export const deletelabtest = asyncHandler(async (req, res) => {
         throw new apiError(401, "Unauthorized request");
     }
 
-    const labtest = await Labtest.findById(labtestid);
+    const labtest = await LabTest.findById(labtestid);
     if (!labtest) {
         throw new apiError(404, "Lab test not found");
     }
@@ -397,7 +397,7 @@ export const deletelabtest = asyncHandler(async (req, res) => {
         { new: true }
     );
 
-    await Labtest.findByIdAndDelete(labtestid);
+    await LabTest.findByIdAndDelete(labtestid);
 
     return res.status(200).json(
         new apiResponse(200, {}, "Lab test deleted successfully")

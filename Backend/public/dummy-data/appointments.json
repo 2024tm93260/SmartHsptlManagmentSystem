@@ -538,5 +538,23 @@
     "medicalhistory": "Previous rotator cuff injury, 3 months into physiotherapy",
     "uniquecode": "APT-030-2026",
     "status": "Confirmed"
+  },
+  {
+    "patientdetails": {
+      "patientname": "Vikram Singh",
+      "email": "vikram.singh@email.com",
+      "phonenumber": 9876543229
+    },
+    "doctordetails": {
+      "doctorname": "Dr. Rajesh Kumar",
+      "email": "rajesh.kumar@BIMS.com",
+      "specialization": "Interventional Cardiology"
+    },
+    "appointmentdate": "2026-05-06",
+    "appointmenttime": "09:00 AM",
+    "symptoms": "Persistent high blood pressure, headaches, dizziness",
+    "medicalhistory": "Stage 2 hypertension, family history of cardiovascular disease",
+    "uniquecode": "APT-031-2026",
+    "status": "Completed"
   }
 ]

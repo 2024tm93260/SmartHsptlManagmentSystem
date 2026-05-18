@@ -79,4 +79,4 @@ const labTestSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-export default mongoose.model("Labtest", labTestSchema);
+export const LabTest = mongoose.model("Labtest", labTestSchema);

@@ -58,8 +58,8 @@ function AdminDepartmentCard({ dept, onClick }) {
           {/* Action Buttons */}
           <div className="mt-4 flex justify-between gap-3">
             <Button
-              size="sm"
-              className="w-full admin-accent-gradient text-primary-foreground hover:opacity-90"
+              size= "sm"
+              className="flex-1 h-8 px-2 text-xs admin-accent-gradient text-primary-foreground hover:opacity-90"
               onClick={(e) => {
                 e.stopPropagation();
                 setShowUpdateModal(true);
@@ -72,7 +72,7 @@ function AdminDepartmentCard({ dept, onClick }) {
             <Button
               size="sm"
               variant="destructive"
-              className="w-full"
+              className="flex-1 text-destructive-foreground"
               onClick={(e) => {
                 e.stopPropagation();
                 setShowDeleteModal(true);

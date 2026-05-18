@@ -20,6 +20,7 @@ import { Doctor } from "../../src/models/doctor.model.js";
 import { Patient } from "../../src/models/patient.model.js";
 import { Appointment } from "../../src/models/appointment.model.js";
 import { Prescription } from "../../src/models/prescription.model.js";
+import { LabTest } from "../../src/models/labtest.model.js";
 import { Admin } from "../../src/models/admin.model.js";
 
 const __filename = fileURLToPath(import.meta.url);
@@ -74,6 +75,7 @@ async function clearCollections() {
       { name: "Patient", model: Patient },
       { name: "Appointment", model: Appointment },
       { name: "Prescription", model: Prescription },
+      { name: "LabTest", model: LabTest },
       { name: "Admin", model: Admin },
     ];
 
@@ -255,19 +257,42 @@ async function seedAppointments() {
 async function seedPrescriptions(appointments) {
   log.info("Loading prescriptions...");
   const prescriptions = loadJSON("prescriptions.json");
-  
-  // Link prescriptions to appointments by index
-  const prescriptionsToInsert = prescriptions.map((presc, index) => {
+
+  // Use passed appointments if available, otherwise fetch all from DB
+  let allAppointments = appointments && appointments.length > 0 ? appointments : [];
+  if (allAppointments.length === 0) {
+    log.warn("No newly inserted appointments — fetching existing ones from DB...");
+    allAppointments = await Appointment.find({}).lean();
+  }
+
+  // Build a queue map keyed by "patientEmail_doctorEmail" to handle multiple matches
+  const appointmentQueue = {};
+  for (const apt of allAppointments) {
+    const key = `${apt.patientdetails.email}_${apt.doctordetails.email}`;
+    if (!appointmentQueue[key]) appointmentQueue[key] = [];
+    appointmentQueue[key].push(apt);
+  }
+
+  const prescriptionsToInsert = prescriptions.map((presc) => {
     const prescCopy = { ...presc };
-    // Link to corresponding appointment if it exists
-    if (appointments && appointments[index]) {
-      prescCopy.appointmentid = appointments[index]._id;
+    const key = `${presc.patientdetails.email}_${presc.doctordetails.email}`;
+    const queue = appointmentQueue[key];
+    if (queue && queue.length > 0) {
+      prescCopy.appointmentid = queue.shift()._id;
+    } else {
+      log.warn(`No appointment found for: ${presc.patientdetails.email} + ${presc.doctordetails.email}`);
     }
     return prescCopy;
   });
-  
+
+  // Skip any prescriptions that still have no appointmentid
+  const validPrescriptions = prescriptionsToInsert.filter(p => p.appointmentid);
+  if (validPrescriptions.length < prescriptionsToInsert.length) {
+    log.warn(`Skipping ${prescriptionsToInsert.length - validPrescriptions.length} prescription(s) with no matching appointment`);
+  }
+
   try {
-    const result = await Prescription.insertMany(prescriptionsToInsert);
+    const result = await Prescription.insertMany(validPrescriptions);
     log.success(`Inserted ${result.length} prescriptions`);
     return result;
   } catch (error) {
@@ -275,7 +300,7 @@ async function seedPrescriptions(appointments) {
     if (error.code === 11000) {
       log.warn("Some prescriptions already exist - attempting one-by-one");
       const results = [];
-      for (const presc of prescriptionsToInsert) {
+      for (const presc of validPrescriptions) {
         try {
           const result = await Prescription.create(presc);
           results.push(result);
@@ -294,6 +319,69 @@ async function seedPrescriptions(appointments) {
 }
 
 /**
+ * Seed lab tests
+ */
+async function seedLabTests(patients, doctors, prescriptions) {
+  log.info("Loading lab tests...");
+  const labTests = loadJSON("labtests.json");
+
+  // Build lookup maps for fast access
+  const patientMap = {};
+  for (const p of patients) patientMap[p.email] = p._id;
+
+  const doctorMap = {};
+  for (const d of doctors) doctorMap[d.email] = d._id;
+
+  const results = [];
+  for (const lt of labTests) {
+    try {
+      const prescription = prescriptions[lt.prescription_index];
+      if (!prescription) {
+        log.warn(`No prescription at index ${lt.prescription_index}, skipping lab test.`);
+        continue;
+      }
+
+      const patient_id = patientMap[lt.patientdetails.email];
+      const doctor_id = doctorMap[lt.doctordetails.email];
+      const verified_by = lt.verified_by_email ? doctorMap[lt.verified_by_email] : null;
+
+      if (!patient_id) {
+        log.warn(`Patient not found for email: ${lt.patientdetails.email}, skipping.`);
+        continue;
+      }
+      if (!doctor_id) {
+        log.warn(`Doctor not found for email: ${lt.doctordetails.email}, skipping.`);
+        continue;
+      }
+
+      const labTestData = {
+        prescription_id: prescription._id,
+        patient_id,
+        doctor_id,
+        tests: lt.tests,
+        overall_status: lt.overall_status,
+        report_date: lt.report_date ? new Date(lt.report_date) : null,
+        attachments: lt.attachments || [],
+        verified_by: verified_by || null,
+        verified_at: lt.verified_at ? new Date(lt.verified_at) : null,
+      };
+
+      const created = await LabTest.create(labTestData);
+      results.push(created);
+
+      // Back-link the lab test on the prescription
+      await Prescription.findByIdAndUpdate(prescription._id, { labtest: created._id });
+    } catch (e) {
+      log.error(`Failed to insert lab test (prescription index ${lt.prescription_index}): ${e.message}`);
+      throw e;
+    }
+  }
+
+  log.success(`Inserted ${results.length} lab tests`);
+  return results;
+}
+
+/**
  * Verify seeded data
  */
 async function verifySeed() {
@@ -306,6 +394,7 @@ async function verifySeed() {
       patients: await Patient.countDocuments(),
       appointments: await Appointment.countDocuments(),
       prescriptions: await Prescription.countDocuments(),
+      labtests: await LabTest.countDocuments(),
       admins: await Admin.countDocuments(),
     };
 
@@ -362,10 +451,11 @@ async function main() {
     
     await seedAdmins();
     await seedDepartments();
-    await seedDoctors();
-    await seedPatients();
+    const doctors = await seedDoctors();
+    const patients = await seedPatients();
     const appointments = await seedAppointments();
-    await seedPrescriptions(appointments);
+    const prescriptions = await seedPrescriptions(appointments);
+    await seedLabTests(patients, doctors, prescriptions);
 
     // Verify
     await verifySeed();
