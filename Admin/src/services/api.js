@@ -1,7 +1,10 @@
 import axios from "axios";
 
 const baseURL =
-  import.meta.env.VITE_API_BASE_URL || "http://localhost:5000/api/v1/admin";
+  import.meta.env.VITE_API_BASE_URL ||
+  (import.meta.env.PROD
+    ? "https://smart-hsptl-managment-system.vercel.app/api/v1/admin"
+    : "http://localhost:5000/api/v1/admin");
 
 const api = axios.create({
   baseURL,

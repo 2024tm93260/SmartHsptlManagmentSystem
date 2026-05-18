@@ -1,6 +1,13 @@
 import mongoose from "mongoose";
 
-const MONGODB_URI = `${process.env.MONGODB_URL}/${process.env.DB_NAME}`;
+const mongoBaseUrl = process.env.MONGODB_URL;
+const mongoDbName = process.env.DB_NAME;
+
+if (!mongoBaseUrl || !mongoDbName) {
+  throw new Error("Missing MongoDB env vars: MONGODB_URL and DB_NAME are required");
+}
+
+const MONGODB_URI = `${mongoBaseUrl}/${mongoDbName}`;
 
 let cached = global.mongoose;
 

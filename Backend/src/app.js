@@ -13,11 +13,17 @@ const allowedOrigins = [
     "http://localhost:5174",
 ].filter(Boolean);
 
+const isVercelPreviewOrigin = (origin = "") =>
+    /^https:\/\/[a-zA-Z0-9-]+\.vercel\.app$/.test(origin);
+
+const isAllowedOrigin = (origin = "") =>
+    allowedOrigins.includes(origin) || isVercelPreviewOrigin(origin);
+
 app.use(
     cors({
         origin: function (origin, callback) {
             if (!origin) return callback(null, true);
-            if (allowedOrigins.includes(origin)) {
+            if (isAllowedOrigin(origin)) {
                 callback(null, true);
             } else {
                 callback(new Error("Not allowed by CORS"));
