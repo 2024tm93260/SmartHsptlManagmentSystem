@@ -8,8 +8,13 @@
   "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "node -e \"console.log('Backend is serverless-ready; no build step required.')\"",
+    "vercel-build": "npm run build",
     "start": "node src/index.js",
     "dev": "nodemon -r dotenv/config --experimental-json-modules src/index.js"
+  },
+  "engines": {
+    "node": ">=20"
   },
   "devDependencies": {
     "nodemon": "^3.1.14"
