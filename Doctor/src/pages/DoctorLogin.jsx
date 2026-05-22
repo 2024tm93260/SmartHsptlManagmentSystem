@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useForm } from "react-hook-form";
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import toast from "react-hot-toast";
 import {
@@ -140,8 +140,10 @@ const DoctorLogin = () => {
               {/* Forgot Password Link */}
               <div className="flex justify-end">
                 <Button
-                 onClick={()=> navigate("/forgot-password")}
-                  className="text-sm text-primary hover:text-primary hover:underline"
+                  type="button"
+                  variant="link"
+                  onClick={() => navigate("/forgot-password")}
+                  className="h-auto p-0 text-sm text-slate-800 hover:text-slate-900"
                 >
                   Forgot Password?
                 </Button>
@@ -169,8 +171,10 @@ const DoctorLogin = () => {
               <p className="text-sm text-muted-foreground">
                 Don't have an account?{" "}
                 <Button
+                  type="button"
+                  variant="link"
                   onClick={() => navigate("/register")}
-                  className="text-primary hover:text-primary font-semibold hover:underline"
+                  className="h-auto p-0 font-semibold text-slate-800 hover:text-slate-900"
                 >
                   Register here
                 </Button>
