@@ -626,5 +626,395 @@
 				"duration": "3 weeks"
 			}
 		]
+	},
+	{
+		"doctordetails": {
+			"doctorname": "Dr. Rajesh Kumar",
+			"email": "rajesh.kumar@BIMS.com",
+			"specialization": "Interventional Cardiology"
+		},
+		"patientdetails": {
+			"patientname": "Amit Singh",
+			"email": "amit.singh@email.com"
+		},
+		"diagonosis": "Progressive Stable Angina - ECG Abnormality",
+		"medicines": [
+			{
+				"medicinename": "Bisoprolol",
+				"dosage": "5 mg",
+				"frequency": "Once daily",
+				"duration": "3 months"
+			},
+			{
+				"medicinename": "Aspirin",
+				"dosage": "75 mg",
+				"frequency": "Once daily",
+				"duration": "Ongoing"
+			},
+			{
+				"medicinename": "Isosorbide Mononitrate",
+				"dosage": "30 mg",
+				"frequency": "Once daily in the morning",
+				"duration": "2 months"
+			}
+		]
+	},
+	{
+		"doctordetails": {
+			"doctorname": "Dr. Priya Sharma",
+			"email": "priya.sharma@BIMS.com",
+			"specialization": "Clinical Neurology"
+		},
+		"patientdetails": {
+			"patientname": "Ritika Bhat",
+			"email": "ritika.bhat@email.com"
+		},
+		"diagonosis": "Postural Orthostatic Tachycardia Syndrome (POTS)",
+		"medicines": [
+			{
+				"medicinename": "Fludrocortisone",
+				"dosage": "0.1 mg",
+				"frequency": "Once daily",
+				"duration": "2 months"
+			},
+			{
+				"medicinename": "Midodrine",
+				"dosage": "5 mg",
+				"frequency": "Three times daily (not at bedtime)",
+				"duration": "1 month"
+			},
+			{
+				"medicinename": "ORS Sachets",
+				"dosage": "1 sachet",
+				"frequency": "Once daily",
+				"duration": "1 month"
+			}
+		]
+	},
+	{
+		"doctordetails": {
+			"doctorname": "Dr. Vikram Patel",
+			"email": "vikram.patel@BIMS.com",
+			"specialization": "Joint Replacement Surgery"
+		},
+		"patientdetails": {
+			"patientname": "Deepak Verma",
+			"email": "deepak.verma@email.com"
+		},
+		"diagonosis": "Pre-operative Clearance - Total Knee Replacement",
+		"medicines": [
+			{
+				"medicinename": "Iron Sucrose",
+				"dosage": "200 mg IV",
+				"frequency": "Alternate days x3",
+				"duration": "1 week"
+			},
+			{
+				"medicinename": "Vitamin C",
+				"dosage": "500 mg",
+				"frequency": "Once daily",
+				"duration": "2 weeks"
+			},
+			{
+				"medicinename": "Pantoprazole",
+				"dosage": "40 mg",
+				"frequency": "Once daily before meals",
+				"duration": "2 weeks"
+			}
+		]
+	},
+	{
+		"doctordetails": {
+			"doctorname": "Dr. Vikram Patel",
+			"email": "vikram.patel@BIMS.com",
+			"specialization": "Joint Replacement Surgery"
+		},
+		"patientdetails": {
+			"patientname": "Neha Gupta",
+			"email": "neha.gupta@email.com"
+		},
+		"diagonosis": "Early Adhesive Capsulitis - Left Shoulder",
+		"medicines": [
+			{
+				"medicinename": "Ibuprofen",
+				"dosage": "400 mg",
+				"frequency": "Twice daily with food",
+				"duration": "2 weeks"
+			},
+			{
+				"medicinename": "Pantoprazole",
+				"dosage": "40 mg",
+				"frequency": "Once daily before meals",
+				"duration": "2 weeks"
+			},
+			{
+				"medicinename": "Diclofenac Gel",
+				"dosage": "Apply topically",
+				"frequency": "Twice daily on shoulder",
+				"duration": "3 weeks"
+			}
+		]
+	},
+	{
+		"doctordetails": {
+			"doctorname": "Dr. Priya Sharma",
+			"email": "priya.sharma@BIMS.com",
+			"specialization": "Clinical Neurology"
+		},
+		"patientdetails": {
+			"patientname": "Suresh Kumar",
+			"email": "suresh.kumar@email.com"
+		},
+		"diagonosis": "Epilepsy - Stable with Dose Adjustment",
+		"medicines": [
+			{
+				"medicinename": "Levetiracetam",
+				"dosage": "750 mg",
+				"frequency": "Twice daily",
+				"duration": "Ongoing"
+			},
+			{
+				"medicinename": "Lamotrigine",
+				"dosage": "150 mg",
+				"frequency": "Once daily",
+				"duration": "Ongoing"
+			},
+			{
+				"medicinename": "Vitamin D3",
+				"dosage": "2000 IU",
+				"frequency": "Once daily",
+				"duration": "Ongoing"
+			}
+		]
+	},
+	{
+		"doctordetails": {
+			"doctorname": "Dr. Rajesh Kumar",
+			"email": "rajesh.kumar@BIMS.com",
+			"specialization": "Interventional Cardiology"
+		},
+		"patientdetails": {
+			"patientname": "Manoj Yadav",
+			"email": "manoj.yadav@email.com"
+		},
+		"diagonosis": "Unstable Angina - Increased Episode Frequency",
+		"medicines": [
+			{
+				"medicinename": "Aspirin",
+				"dosage": "150 mg",
+				"frequency": "Once daily",
+				"duration": "1 month"
+			},
+			{
+				"medicinename": "Clopidogrel",
+				"dosage": "75 mg",
+				"frequency": "Once daily",
+				"duration": "3 months"
+			},
+			{
+				"medicinename": "Nitroglycerin",
+				"dosage": "0.5 mg sublingual",
+				"frequency": "As needed for chest pain",
+				"duration": "PRN"
+			},
+			{
+				"medicinename": "Metoprolol Succinate",
+				"dosage": "50 mg",
+				"frequency": "Once daily",
+				"duration": "Ongoing"
+			}
+		]
+	},
+	{
+		"doctordetails": {
+			"doctorname": "Dr. Priya Sharma",
+			"email": "priya.sharma@BIMS.com",
+			"specialization": "Clinical Neurology"
+		},
+		"patientdetails": {
+			"patientname": "Sneha Roy",
+			"email": "sneha.roy@email.com"
+		},
+		"diagonosis": "Vestibular Migraine with Visual Aura",
+		"medicines": [
+			{
+				"medicinename": "Topiramate",
+				"dosage": "25 mg",
+				"frequency": "Once daily at night",
+				"duration": "3 months"
+			},
+			{
+				"medicinename": "Sumatriptan",
+				"dosage": "50 mg",
+				"frequency": "As needed during episode",
+				"duration": "PRN"
+			},
+			{
+				"medicinename": "Cinnarizine",
+				"dosage": "25 mg",
+				"frequency": "Twice daily",
+				"duration": "4 weeks"
+			}
+		]
+	},
+	{
+		"doctordetails": {
+			"doctorname": "Dr. Vikram Patel",
+			"email": "vikram.patel@BIMS.com",
+			"specialization": "Joint Replacement Surgery"
+		},
+		"patientdetails": {
+			"patientname": "Anjali Patel",
+			"email": "anjali.patel@email.com"
+		},
+		"diagonosis": "Hip Impingement Syndrome (Femoroacetabular Impingement)",
+		"medicines": [
+			{
+				"medicinename": "Naproxen",
+				"dosage": "500 mg",
+				"frequency": "Twice daily with food",
+				"duration": "3 weeks"
+			},
+			{
+				"medicinename": "Esomeprazole",
+				"dosage": "20 mg",
+				"frequency": "Once daily",
+				"duration": "3 weeks"
+			},
+			{
+				"medicinename": "Diclofenac Gel",
+				"dosage": "Apply topically",
+				"frequency": "Twice daily on hip region",
+				"duration": "2 weeks"
+			}
+		]
+	},
+	{
+		"doctordetails": {
+			"doctorname": "Dr. Rajesh Kumar",
+			"email": "rajesh.kumar@BIMS.com",
+			"specialization": "Interventional Cardiology"
+		},
+		"patientdetails": {
+			"patientname": "Vikram Singh",
+			"email": "vikram.singh@email.com"
+		},
+		"diagonosis": "Uncontrolled Hypertension with Pedal Edema",
+		"medicines": [
+			{
+				"medicinename": "Amlodipine",
+				"dosage": "10 mg",
+				"frequency": "Once daily",
+				"duration": "Ongoing"
+			},
+			{
+				"medicinename": "Telmisartan",
+				"dosage": "40 mg",
+				"frequency": "Once daily",
+				"duration": "Ongoing"
+			},
+			{
+				"medicinename": "Indapamide",
+				"dosage": "1.5 mg",
+				"frequency": "Once daily in the morning",
+				"duration": "2 months"
+			}
+		]
+	},
+	{
+		"doctordetails": {
+			"doctorname": "Dr. Priya Sharma",
+			"email": "priya.sharma@BIMS.com",
+			"specialization": "Clinical Neurology"
+		},
+		"patientdetails": {
+			"patientname": "Rahul Mishra",
+			"email": "rahul.mishra@email.com"
+		},
+		"diagonosis": "Generalized Anxiety Disorder with Insomnia",
+		"medicines": [
+			{
+				"medicinename": "Sertraline",
+				"dosage": "50 mg",
+				"frequency": "Once daily in the morning",
+				"duration": "3 months"
+			},
+			{
+				"medicinename": "Melatonin",
+				"dosage": "3 mg",
+				"frequency": "At bedtime",
+				"duration": "2 months"
+			},
+			{
+				"medicinename": "Clonazepam",
+				"dosage": "0.25 mg",
+				"frequency": "Once daily at night",
+				"duration": "2 weeks"
+			}
+		]
+	},
+	{
+		"doctordetails": {
+			"doctorname": "Dr. Vikram Patel",
+			"email": "vikram.patel@BIMS.com",
+			"specialization": "Joint Replacement Surgery"
+		},
+		"patientdetails": {
+			"patientname": "Ritika Bhat",
+			"email": "ritika.bhat@email.com"
+		},
+		"diagonosis": "Adhesive Capsulitis - Improvement Phase",
+		"medicines": [
+			{
+				"medicinename": "Celecoxib",
+				"dosage": "200 mg",
+				"frequency": "Once daily",
+				"duration": "3 weeks"
+			},
+			{
+				"medicinename": "Diclofenac Gel",
+				"dosage": "Apply topically",
+				"frequency": "Twice daily on shoulder",
+				"duration": "3 weeks"
+			},
+			{
+				"medicinename": "Calcium + Vitamin D3",
+				"dosage": "500 mg + 250 IU",
+				"frequency": "Once daily",
+				"duration": "2 months"
+			}
+		]
+	},
+	{
+		"doctordetails": {
+			"doctorname": "Dr. Vikram Patel",
+			"email": "vikram.patel@BIMS.com",
+			"specialization": "Joint Replacement Surgery"
+		},
+		"patientdetails": {
+			"patientname": "Amit Singh",
+			"email": "amit.singh@email.com"
+		},
+		"diagonosis": "Post-Wrist Injury Rehabilitation",
+		"medicines": [
+			{
+				"medicinename": "Ibuprofen",
+				"dosage": "400 mg",
+				"frequency": "Twice daily with food",
+				"duration": "2 weeks"
+			},
+			{
+				"medicinename": "Calcium + Vitamin D3",
+				"dosage": "500 mg + 250 IU",
+				"frequency": "Once daily",
+				"duration": "3 months"
+			},
+			{
+				"medicinename": "Collagen Peptides",
+				"dosage": "10 g",
+				"frequency": "Once daily",
+				"duration": "2 months"
+			}
+		]
 	}
 ]
