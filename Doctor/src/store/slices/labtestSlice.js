@@ -34,7 +34,7 @@ const labtestSlice = createSlice({
     });
 
     builder.addCase(getLabTestByPrescription.fulfilled, (state, action) => {
-      state.labtests = action.payload;
+      state.labtests = action.payload ? [action.payload] : [];
     });
 
     builder.addCase(createLabTest.fulfilled, (state, action) => {

@@ -20,6 +20,8 @@ import AppointmentDetails from './pages/AppointmentDetails'
 import CreatePrescription from './pages/CreatePrescription'
 import AllPrescriptions from './pages/AllPrescriptions'
 import PrescriptionDetails from './pages/PrescriptionDetails'
+import AllLabTests from './pages/AllLabTests'
+import LabTestDetails from './pages/LabTestDetails'
 
 const router = createBrowserRouter([
   {
@@ -91,6 +93,22 @@ const router = createBrowserRouter([
         element: (
           <AuthLayout authentication={true}>
             <PrescriptionDetails/>
+          </AuthLayout>
+        )
+      },
+      {
+        path: '/labtests',
+        element: (
+          <AuthLayout authentication={true}>
+            <AllLabTests />
+          </AuthLayout>
+        )
+      },
+      {
+        path: '/labtests/:labtestid',
+        element: (
+          <AuthLayout authentication={true}>
+            <LabTestDetails />
           </AuthLayout>
         )
       },
