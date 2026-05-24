@@ -51,7 +51,7 @@
     "symptoms": "Severe headaches every morning, neck stiffness",
     "medicalhistory": "Chronic tension headaches, high stress",
     "uniquecode": "APT-003-2026",
-    "status": "Pending"
+    "status": "Confirmed"
   },
   {
     "patientdetails": {
@@ -123,7 +123,7 @@
     "symptoms": "Knee instability, pain during movement, swelling",
     "medicalhistory": "ACL tear from sports injury",
     "uniquecode": "APT-007-2026",
-    "status": "Pending"
+    "status": "Confirmed"
   },
   {
     "patientdetails": {
@@ -159,7 +159,7 @@
     "symptoms": "Shoulder stiffness, limited range of motion, pain",
     "medicalhistory": "Frozen shoulder from fall 3 months ago",
     "uniquecode": "APT-009-2026",
-    "status": "Pending"
+    "status": "Confirmed"
   },
   {
     "patientdetails": {
@@ -411,7 +411,7 @@
     "symptoms": "Tremors in hands, slow movement, balance problems",
     "medicalhistory": "Possible early Parkinson's, referred by general practitioner",
     "uniquecode": "APT-023-2026",
-    "status": "Pending"
+    "status": "Confirmed"
   },
   {
     "patientdetails": {
@@ -465,7 +465,7 @@
     "symptoms": "Shortness of breath on exertion, leg swelling",
     "medicalhistory": "Family history of heart disease, no prior cardiac diagnosis",
     "uniquecode": "APT-026-2026",
-    "status": "Pending"
+    "status": "Confirmed"
   },
   {
     "patientdetails": {
@@ -519,7 +519,7 @@
     "symptoms": "Persistent knee swelling, warmth and tenderness",
     "medicalhistory": "Knee osteoarthritis, considering total knee replacement",
     "uniquecode": "APT-029-2026",
-    "status": "Pending"
+    "status": "Confirmed"
   },
   {
     "patientdetails": {
@@ -789,7 +789,7 @@
     "symptoms": "Palpitations and breathlessness after physical activity",
     "medicalhistory": "No prior cardiac history, active post-ACL rehabilitation",
     "uniquecode": "APT-044-2026",
-    "status": "Pending"
+    "status": "Confirmed"
   },
   {
     "patientdetails": {
@@ -807,7 +807,7 @@
     "symptoms": "Hip mobility follow-up, physiotherapy outcome review",
     "medicalhistory": "Post total hip replacement, 3 months into recovery, BP managed",
     "uniquecode": "APT-045-2026",
-    "status": "Pending"
+    "status": "Confirmed"
   },
   {
     "patientdetails": {
@@ -825,6 +825,6 @@
     "symptoms": "Palpitations at night, INR check required, persistent fatigue",
     "medicalhistory": "Atrial fibrillation on warfarin, previous rapid ventricular rate episode",
     "uniquecode": "APT-046-2026",
-    "status": "Pending"
+    "status": "Confirmed"
   }
 ]
